@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', [FrontController::class, 'home'])->name('site.home');
+Route::get('/about', [FrontController::class, 'about'])->name('site.about');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
