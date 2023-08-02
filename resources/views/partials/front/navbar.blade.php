@@ -12,7 +12,7 @@
                 <div class="navbar-nav ml-auto py-0">
                     <a href="{{ route('site.home') }}" class="nav-item nav-link active">Home</a>
                     <a href="{{ route('site.about') }}" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Service</a>
+                    <a href="{{route('site.service')}}" class="nav-item nav-link">Service</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                         <div class="dropdown-menu rounded-0 m-0">
@@ -28,7 +28,7 @@
                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="{{route ('site.service')}}" class="nav-item nav-link">Contact</a>
                 </div>
             </div>
         </nav>

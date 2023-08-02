@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::get('/home', [FrontController::class, 'home'])->name('site.home');
 Route::get('/about', [FrontController::class, 'about'])->name('site.about');
+Route::get('/service', [FrontController::class, 'service'])->name('site.service');
+Route::get('/contact', [FrontController::class, 'contact'])->name('site.contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
