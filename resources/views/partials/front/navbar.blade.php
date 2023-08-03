@@ -17,18 +17,18 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="car.html" class="dropdown-item">Car Listing</a>
-                            <a href="detail.html" class="dropdown-item">Car Detail</a>
-                            <a href="booking.html" class="dropdown-item">Car Booking</a>
+                            <a href="{{route('site.detail')}}" class="dropdown-item">Car Detail</a>
+                            <a href="{{route('booking')}}" class="dropdown-item">Car Booking</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="team.html" class="dropdown-item">The Team</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="{{route('site.team')}}" class="dropdown-item">The Team</a>
+                            <a href="{{route('site.testimonial')}}" class="dropdown-item">Testimonial</a>
                         </div>
                     </div>
-                    <a href="{{route ('site.service')}}" class="nav-item nav-link">Contact</a>
+                    <a href="{{route ('site.contact')}}" class="nav-item nav-link">Contact</a>
                 </div>
             </div>
         </nav>

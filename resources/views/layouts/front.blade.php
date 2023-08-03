@@ -32,10 +32,10 @@
 <body>
     @include('partials.front.topbar')
     @include('partials.front.navbar')
+    @include('partials.front.search')
     
     @yield('hero')
     
-    @include('partials.front.search')
     @yield('content')
 
 

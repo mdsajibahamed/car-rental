@@ -22,4 +22,22 @@ class FrontController extends Controller
     public function contact(){
         return view('contact');
     }
+    //
+    public function detail (){
+        return  view('car_detail');
+    }
+    //
+    public function booking(){
+        return view('booking');
+
+    }
+    //
+    public function team(){
+        return view('team');
+
+    }
+    //
+    public function testimonial(){
+        return view('testimonial');
+    }
 }
