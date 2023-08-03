@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', [FrontController::class, 'home'])->name('site.home');
 Route::get('/home', [FrontController::class, 'home'])->name('site.home');
 Route::get('/about', [FrontController::class, 'about'])->name('site.about');
 Route::get('/service', [FrontController::class, 'service'])->name('site.service');
