@@ -1,0 +1,63 @@
+                                         Databse design and table design
+Users:
+user_id (Primary Key)
+username
+email
+password
+role (admin, customer)
+...
+
+Customers:
+customer_id (Primary Key)
+user_id (Foreign Key referencing Users)
+full_name
+email address
+contact_number
+address
+...
+
+Vehicles:
+vehicle_id (Primary Key)
+make
+model
+year
+seating capacity
+price perday
+type (sedan, SUV, etc.)
+status (available, rented, maintenance)
+location_id (Foreign Key referencing Locations)
+...
+
+Locations:
+location_id (Primary Key)
+name
+address
+
+Bookings:
+booking_id (Primary Key)
+customer_id (Foreign Key referencing Customers)
+vehicle_id (Foreign Key referencing Vehicles)
+pickup_date
+return_date
+status (pending, confirmed, completed)
+total_amount
+...
+Payments:
+payment_id (Primary Key)
+booking_id (Foreign Key referencing Bookings)
+payment_date
+amount
+...
+Reviews:
+review_id (Primary Key)
+customer_id (Foreign Key referencing Customers)
+vehicle_id (Foreign Key referencing Vehicles)
+rating
+comment
+...
+Maintenance:
+maintenance_id (Primary Key)
+vehicle_id (Foreign Key referencing Vehicles)
+description
+start_date
+end_date

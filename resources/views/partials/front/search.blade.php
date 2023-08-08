@@ -1,3 +1,11 @@
+{{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> --}}
+<style>
+
+.modal {
+    --bs-modal-width: 900px !important;
+
+  }
+</style>
 <!-- Search Start -->
 <div class="container-fluid bg-white pt-3 px-lg-5">
     <div class="row mx-n2">
@@ -127,8 +135,93 @@
 
         </div>
         <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-            <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Search</button>
+          <button type="button" class="btn btn-primary btn-block mb-3 " style="height: 50px;"  data-toggle="modal" data-target="#exampleModal">
+            Search
+          </button>
+            {{-- <a class="btn btn-primary btn-block mb-3" style="height: 50px;"  href="{{route('search.dashboard')}}">Search</a> --}}
+            {{-- <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">{{}}</button> --}}
         </div>
     </div>
 </div>
-<!-- Search End -->
+<!-- Modal -->
+
+{{-- <div class="modal fade w-100" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <label for="" class="form-label">Pickup Location</label>
+            <select class="form-control" name="" id="">
+              <option value="">Select</option>
+              <option value="">Dhaka</option>
+            </select>
+            <label for="" class="form-label">Drop Location</label>
+            <select name="" id="" class="form-control">
+              <option value="">Select</option>
+              <option value="">Manikgonj</option>
+              <option value="">Munshigonj</option>
+              <option value="">Tangil</option>
+            </select>
+            <label for="" class="form-label">Date</label>
+            <input type="date" class="form-control">
+            <label for="" class="form-label">Time</label>
+            <input type="text" class="form-control">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Search End --> --}}
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <label for="" class="form-label">Pickup Location</label>
+          <select class="form-control" name="" id="">
+            <option value="">Select</option>
+            <option value="">Dhaka</option>
+          </select>
+          <label for="" class="form-label">Drop Location</label>
+          <select name="" id="" class="form-control">
+            <option value="">Select</option>
+            <option value="">Manikgonj</option>
+            <option value="">Munshigonj</option>
+            <option value="">Tangil</option>
+          </select>
+          <label for="" class="form-label">Date</label>
+          <input type="date" class="form-control">
+          <label for="" class="form-label">Time</label>
+          <input type="text" class="form-control">
+          <label for="" class=" form-label">Car</label>
+          <select name="" id="" class=" form-control">
+            <option value="">Select  Car</option>
+            <option value="">TOYOTA RAV4</option>
+            <option value="">HYUNDAI ACCENT</option>
+          </select>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> --}}

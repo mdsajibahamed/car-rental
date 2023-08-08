@@ -13,12 +13,12 @@
                     <a href="{{ route('site.home') }}" class="nav-item nav-link active">Home</a>
                     <a href="{{ route('site.about') }}" class="nav-item nav-link">About</a>
 
-                    @auth
+                
                     <a href="{{route('site.service')}}" class="nav-item nav-link">Service</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="car.html" class="dropdown-item">Car Listing</a>
+                            <a href="{{route('site.car_list')}}" class="dropdown-item">Car Listing</a>
                             <a href="{{route('site.detail')}}" class="dropdown-item">Car Detail</a>
                             <a href="{{route('booking')}}" class="dropdown-item">Car Booking</a>
                         </div>
@@ -31,10 +31,9 @@
                         </div>
                     </div>
                     <a href="{{route ('site.contact')}}" class="nav-item nav-link">Contact</a>
-                  
-                    @endauth
-                  
-                       {{-- <div class="nav-item dropdown">
+                    
+                    @auth
+                       <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                             {{Auth::user()->name}} 
                           </a>
@@ -47,8 +46,8 @@
                               </form>
                               <a class="dropdown-item"  href="https://laravel.com/" target="_blank">Something Wrong</a>
                           </div>
-                       </div>   --}}
-            
+                       </div>  
+                    @endauth
                     @guest
                     <a class="nav-item nav-link" href="{{url('login')}}">Login</a>
                     <a href="{{url('register')}}" class="nav-item nav-link">Registration</a>

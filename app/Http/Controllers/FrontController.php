@@ -40,4 +40,8 @@ class FrontController extends Controller
     public function testimonial(){
         return view('testimonial');
     }
+    //
+    public function car_list(){
+        return view('car_list');
+    }
 }

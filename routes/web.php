@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -22,10 +23,30 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontController::class, 'home'])->name('site.home');
 Route::get('/home', [FrontController::class, 'home'])->name('site.home');
 Route::get('/about', [FrontController::class, 'about'])->name('site.about');
+Route::get('/service', [FrontController::class, 'service'])->name('site.service');
+Route::get('/contact', [FrontController::class, 'contact'])->name('site.contact');
+Route::get('/details', [FrontController::class, 'detail'])->name('site.detail');
+Route::get('/booking', [FrontController::class, 'booking'])->name('booking');
+Route::get('/team', [FrontController::class, 'team'])->name('site.team');
+Route::get('/testimonial', [FrontController::class, 'testimonial'])->name('site.testimonial');
+Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list');
 
 
-
-
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/vehicle', [AdminController::class, 'car_list'])->name('admin.vehicle');
+    Route::get('/form', [AdminController::class, 'form'])->name('form.dashboard');
+    // Route::get('/search',[AdminController::class,'search'])->name('search.dashboard');
+    Route::get('/car', function () { return view('welcome');
+    
+    });
+    
+});
+// Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+// Route::get('/form', [AdminController::class, 'form'])->name('form.dashboard');
+ Route::get('/car', function () {
+    return view('welcome');
+ });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,12 +58,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
    // after login
-Route::get('/service', [FrontController::class, 'service'])->name('site.service');
-Route::get('/contact', [FrontController::class, 'contact'])->name('site.contact');
-Route::get('/details', [FrontController::class, 'detail'])->name('site.detail');
-Route::get('/booking', [FrontController::class, 'booking'])->name('booking');
-Route::get('/team', [FrontController::class, 'team'])->name('site.team');
-Route::get('/testimonial', [FrontController::class, 'testimonial'])->name('site.testimonial');
 
 
 });
