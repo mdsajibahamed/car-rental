@@ -57,7 +57,7 @@ comment
 ...
 Maintenance:
 maintenance_id (Primary Key)
-vehicle_id (Foreign Key referencing Vehicles)
+vehicle_id (Foreign Key referencing Vehicles)        
 description
 start_date
 end_date

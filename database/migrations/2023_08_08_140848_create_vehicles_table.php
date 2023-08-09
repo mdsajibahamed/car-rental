@@ -13,14 +13,18 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("location_id")->unsigned();
-            $table->foreign("location_id")->references("id")->on("locations");
             $table->string("make")->nullable();
             $table->string("model");
+            $table->string("thumbnail")->nullable();
             $table->string("year")->nullable();
             $table->string("type")->nullable();
             $table->tinyInteger("status")->default("1");
             $table->string("seating_capacity")->nullable();
+            $table->string("rentamout");
+            $table->string("image")->nullable();
+            $table->string("serial_number")->nullable();
+            $table->string("owner_name")->nullable();
+            $table->string("owner_phone")->nullable();
             $table->string("price")->nullable();
             $table->timestamps();
         });
@@ -34,3 +38,4 @@ return new class extends Migration
         Schema::dropIfExists('vehicles');
     }
 };
+

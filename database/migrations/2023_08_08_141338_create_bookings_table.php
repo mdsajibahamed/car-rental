@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("customer_id")->unsigned();
-            $table->foreign("customer_id")->references("id")->on("customers");
+            $table->bigInteger("detail_id")->unsigned();
+            $table->foreign("detail_id")->references("id")->on("details");
             $table->bigInteger("vehicle_id")->unsigned();
             $table->foreign("vehicle_id")->references("id")->on("vehicles");
+            $table->string("location_from")->nullable();
+            $table->string("location_to")->nullable();
             $table->string("pickup_date")->nullable();
-            $table->string("drop_date")->nullable();
-            $table->tinyInteger("status");
+            $table->string("return_date")->nullable();
+            $table->string("total_days")->nullable();
+            $table->tinyInteger("status")->nullable();
             $table->string("total_amount");
             $table->timestamps();
         });
