@@ -4,5 +4,59 @@
     
 @endsection
 @section('content')
-    
+    <section class="my-5 pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="d-flex justify-content-between">
+                      <h2>All User</h2>
+                      <a href="{{route('user.create')}}" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
+
+                    </div>
+                    <div>
+                        <table class="table table-striped">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col style="width: 20%;">
+                            </colgroup>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile Phone</th>
+                                <th>Address</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td style="text-align: center">
+                                    <a href=""><i class="bi bi-eye-fill"></i></a>
+                                    <a href=""><i class="bi bi-pencil-square"></i></a> 
+                                    <a href="" onclick="del(event, this)"><i class="bi bi-trash3-fill"></i></a>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+@endsection
+
+@section('script')
+    <script>
+        function del(e,t){
+            e.preventDefault();
+            let c = confirm("Are you sure you want to delete?");
+            if(!c) return;            
+            t.closest('form').submit();
+        }
+    </script>
 @endsection

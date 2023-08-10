@@ -13,7 +13,7 @@
                         <a href="{{route('vehicle.create')}}" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
                     </div>
                  
-                     <div>
+                        <div>
                              <table class="table table-striped">
                              <colgroup>
                                  <col>
@@ -33,22 +33,22 @@
                              
                  
                              
-                                @forelse ($vehicle as $vehicle)
+                                @forelse ($vehicles as $vehicle)
                                   <tr>
                                      <td>{{$vehicle->make}}</td>
-                                      <td>{{$vehicle->seating_capacity}}</td>
-                                    <td>{{$vehicle->model}}</td>
+                                     <td>{{$vehicle->model}}</td>
                                      <td>{{$vehicle->thumbnail}}</td>
-                                     <td>{{$vehicle->owner_name}}</td>
                                      <td>{{$vehicle->type}}</td>
+                                     <td>{{$vehicle->seating_capacity}}</td>
+                                     <td>{{$vehicle->owner_name}}</td>
                                      <td style="text-align: center">
                                          <a href=""><i class="bi bi-eye-fill"></i></i></a>
                                          <a href="{{route("vehicle.edit",$vehicle->id)}}"><i class="bi bi-pencil-square"></i></a> 
-                                         <form action="" method="POST" class="d-inline">
+                                         <form action="{{route('vehicle.destroy', $vehicle->id)}}" method="POST" class="d-inline">
                                          @csrf
                                          @method("delete")
                                          {{-- <button type="submit"><i class="bi bi-trash3-fill"></i></button> --}}
-                                         <a href="{{route("vehicle.destroy",$vehicle->id)}}" onclick="del(event, this)"><i class="bi bi-trash3-fill"></i></a>
+                                         <a href="#" onclick="del(event, this)"><i class="bi bi-trash3-fill"></i></a>
                                          </form> 
                                        </td>
                                   </tr>

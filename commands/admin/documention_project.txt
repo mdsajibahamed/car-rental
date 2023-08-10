@@ -117,3 +117,148 @@ The outline above is just a starting point; you can customize it based on the sp
 documentation as the project evolves to keep it accurate and helpful. 
 Good documentation will make it easier for users and developers to understand and
  utilize the car rental application effectivel
+
+
+
+
+
+
+ Sedan: A four-door passenger car with a separate trunk for cargo, known for its comfortable and practical design.
+
+Hatchback: A compact car with a rear door that includes the rear window and allows access to a cargo area shared with the passenger compartment.
+
+SUV (Sport Utility Vehicle): A versatile vehicle designed for both on-road and off-road use, often with higher ground clearance and a spacious interior.
+
+Crossover: A type of SUV built on a car platform, combining the features of an SUV and a hatchback or sedan.
+
+Coupe: A two-door car with a sporty and often more stylish design, typically having a shorter roofline.
+
+Convertible: A car with a retractable or removable roof, allowing the driver to enjoy an open-top driving experience.
+
+Minivan: A spacious vehicle designed to transport a larger number of passengers, often used for family or group travel.
+
+Pickup Truck: A vehicle with an open cargo bed at the back, designed for carrying goods, equipment, or even passengers in some cases.
+
+Sports Car: A high-performance car designed for speed, handling, and driving enjoyment, often with a focus on style and agility.
+
+Electric Car: A vehicle that runs entirely on electricity, powered by an electric motor and rechargeable batteries.
+
+
+
+
+Brand vehicle::::::::::::
+Acura
+Alfa Romeo
+Aston Martin
+Audi
+Bentley
+BMW
+Bugatti
+Buick
+Cadillac
+Chevrolet
+Chrysler
+Citroën
+Dodge
+Ferrari
+Fiat
+Ford
+Genesis
+GMC
+Honda
+Hyundai
+Infiniti
+Jaguar
+Jeep
+Kia
+Lamborghini
+Land Rover
+Lexus
+Lincoln
+Maserati
+Mazda
+McLaren
+Mercedes-Benz
+Mini
+Mitsubishi
+Nissan
+Pagani
+Porsche
+Ram
+Rolls-Royce
+Subaru
+Tesla
+Toyota
+Volkswagen
+Volvo
+
+
+
+Tayota vehicle Model ::::
+Toyota Camry: A midsize sedan known for its reliability, comfort, and practicality.
+
+Toyota Corolla: A compact sedan (and hatchback) that's one of the best-selling cars globally, recognized for its affordability and fuel efficiency.
+
+Toyota RAV4: A compact SUV (crossover) with a reputation for versatility and strong sales.
+
+Toyota Highlander: A midsize SUV known for its spacious interior and family-friendly features.
+
+Toyota 4Runner: A midsize SUV with off-road capabilities, suitable for outdoor adventures.
+
+Toyota Tacoma: A midsize pickup truck known for its durability and off-road prowess.
+
+Toyota Tundra: A full-size pickup truck, often appreciated for its towing capacity.
+
+Toyota Prius: A popular hybrid car known for its excellent fuel economy.
+
+Toyota Sienna: A minivan with versatile seating and family-oriented features.
+
+Toyota Avalon: A full-size sedan known for its comfort and refined features.
+
+
+
+Nissan vehicle model:::::::
+Nissan Altima: A midsize sedan known for its comfort, value, and reliability.
+
+Nissan Sentra: A compact sedan that offers good fuel efficiency and practicality.
+
+Nissan Maxima: A full-size sedan with a more upscale feel and sporty design.
+
+Nissan Rogue: A compact SUV (crossover) with strong sales and family-friendly features.
+
+Nissan Murano: A midsize SUV known for its distinctive styling and comfortable interior.
+
+Nissan Pathfinder: A midsize SUV with three-row seating, suitable for larger families.
+
+Nissan Armada: A full-size SUV with towing capabilities and spacious interior.
+
+Nissan Juke: A compact SUV with a unique and sporty design.
+
+Nissan Titan: A full-size pickup truck with various configurations.
+
+Nissan Frontier: A midsize pickup truck that offers a balance of utility and efficiency
+
+
+Mitsubishi vehicle Model:::::
+Mitsubishi Outlander: A compact SUV known for its value, spaciousness, and available third-row seating.
+
+Mitsubishi Eclipse Cross: A compact SUV with a distinctive design and modern features.
+
+Mitsubishi Mirage: A subcompact car known for its affordability and fuel efficiency.
+
+Mitsubishi Mirage G4: The sedan version of the Mirage, offering similar characteristics in a sedan body style.
+
+Mitsubishi ASX (RVR): A compact SUV sold under different names in various markets, including the ASX and RVR.
+
+Mitsubishi Pajero (Montero): A full-size SUV known for its off-road capabilities (marketed as the Montero in some regions).
+
+Mitsubishi Triton (L200): A midsize pickup truck available in various global markets.
+
+
+Tesla vehicle Model::::::
+
+Tesla Model S
+Tesla Model 3
+Tesla Model X
+Tesla Model Y
+Tesla Roadster (2nd Generation)

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class VehicleController extends Controller
 {
@@ -12,9 +13,9 @@ class VehicleController extends Controller
      */
     public function index()
     {  
-        $vehicle =Vehicle::all(); 
+        $vehicles =Vehicle::all(); 
         // ->paginate(config('vehi.perpage'));
-        return view('admin.vehicle.index')->with('vehicle',$vehicle);
+        return view('admin.vehicle.index')->with('vehicles',$vehicles);
     }
 
     /**
@@ -31,7 +32,7 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'make'=>"required|min:10|max:20",
+            'make'=>"required|min:2|max:20",
             'model'=>"required|min:5|max:20"
         ],[
          'make.min' =>':attribute You must be minimum length 10',
@@ -54,7 +55,8 @@ class VehicleController extends Controller
      */
     public function edit(Vehicle $vehicle)
     {
-        return view('admin.vehicle.edit');
+        // dd($vehicle);
+        return view('admin.vehicle.edit',compact('vehicle'));
         //->with("vehicle",$vehicle);
         
         // return view("category.edit")
@@ -64,8 +66,17 @@ class VehicleController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Vehicle $vehicle)
-    {
-        //
+    { 
+        // $vehicle->make =$request->make;
+        // $vehicle->model = $request->model;
+        // if($vehicle->save()){
+            $vehicle->update($request->all());
+        return redirect()->route('vehicle.index')->with("info","Updated Successfully ,Id :".$vehicle->id);
+        // return "hi";
+        // dd($vehicle);
+        // dd($request);
+
+        // }
     }
 
     /**

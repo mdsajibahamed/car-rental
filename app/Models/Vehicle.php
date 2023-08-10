@@ -17,6 +17,7 @@ class Vehicle extends Model
         'rentamout',
         'image',
         'owner_name',
-        'phone'
+        'phone',
+        'seating_capacity'
     ];
 }
