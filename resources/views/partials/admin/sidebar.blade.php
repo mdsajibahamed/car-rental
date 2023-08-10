@@ -16,15 +16,9 @@
         </div>
         <div class="navbar-nav w-100">
             <a href="{{route('admin.dashboard')}}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-            <div class="nav-item dropdown">
-                <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="me-2 bi bi-car-front"></i>Vehicle</a>
-                <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{route('admin.vehicle')}}" class="dropdown-item">Vehicle List</a>
-                    <a href="typography.html" class="dropdown-item">Vehicle Add</a>
-                    <a href="element.html" class="dropdown-item">Other Elements</a>
-                </div>
-            </div>
-            <div class="nav-item dropdown">
+            <a href="{{route('vehicle.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-car-front"></i>Vehicle</a>
+            <a href="{{route('user.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-person-circle"></i>User</a>
+            {{-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="me-2 bi bi-tools"></i>Services</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{url('')}}" class="dropdown-item">Car Financing</a>
@@ -33,7 +27,7 @@
                     <a href="element.html" class="dropdown-item">Auto Painting</a>
                     <a href="element.html" class="dropdown-item">Auto Cleaning</a>
                 </div>
-            </div>
+            </div> --}}
             <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
             <a href="{{route('form.dashboard')}}" class="nav-item nav-link"><i class="bi bi-credit-card-2-front me-2"></i>Payment</a>
             <a href="#" class="nav-item nav-link"><i class="bi bi-book-half me-2"></i>Booking</a>

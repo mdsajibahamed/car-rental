@@ -11,8 +11,10 @@ class VehicleController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+    {  
+        $vehicle =Vehicle::all(); 
+        // ->paginate(config('vehi.perpage'));
+        return view('admin.vehicle.index')->with('vehicle',$vehicle);
     }
 
     /**
@@ -20,7 +22,7 @@ class VehicleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.vehicle.create');
     }
 
     /**
@@ -28,7 +30,15 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'make'=>"required|min:10|max:20",
+            'model'=>"required|min:5|max:20"
+        ],[
+         'make.min' =>':attribute You must be minimum length 10',
+         'model.min'=>':attribute You must be minimum length 5'
+        ]);
+         Vehicle::create($request->all());
+         return redirect()->route('vehicle.index')->with('success','successfully added');
     }
 
     /**
@@ -44,7 +54,10 @@ class VehicleController extends Controller
      */
     public function edit(Vehicle $vehicle)
     {
-        //
+        return view('admin.vehicle.edit');
+        //->with("vehicle",$vehicle);
+        
+        // return view("category.edit")
     }
 
     /**
@@ -60,6 +73,9 @@ class VehicleController extends Controller
      */
     public function destroy(Vehicle $vehicle)
     {
-        //
+        if($vehicle->delete()){
+            return redirect()->route('vehicle.index')->with("info","delete successfully".$vehicle->id);
+
+        }
     }
 }
