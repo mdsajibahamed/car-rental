@@ -10,7 +10,7 @@
           <div class="col-8">
              <div class="d-flex justify-content-between">
                 <h1>Edit Vehicle</h1>
-                {{-- <a title="back to index" style="font-size: 2em" href="{{route("vehicle.index")}}"><i class="bi bi-backspace"></i></a> --}}
+                <a title="back to index" style="font-size: 2em" href="{{route("vehicle.index")}}"><i class="bi bi-backspace"></i></a>
              </div>
           
              <form action="{{route("vehicle.update",$vehicle->id)}}" method="post">

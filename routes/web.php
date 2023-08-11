@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/form', [AdminController::class, 'form'])->name('form.dashboard');
     Route::resource('vehicle', VehicleController::class);
     Route::resource('user', DetailController::class);
+    Route::resource('service', ServiceController::class);
     // Route::get('/search',[AdminController::class,'search'])->name('search.dashboard');
     
 });

@@ -12,10 +12,15 @@ class VehicleController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {  
+    {   
+        // variable  database data 
         $vehicles =Vehicle::all(); 
         // ->paginate(config('vehi.perpage'));
         return view('admin.vehicle.index')->with('vehicles',$vehicles);
+
+
+
+        // return view('admin.vehicle.index',compact('vehicles'));
     }
 
     /**
@@ -40,6 +45,8 @@ class VehicleController extends Controller
         ]);
          Vehicle::create($request->all());
          return redirect()->route('vehicle.index')->with('success','successfully added');
+
+        //  Vehicle is database 
     }
 
     /**
@@ -48,6 +55,7 @@ class VehicleController extends Controller
     public function show(Vehicle $vehicle)
     {
     //   $vehicle = Vehicle::all();
+    
         return view('admin.vehicle.single')->with('vehicle',$vehicle);
     }
 

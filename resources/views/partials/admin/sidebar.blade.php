@@ -18,6 +18,7 @@
             <a href="{{route('admin.dashboard')}}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <a href="{{route('vehicle.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-car-front"></i>Vehicle</a>
             <a href="{{route('user.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-person-circle"></i>User</a>
+            <a href="{{route('service.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-tools"></i>Service</a>
             {{-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="me-2 bi bi-tools"></i>Services</a>
                 <div class="dropdown-menu bg-transparent border-0">
@@ -26,7 +27,7 @@
                     <a href="element.html" class="dropdown-item">Auto Repairing</a>
                     <a href="element.html" class="dropdown-item">Auto Painting</a>
                     <a href="element.html" class="dropdown-item">Auto Cleaning</a>
-                </div>
+                </div>  
             </div> --}}
             <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
             <a href="{{route('form.dashboard')}}" class="nav-item nav-link"><i class="bi bi-credit-card-2-front me-2"></i>Payment</a>

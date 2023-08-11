@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Detail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class DetailController extends Controller
 {
@@ -12,7 +12,8 @@ class DetailController extends Controller
      */
     public function index()
     {
-       return view('admin.user.index');
+        $details = Detail::all();
+        return view('admin.user.index')->with('details',$details);
     }
 
     /**
@@ -28,7 +29,13 @@ class DetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $this->validate($request,[
+              'full_name'=>"required|string|min:2|max:20|unique:users,name",
+              'address2'=>"required|string|min:10|max:255"
+             ]);
+        Detail::create($request->all());
+        return redirect()->route('user.create')->with('info',"user crate successfully");
     }
 
     /**
@@ -44,7 +51,8 @@ class DetailController extends Controller
      */
     public function edit(Detail $detail)
     {
-        //
+        // dd($detail);
+        return view('admin.user.edit',compact('detail'));
     }
 
     /**
@@ -52,7 +60,8 @@ class DetailController extends Controller
      */
     public function update(Request $request, Detail $detail)
     {
-        //
+        $detail->update($request->all());
+        return redirect()->route('user.index')->with("info","Updated Successfully ,Id :".$detail->id);
     }
 
     /**

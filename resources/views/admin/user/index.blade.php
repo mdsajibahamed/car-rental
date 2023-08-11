@@ -10,36 +10,43 @@
                 <div class="col-8">
                     <div class="d-flex justify-content-between">
                       <h2>All User</h2>
-                      <a href="{{route('user.create')}}" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
+                      <a href="{{route('user.create')}}" title="Add new User" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
 
                     </div>
                     <div>
                         <table class="table table-striped">
                             <colgroup>
+                               
                                 <col>
                                 <col>
                                 <col>
                                 <col style="width: 20%;">
                             </colgroup>
                             <tr>
-                                <th>Name</th>
+                                <th> Full Name</th>
                                 <th>Email</th>
+                                <th>Title</th>
                                 <th>Mobile Phone</th>
-                                <th>Address</th>
+                                <th>Address1</th>
                                 <th>Action</th>
                             </tr>
+                            @forelse ($details as $detail)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{$detail->full_name}}</td>
+                                <td>{{$detail->email}}</td>
+                                <td>{{$detail->title}}</td>
+                                <td>{{$detail->mobile_number}}</td>
+                                <td>{{$detail->address1}}</td>
                                 <td style="text-align: center">
                                     <a href=""><i class="bi bi-eye-fill"></i></a>
-                                    <a href=""><i class="bi bi-pencil-square"></i></a> 
-                                    <a href="" onclick="del(event, this)"><i class="bi bi-trash3-fill"></i></a>
+                                    <a href="{{route('user.edit',$detail->id)}}"><i class="bi bi-pencil-square"></i></a> 
 
                                 </td>
                             </tr>
+                            @empty
+                                
+                            @endforelse
+                           
                         </table>
                     </div>
 
