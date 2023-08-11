@@ -14,10 +14,13 @@ class Vehicle extends Model
         'thumbnail',
         'year',
         'type',
+        'status',
+        'serial_number',
         'rentamout',
         'image',
         'owner_name',
-        'phone',
-        'seating_capacity'
+        'owner_phone',
+        'seating_capacity',
+        'price'
     ];
 }

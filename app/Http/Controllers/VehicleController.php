@@ -47,7 +47,8 @@ class VehicleController extends Controller
      */
     public function show(Vehicle $vehicle)
     {
-        //
+    //   $vehicle = Vehicle::all();
+        return view('admin.vehicle.single')->with('vehicle',$vehicle);
     }
 
     /**

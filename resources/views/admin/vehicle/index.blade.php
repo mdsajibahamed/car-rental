@@ -4,14 +4,14 @@
 @section('content')
 
 
-    <section class="">
+    <sction class="">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-10">
-                    <div class="d-flex justify-content-between">
+                       <div class="d-flex justify-content-between">
                         <h3>All Vehicles</h3>
                         <a href="{{route('vehicle.create')}}" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
-                    </div>
+                        </div>
                  
                         <div>
                              <table class="table table-striped">
@@ -42,7 +42,7 @@
                                      <td>{{$vehicle->seating_capacity}}</td>
                                      <td>{{$vehicle->owner_name}}</td>
                                      <td style="text-align: center">
-                                         <a href=""><i class="bi bi-eye-fill"></i></i></a>
+                                         <a href="{{route("vehicle.show",$vehicle->id)}}"><i class="bi bi-eye-fill"></i></i></a>
                                          <a href="{{route("vehicle.edit",$vehicle->id)}}"><i class="bi bi-pencil-square"></i></a> 
                                          <form action="{{route('vehicle.destroy', $vehicle->id)}}" method="POST" class="d-inline">
                                          @csrf
@@ -63,9 +63,9 @@
 
             
             
-          </div>
-    </div>
-</section>
+            </div>
+        </div>
+    </section>
 
 
 @endsection
