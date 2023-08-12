@@ -11,11 +11,11 @@
                     <div class="d-flex justify-content-between">
                         <h2>Add User</h2>
                         
-                         <a href="{{(route('user.index'))}}" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a>
+                         <a href="{{route('role.index')}}" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a>
                         
                     </div>
                     <div class="">
-                        <form action="{{route('user.store')}}" method="post">
+                        <form action="{{route('role.store')}}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Title</label>

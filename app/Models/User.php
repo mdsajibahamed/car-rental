@@ -22,7 +22,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'role',
         'password',
     ];
 
@@ -48,8 +47,8 @@ class User extends Authenticatable
     /**
      * Get the comments for the blog post.
      */
-    public function details(): HasMany
+    public function roles(): HasMany
     {
-        return $this->hasMany(Detail::class);
+        return $this->hasMany(Role::class);
     }
 }

@@ -30,9 +30,8 @@
                                  <th>Owner Name</th>
                                  <th>Action</th>
                              </tr>
-                             
-                 
-                             
+
+                            
                                 @forelse ($vehicles as $vehicle)
                                   <tr>
                                      <td>{{$vehicle->make}}</td>

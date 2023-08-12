@@ -11,14 +11,12 @@ class Detail extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'title',
-        'user_id',
-        'email',
-        'full_name',
-        'status',
+
+        'date_of_birth',
+        'gender',
         'mobile_number',
         'address1',
-        'address2'
+        'address2',
     ];
 
     public function user(): BelongsTo

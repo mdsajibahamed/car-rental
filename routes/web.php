@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Route;
@@ -37,11 +38,11 @@ Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
-   // Route::get('/vehicle', [AdminController::class, 'car_list'])->name('admin.vehicle');
     Route::get('/form', [AdminController::class, 'form'])->name('form.dashboard');
-    Route::resource('vehicle', VehicleController::class);
-    Route::resource('user', DetailController::class);
-    Route::resource('service', ServiceController::class);
+    Route::resource( 'vehicle', VehicleController::class );
+    Route::resource( 'service', ServiceController::class );
+    Route::resource( 'role', RoleController::class );
+    // Route::resource('user', DetailController::class);
     // Route::get('/search',[AdminController::class,'search'])->name('search.dashboard');
     
 });
