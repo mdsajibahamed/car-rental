@@ -11,17 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('details', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->bigInteger("user_id")->unsigned();
-            $table->foreign("user_id")->references("id")->on("users");
-            $table->string("full_name");
+            $table->string('title', 25)->unique();
+            $table->string('description')->nullable();
             $table->tinyInteger('status')->default(0);
-            $table->string("mobile_number");
-            $table->text("address1")->nullable();
-            $table->string("address2")->nullable();
-
             $table->timestamps();
         });
     }
@@ -31,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('details');
+        Schema::dropIfExists('roles');
     }
 };

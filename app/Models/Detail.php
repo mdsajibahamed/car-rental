@@ -13,6 +13,7 @@ class Detail extends Model
     protected $fillable =[
         'title',
         'user_id',
+        'email',
         'full_name',
         'status',
         'mobile_number',
@@ -22,6 +23,7 @@ class Detail extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
+
     }
 }

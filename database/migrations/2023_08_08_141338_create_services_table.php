@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("email");
-            $table->text("address")->nullable();
-            $table->text("service");
+            $table->string("title", 50);
+            $table->string("highlights");
+            $table->text("description")->nullable();
+            $table->decimal("price", 10, 2);
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

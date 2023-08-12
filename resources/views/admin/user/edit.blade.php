@@ -12,7 +12,8 @@
                     <a title="back to index" style="font-size: 2em" href="{{route("user.index")}}"><i class="bi bi-backspace"></i></a>
                 </div>
                 <div>
-                        <form action="{{route("user.update",$detail->id)}}" method="post">
+                        <form action="{{ route("user.update", $detail->id) }}" method="post">
+                            <h1>{{ $detail->id }}</h1>
                             @csrf
                             @method("put")
                             <div class="form-group">

@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       return view('admin.service.index');
+        //
     }
 
     /**
@@ -34,15 +34,15 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Service $service)
+    public function show(Role $role)
     {
-        return 'hrello rejoan';
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Service $service)
+    public function edit(Role $role)
     {
         //
     }
@@ -50,7 +50,7 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, Role $role)
     {
         //
     }
@@ -58,7 +58,7 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Service $service)
+    public function destroy(Role $role)
     {
         //
     }

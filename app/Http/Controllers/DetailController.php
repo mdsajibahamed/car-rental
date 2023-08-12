@@ -51,8 +51,9 @@ class DetailController extends Controller
      */
     public function edit(Detail $detail)
     {
-        // dd($detail);
-        return view('admin.user.edit',compact('detail'));
+
+        dd($detail);
+        // return view('admin.user.edit',compact('detail'));
     }
 
     /**
@@ -60,8 +61,8 @@ class DetailController extends Controller
      */
     public function update(Request $request, Detail $detail)
     {
-        $detail->update($request->all());
-        return redirect()->route('user.index')->with("info","Updated Successfully ,Id :".$detail->id);
+        // $detail->update($request->all());
+        // return redirect()->route('user.index')->with("info","Updated Successfully ,Id :".$detail->id);
     }
 
     /**

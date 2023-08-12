@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->bigInteger("detail_id")->unsigned();
-            $table->foreign("detail_id")->references("id")->on("details");
+            $table->foreign("detail_id")->references("id")->on("details")->onDelete('cascade');
             $table->bigInteger("vehicle_id")->unsigned();
-            $table->foreign("vehicle_id")->references("id")->on("vehicles");
+            $table->foreign("vehicle_id")->references("id")->on("vehicles")->onDelete('cascade');
             $table->string("location_from")->nullable();
             $table->string("location_to")->nullable();
             $table->string("pickup_date")->nullable();

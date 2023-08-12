@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("booking_id")->unsigned();
-            $table->foreign("booking_id")->references("id")->on("bookings");
+            $table->bigInteger("booking_id")->unsigned()->nullable();
+            $table->foreign("booking_id")->references("id")->on("bookings")->onDelete('cascade');
+            $table->bigInteger("service_id")->unsigned()->nullable();
+            $table->foreign("service_id")->references("id")->on("services")->onDelete('cascade');
             $table->string("payment_date");
             $table->string("payment_type");
             $table->string("trxid")->nullValue();

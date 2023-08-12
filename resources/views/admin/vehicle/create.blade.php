@@ -15,6 +15,7 @@
          
             <form action="{{route('vehicle.store')}}" method="post">
                @csrf
+               <input type="hidden" name="user_id" value="" />
                <div class="form-group">
                   <label for="" class="form-label">Make</label>
                   <input type="text" class="form-control" name="make" placeholder="make" value="{{old("make")}}">

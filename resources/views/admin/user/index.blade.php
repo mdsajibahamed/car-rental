@@ -23,6 +23,8 @@
                                 <col style="width: 20%;">
                             </colgroup>
                             <tr>
+                                <th> id</th>
+                                <th>User id</th>
                                 <th> Full Name</th>
                                 <th>Email</th>
                                 <th>Title</th>
@@ -32,6 +34,8 @@
                             </tr>
                             @forelse ($details as $detail)
                             <tr>
+                                <td>{{$detail->id}}</td>
+                                <td>{{$detail->user_id}}</td>
                                 <td>{{$detail->full_name}}</td>
                                 <td>{{$detail->email}}</td>
                                 <td>{{$detail->title}}</td>
@@ -44,7 +48,9 @@
                                 </td>
                             </tr>
                             @empty
-                                
+                                <tr>
+                                    <td>Data not found</td>
+                                </tr>
                             @endforelse
                            
                         </table>
