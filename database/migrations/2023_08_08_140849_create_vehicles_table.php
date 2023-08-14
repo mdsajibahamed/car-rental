@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger("user_id")->unsigned();
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
+            $table->bigInteger("brand_id")->unsigned();
+            $table->foreign("brand_id")->references("id")->on("brands")->onDelete('cascade');
             $table->string("make")->nullable();
             $table->string("model");
             $table->string("thumbnail")->nullable();

@@ -17,9 +17,24 @@
                 @csrf
                 @method("put")
                 <div class="form-group">
-                   <label for="" class="form-label">Make</label>
-                   <input type="text" class="form-control" name="make" placeholder="make" value="{{$vehicle->make}}">
-                </div>
+                  <label for="" class="form-label">User Name</label>
+                  <select name="user_id" class="form-control" id="userRole">
+                      <option value="">{{ __('-- User Role --') }}</option>
+                      @foreach ($users as $user)
+                        <option value="{{ $user->id }}" {{ $user->id === $vehicle->user_id ? 'selected' : '' }} >{{ $user->name }}</option>
+                      @endforeach
+                    </select>                        
+              </div>
+              <div class="form-group">
+               <label for="" class="form-label">User Role</label>
+               <select name="role_id" class="form-control" id="userRole">
+                   <option value="">{{ __('-- User Role --') }}</option>
+                   @foreach ($brands as $brand)
+                     <option value="{{ $brand->id }}" {{ $brand->id === $vehicle->brand_id ? 'selected' : '' }} >{{ $brand->title }}</option>
+                   @endforeach
+                 </select>                        
+           </div>
+                
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Model</label>
                    <input type="text" class="form-control" name="model" placeholder="model" value="{{$vehicle->model}}">
@@ -46,7 +61,7 @@
                 </div>
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Rent Amount</label>
-                   <input type="text" class="form-control" name="rentamout" placeholder="rentamount" value="{{$vehicle->rentamount}}">
+                   <input type="text" class="form-control" name="rentamout" placeholder="rentamout" value="{{$vehicle->rentamout}}">
                 </div>
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Image</label>
@@ -58,7 +73,7 @@
                 </div>
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Owner Name</label>
-                   <input type="text" class="form-control" name="owner_name" placeholder="owner_name" value="{{$vehicle->owner_number}}">
+                   <input type="text" class="form-control" name="owner_name" placeholder="owner_name" value="{{ $vehicle->owner_name }}">
                 </div>
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Owner Phone</label>

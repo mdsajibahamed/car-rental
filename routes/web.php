@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
@@ -44,6 +45,7 @@ Route::prefix('admin')->group(function () {
     Route::resource( 'service', ServiceController::class );
     Route::resource( 'role', RoleController::class );
     Route::resource('user', UserController::class);
+    Route::resource('brand', BrandController::class);
     // Route::get('/search',[AdminController::class,'search'])->name('search.dashboard');
     
 });

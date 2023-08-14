@@ -17,19 +17,28 @@
                @csrf
                <input type="hidden" name="user_id" value="" />
                <div class="form-group">
-                  <label for="" class="form-label">User Id</label>
-                  <select name="user_id" class="form-select" id="">
+                  <label for="" class="form-label">User Name</label>
+                  <select name="user_id" class="form-select" id=""> 
                   @forelse ($users as $user)
-                      <option value="{{ $user->id }}">{{ $user->id }}</option>
+                      <option value="{{ $user->id }}">{{ $user->name }}</option>
                   @empty
                       <option value="">{{ __('-- Choose One --') }}</option>
                   @endforelse
                  </select>
               </div>
-               <div class="form-group">
-                  <label for="" class="form-label">Make</label>
-                  <input type="text" class="form-control" name="make" placeholder="make" value="{{old("make")}}">
-               </div>
+              <div class="form-group">
+               <label for="" class="form-label">Brand</label>
+               <select name="brand_id" class="form-select" id="">
+
+               @forelse ($brands as $brand)
+                   <option value="{{ $brand->id}}">{{ $brand->title }}</option>
+               @empty
+                   <option value="">{{ __('-- Choose One --') }}</option>
+               @endforelse
+              </select>
+           </div>
+              
+              
                <div class="form-group">
                   <label for="" class="form-label mt-2">Model</label>
                   <input type="text" class="form-control" name="model" placeholder="model" value="{{old("model")}}">
@@ -44,7 +53,7 @@
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Type</label>
-                  <input type="text" class="form-control" name="user_id" placeholder="user_id" value="{{old("user_id")}}">
+                  <input type="text" class="form-control" name="type" placeholder="type" value="{{old("type")}}">
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Status</label>

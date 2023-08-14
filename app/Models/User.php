@@ -53,4 +53,11 @@ class User extends Authenticatable
     {
         return $this->hasOne(Detail::class);
     }
+      /**
+     * Get the comments for the blog post.
+     */
+    public function vehicle(): HasOne
+    {
+        return $this->hasOne(Vehicle::class);
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\User;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
@@ -30,7 +31,8 @@ class VehicleController extends Controller
     public function create()
     {
         $users = User::all();
-        return view('admin.vehicle.create',compact('users'));
+        $brands = Brand::all();
+        return view('admin.vehicle.create',compact('users','brands'));
     }
 
     /**
@@ -39,7 +41,7 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-             'make'  =>"required|min:2|max:20",
+             'make'  =>"min:2|max:20",
             'model' =>"required|min:5|max:20"
         ],[
          'make.min' =>':attribute You must be minimum length 10',
@@ -67,7 +69,9 @@ class VehicleController extends Controller
     public function edit(Vehicle $vehicle)
     {
         // dd($vehicle);
-        return view('admin.vehicle.edit',compact('vehicle'));
+        $brands = Brand::all();
+        $users = User::all();
+        return view('admin.vehicle.edit',compact('vehicle','brands','users'));
         //->with("vehicle",$vehicle);
         
         // return view("category.edit")
