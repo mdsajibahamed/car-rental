@@ -17,6 +17,16 @@
                @csrf
                <input type="hidden" name="user_id" value="" />
                <div class="form-group">
+                  <label for="" class="form-label">User Id</label>
+                  <select name="user_id" class="form-select" id="">
+                  @forelse ($users as $user)
+                      <option value="{{ $user->id }}">{{ $user->id }}</option>
+                  @empty
+                      <option value="">{{ __('-- Choose One --') }}</option>
+                  @endforelse
+                 </select>
+              </div>
+               <div class="form-group">
                   <label for="" class="form-label">Make</label>
                   <input type="text" class="form-control" name="make" placeholder="make" value="{{old("make")}}">
                </div>
@@ -34,7 +44,7 @@
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Type</label>
-                  <input type="text" class="form-control" name="type" placeholder="type" value="{{old("type")}}">
+                  <input type="text" class="form-control" name="user_id" placeholder="user_id" value="{{old("user_id")}}">
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Status</label>

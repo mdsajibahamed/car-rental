@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
@@ -20,9 +20,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'role_id',
         'name',
         'email',
-        'password',
+        'password'
+    
     ];
 
     /**
@@ -47,8 +49,8 @@ class User extends Authenticatable
     /**
      * Get the comments for the blog post.
      */
-    public function roles(): HasMany
+    public function detail(): HasOne
     {
-        return $this->hasMany(Role::class);
+        return $this->hasOne(Detail::class);
     }
 }

@@ -7,11 +7,13 @@
 
     <section>
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-5">
                 <div class="col-8">
                     <div class="d-flex justify-content-between">
                         <h2>All Vehicle</h2>
-                        <a href="{{route('vehicle.create')}}" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
+                        <a href="" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a>
+
+                        <a href="" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
                     </div>
                     <div>
                         <table class="table table-striped">

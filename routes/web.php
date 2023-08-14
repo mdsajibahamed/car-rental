@@ -6,6 +6,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,7 +43,7 @@ Route::prefix('admin')->group(function () {
     Route::resource( 'vehicle', VehicleController::class );
     Route::resource( 'service', ServiceController::class );
     Route::resource( 'role', RoleController::class );
-    // Route::resource('user', DetailController::class);
+    Route::resource('user', UserController::class);
     // Route::get('/search',[AdminController::class,'search'])->name('search.dashboard');
     
 });

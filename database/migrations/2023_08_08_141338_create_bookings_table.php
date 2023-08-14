@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            // deail means profile
             $table->bigInteger("detail_id")->unsigned();
             $table->foreign("detail_id")->references("id")->on("details")->onDelete('cascade');
             $table->bigInteger("vehicle_id")->unsigned();

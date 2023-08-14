@@ -11,7 +11,7 @@ class Detail extends Model
 {
     use HasFactory;
     protected $fillable =[
-
+        'user_id',
         'date_of_birth',
         'gender',
         'mobile_number',

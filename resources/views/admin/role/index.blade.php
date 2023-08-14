@@ -14,54 +14,58 @@
 
                     </div>
                     <div>
-                        <table class="table table-striped">
+                        <table class="table table-striped justify-content-center">
                             <colgroup>
-                               
                                 <col>
                                 <col>
                                 <col>
-                                <col style="width: 20%;">
+                                <col >
                             </colgroup>
                             <tr>
                                 <th >Sl</th>
-                                <th >Title </th>                                
+                                <th >Title </th>
+                                <th>Id</th>                                
                                 <th >Status</th>
                                 <th >Date create</th>
-                                <th >Action</th>
+                                <th class="text-align-center">Action</th>
                             </tr>
-                          @forelse ($roles as $role)
+                          @forelse ($roles as $k => $role)
                             <tr>
-                                {{-- <td>{{$role->sl}}</td> 
-                              <th>{{$loop->iteration}}</th>
-                                <th>{{$k+1}}</th>
-                                <th>{{$k}}</th>
+                              <td>{{$loop->iteration}}</td>
+                                {{-- <td>{{$k+1}}</td>
+                                <td>{{$k}}</td> --}}
                                 <td>{{$role->title}}</td>
-                                <td>  --}}
-                                    {{-- @if($role->staus ==== 1){
-                                        <span>{{('Enable')}}</span>
-                                    }@elseif($role->status ==== 0){
+                                <td>{{$role->id}}</td>
+                                <td> 
+                                    @if($role->status ===1){
+                                        <span class="badge bg-success">{{ __('Enable') }}</span>
+                                    }@elseif($role->status === 0){
                                         
-                                        <span>{{('Disable')}}</span>
+                                        <span class="badge bg-danger">{{__('Disable')}}</span>
                                     }@else
-                                        <span>{{('Pending')}}</span>
+                                        <span class="badge bg-secondary">{{__('Pending')}}</span>
                                     @endif
                                 </td>
                                 <td>
-                                    {{-- {{ $role->created_at->diffforhumans() }}
-                                    {{ $role->created_at }} --}}
+                                 {{ $role->created_at->diffforhumans() }}
+                                    {{-- {{ $role->created_at }}  --}}
                                 </td>
-                                <td style="text-align: center">
-                                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                                    <a href="{{route('user.edit',$detail->id)}}"><i class="bi bi-pencil-square"></i></a> 
-
+                                <td >
+                                    <a href="{{ route('role.show',$role->id)}}"><i class="bi bi-eye-fill"></i></a>
+                                    <a href="{{route('role.edit',$role->id)}}"><i class="bi bi-pencil-square"></i></a> 
+                                    <form action="{{ route('role.destroy',$role->id)}}" class="d-inline" method="POST">
+                                        @csrf
+                                        @method("delete")
+                                        <a href="#" class="bi bi-trash3-fill" onclick="del(event,this)"></a>
+                                    </form>
                                 </td>
-                            </tr>
+                            
                            @empty
-                                <tr>
-                                    <td>Data not found</td>
-                                </tr>
+                                
+                                    <td class=" text align-center">Data not found</td>
+                                
                             @endforelse
-                           
+                        </tr>
                         </table>
                     </div>
 

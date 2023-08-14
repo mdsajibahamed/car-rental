@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -28,7 +29,8 @@ class VehicleController extends Controller
      */
     public function create()
     {
-        return view('admin.vehicle.create');
+        $users = User::all();
+        return view('admin.vehicle.create',compact('users'));
     }
 
     /**
@@ -37,8 +39,8 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'make'=>"required|min:2|max:20",
-            'model'=>"required|min:5|max:20"
+             'make'  =>"required|min:2|max:20",
+            'model' =>"required|min:5|max:20"
         ],[
          'make.min' =>':attribute You must be minimum length 10',
          'model.min'=>':attribute You must be minimum length 5'

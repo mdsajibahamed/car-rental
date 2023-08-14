@@ -10,15 +10,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Role extends Model
 {
     use HasFactory;
-    protected $filable =[
+    protected $fillable =[
         'title',
         'description',
         'status'
     ];
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
+    // public function user(): BelongsTo
+    // {
+    //     return $this->belongsTo(User::class);
 
-    }
+    // }
 
 }

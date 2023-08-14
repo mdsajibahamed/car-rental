@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class RoleController extends Controller
 {
@@ -12,7 +13,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles =Role::all();
+       $roles = Role::all();
          return view('admin.role.index',)->with('roles',$roles);
     }
 
@@ -21,7 +22,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-       return view ('admin.role.index');
+       return view ('admin.role.create');
     }
 
     /**
@@ -29,7 +30,9 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,['title'=>"required|min:2|max:25",'description'=>"required|min:50|max:255"]);
+       Role::create($request->all());
+       return redirect()->route('role.create')->with("info","Role Create Successfully");
     }
 
     /**
@@ -37,7 +40,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+       return view('admin.role.single')->with('role',$r);
     }
 
     /**
@@ -45,7 +48,10 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+    //    dd($role);
+        return view('admin.role.edit')->with("role",$role);
+        // return "hi";
+
     }
 
     /**
@@ -53,7 +59,9 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $this->validate($request,['title'=>"required|min:2|max:25",'description'=>"required|min:50|max:255"]);
+        $role->update($request->all());
+        return back()->with('success', 'Role updated successfully');
     }
 
     /**
@@ -61,6 +69,8 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+    //   dd($role);
+    $role->delete();
+    return redirect()->route('role.index')->with('warning','delete successfully');
     }
 }

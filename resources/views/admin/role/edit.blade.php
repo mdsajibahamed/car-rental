@@ -9,38 +9,29 @@
             <div class="col-8">
                 <div class="d-flex justify-content-between">
                     <h2>Edit user</h2>
-                    <a title="back to index" style="font-size: 2em" href="{{route("user.index")}}"><i class="bi bi-backspace"></i></a>
+                    <a title="back to index" style="font-size: 2em" href="{{route('role.index')}}"><i class="bi bi-backspace"></i></a>
                 </div>
                 <div>
-                        <form action="{{ route("user.update", $detail->id) }}" method="post">
-                            <h1>{{ $detail->id }}</h1>
+                        <form action="{{ route('role.update',$role->id) }}" method="post">
+        
                             @csrf
-                            @method("put")
+                           @method('put')
                             <div class="form-group">
                             <label for="" class="form-label">Title</label>
-                            <input type="text" class="form-control" name="title" placeholder="title..." value="{{$detail->title}}">
+                            <input type="text" class="form-control" name="title" placeholder="{{ __('title....')}}" value="{{$role->title}}">
                             </div>
                             <div class="form-group">
-                            <label for="" class="form-label mt-2">Full Name</label>
-                            <input type="text" class="form-control" name="full_name" placeholder="full_name..." value="{{$detail->full_name}}">
+                                <label for="" class="form-label">Description</label>
+                                <input type="text" class="form-control" name="description" placeholder="{{ __('description....') }}" value="{{$role->description}}">
                             </div>
                             <div class="form-group">
-                            <label for="" class="form-label mt-2">Status</label>
-                            <input type="text" class="form-control" name="status" placeholder="status..." value="{{$detail->status}}">
+                                <label for="" class="form-label mt-2">Status</label>
+                                <select name="status" class="form-control" id="">
+                                    <option value="">{{__('choose status')}}</option>
+                                    <option value="1" {{$role->status === 1 ? 'selected' : ''}}>{{__('Enable')}}</option>
+                                    <option value="0" {{$role->status === 0 ? 'selected' : ''}}>{{__('Disable')}}</option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                            <label for="" class="form-label mt-2">Mobile Number</label>
-                            <input type="text" class="form-control" name="mobile_number" placeholder="mobile_number.." value="{{$detail->mobile_number}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="form-label mt-2">Address1</label>
-                                <input type="text" class="form-control" name="address1" placeholder="address1.." value="{{$detail->address1}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="form-label mt-2">Address2</label>
-                                <input type="text" class="form-control" name="address2" placeholder="address2.." value="{{$detail->address2}}">
-                            </div>
-                        
                             <input type="submit" value="Update" class="btn btn-outline-primary my-3">     
                         </form>
                 </div>

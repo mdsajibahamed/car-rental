@@ -26,6 +26,7 @@
                                  <th>Model</th>
                                  <th>Thumbnail</th>
                                  <th>Type</th>
+                                 <th>User Id</th>
                                  <th>Seating Capacity</th>
                                  <th>Owner Name</th>
                                  <th>Action</th>
@@ -38,6 +39,7 @@
                                      <td>{{$vehicle->model}}</td>
                                      <td>{{$vehicle->thumbnail}}</td>
                                      <td>{{$vehicle->type}}</td>
+                                     <td>{{$vehicle->user_id}}</td>
                                      <td>{{$vehicle->seating_capacity}}</td>
                                      <td>{{$vehicle->owner_name}}</td>
                                      <td style="text-align: center">
