@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +48,8 @@ Route::prefix('admin')->group(function () {
     Route::resource( 'role', RoleController::class );
     Route::resource('user', UserController::class);
     Route::resource('brand', BrandController::class);
+    Route::resource('type', TypeController::class);
+    Route::resource('booking', BookingController::class);
     // Route::get('/search',[AdminController::class,'search'])->name('search.dashboard');
     
 });

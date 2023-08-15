@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Detail;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -12,7 +14,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $bookings = Booking::all();
+        return view('admin.booking.index',compact('bookings'));
     }
 
     /**
@@ -20,7 +23,9 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        $vehicles = Vehicle::all();
+        $details = Detail::all();
+        return view('admin.booking.create',compact('details','vehicles')); 
     }
 
     /**
@@ -28,7 +33,8 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Booking::create($request->all()); 
+      return redirect()->route('booking.create')->with('info','Create Successfully');
     }
 
     /**

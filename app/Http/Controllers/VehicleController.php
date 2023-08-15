@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Type;
 use App\Models\User;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
@@ -17,8 +18,9 @@ class VehicleController extends Controller
     {   
         // variable  database data 
         $vehicles =Vehicle::all(); 
+        $brands = Brand::all();
         // ->paginate(config('vehi.perpage'));
-        return view('admin.vehicle.index')->with('vehicles',$vehicles);
+        return view('admin.vehicle.index',compact('vehicles','brands'));
 
 
 
@@ -30,9 +32,10 @@ class VehicleController extends Controller
      */
     public function create()
     {
+        $types = Type::all();
         $users = User::all();
         $brands = Brand::all();
-        return view('admin.vehicle.create',compact('users','brands'));
+        return view('admin.vehicle.create',compact('users','brands','types'));
     }
 
     /**
@@ -40,12 +43,11 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $this->validate($request,[
-             'make'  =>"min:2|max:20",
-            'model' =>"required|min:5|max:20"
-        ],[
-         'make.min' =>':attribute You must be minimum length 10',
-         'model.min'=>':attribute You must be minimum length 5'
+            'model' =>"required|min:5|max:25",
+            // 'thumbnail'  =>"min:2|max:20",
+            'year' =>"required|min:1|max:10",'status'=>"required",'seating_capacity'=>"required|min:1|max:30",'rentamount'=>"required|max:30",'serial_number'=>"required|min:5|max:100",'owner_name'=>"required|min:2|max:25",'owner_phone'=>"required|min:5|max:100",'price'=>"required|min:2|max:30"
         ]);
          Vehicle::create($request->all());
          return redirect()->route('vehicle.index')->with('success','successfully added');
@@ -69,10 +71,13 @@ class VehicleController extends Controller
     public function edit(Vehicle $vehicle)
     {
         // dd($vehicle);
+        $types = Type::all();
         $brands = Brand::all();
         $users = User::all();
-        return view('admin.vehicle.edit',compact('vehicle','brands','users'));
-        //->with("vehicle",$vehicle);
+        return view('admin.vehicle.edit',compact('vehicle','brands','users','types'));
+
+
+        // ->with("vehicle",$vehicle);
         
         // return view("category.edit")
     }

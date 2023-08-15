@@ -52,9 +52,15 @@
                   <input type="text" class="form-control" name="year" placeholder="year" value="{{old("year")}}">
                </div>
                <div class="form-group">
-                  <label for="" class="form-label mt-2">Type</label>
-                  <input type="text" class="form-control" name="type" placeholder="type" value="{{old("type")}}">
-               </div>
+                  <label for="" class="form-label">Type</label>
+                  <select name="type_id" class="form-select" id=""> 
+                  @forelse ($types as $type)
+                      <option value="{{ $type->id }}">{{ $type->title }}</option>
+                  @empty
+                      <option value="">{{ __('-- Choose One --') }}</option>
+                  @endforelse
+                 </select>
+              </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Status</label>
                   <input type="text" class="form-control" name="status" placeholder="status" value="{{old("status")}}">
@@ -65,7 +71,7 @@
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Rent Amount</label>
-                  <input type="text" class="form-control" name="rentamout" placeholder="rentamount" value="{{old("rentamout")}}">
+                  <input type="text" class="form-control" name="rentamount" placeholder="rentamount" value="{{old("rentamount")}}">
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Image</label>

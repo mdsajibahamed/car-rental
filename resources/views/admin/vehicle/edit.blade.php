@@ -26,11 +26,11 @@
                     </select>                        
               </div>
               <div class="form-group">
-               <label for="" class="form-label">User Role</label>
-               <select name="role_id" class="form-control" id="userRole">
-                   <option value="">{{ __('-- User Role --') }}</option>
+               <label for="" class="form-label">Brand</label>
+               <select name="brand_id" class="form-control" id="brand">
+                   <option value="">{{ __('-- Brand Name --') }}</option>
                    @foreach ($brands as $brand)
-                     <option value="{{ $brand->id }}" {{ $brand->id === $vehicle->brand_id ? 'selected' : '' }} >{{ $brand->title }}</option>
+                     <option value="{{ $brand->id }}" {{ $brand->id === $vehicle->brand_id ? 'selected' : '' }}> {{ $brand->title }}</option>
                    @endforeach
                  </select>                        
            </div>
@@ -48,9 +48,14 @@
                    <input type="text" class="form-control" name="year" placeholder="year" value="{{$vehicle->year}}">
                 </div>
                 <div class="form-group">
-                   <label for="" class="form-label mt-2">Type</label>
-                   <input type="text" class="form-control" name="type" placeholder="type" value="{{$vehicle->type}}">
-                </div>
+                  <label for="" class="form-label">Type</label>
+                  <select name="type_id" class="form-control" id="type">
+                      <option value="">{{ __('-- Type Name --') }}</option>
+                      @foreach ($types as $type)
+                        <option value="{{ $type->id }}" {{ $type->id === $vehicle->type_id ? 'selected' : '' }} >{{ $type->title }}</option>
+                      @endforeach
+                    </select>                        
+              </div>
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Status</label>
                    <input type="text" class="form-control" name="status" placeholder="status" value="{{$vehicle->status}}">
@@ -61,7 +66,7 @@
                 </div>
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Rent Amount</label>
-                   <input type="text" class="form-control" name="rentamout" placeholder="rentamout" value="{{$vehicle->rentamout}}">
+                   <input type="text" class="form-control" name="rentamout" placeholder="rentamout" value="{{$vehicle->rentamount}}">
                 </div>
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Image</label>

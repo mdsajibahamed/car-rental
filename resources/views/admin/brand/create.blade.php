@@ -10,7 +10,7 @@
                 <div class="col-8">
                     <div class="d-flex justify-content-between">
                         <h2>All Brands</h2>
-                        <a href="" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a>
+                        <a href="{{route('brand.index')}}" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a>
                     </div>
                     <div>
                        <form action="{{ route('brand.store') }}" method="post">

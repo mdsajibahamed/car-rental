@@ -17,14 +17,16 @@ return new class extends Migration
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
             $table->bigInteger("brand_id")->unsigned();
             $table->foreign("brand_id")->references("id")->on("brands")->onDelete('cascade');
-            $table->string("make")->nullable();
+            $table->bigInteger("type_id")->unsigned();
+            $table->foreign("type_id")->references("id")->on("types")->onDelete('cascade');
+            $table->string("brand")->nullable();
             $table->string("model");
             $table->string("thumbnail")->nullable();
             $table->string("year")->nullable();
             $table->string("type")->nullable();
             $table->tinyInteger("status")->default("1");
             $table->string("seating_capacity")->nullable();
-            $table->string("rentamout");
+            $table->string("rentamount");
             $table->string("image")->nullable();
             $table->string("serial_number")->nullable();
             $table->string("owner_name")->nullable();

@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
-
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Vehicle extends Model
 {
@@ -15,14 +14,15 @@ class Vehicle extends Model
     protected $fillable = [
         'user_id',
         'brand_id',
-        'make',
+        'type_id',
+        'brand',
         'model',
         'thumbnail',
         'year',
         'type',
         'status',
         'serial_number',
-        'rentamout',
+        'rentamount',
         'image',
         'owner_name',
         'owner_phone',
@@ -43,4 +43,19 @@ class Vehicle extends Model
     {
         return $this->belongsTo(User::class);
     }
+        /**
+     * Get the comments for the blog post.
+     */
+    public function type(): BelongsTo
+    {
+        return $this->BelongsTo(Type::class);
+    }
+    //      /**
+    //  * Get the comments for the blog post.
+    //  */
+    // public function type(): HasMany
+    // {
+    //     return $this->HasMany(Type::class);
+    // }
+  
 }

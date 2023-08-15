@@ -47,7 +47,7 @@
                                 </td>
                             </tr>
                         @empty
-                            <tr></tr>
+                            <td> Na Data Available</td>
                         @endforelse
                         
                     </table>
