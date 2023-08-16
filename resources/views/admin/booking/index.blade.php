@@ -3,6 +3,11 @@
 {{__('Bokking')}}
     
 @endsection
+
+@section('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+@endsection
+
 @section('content')
 
     <section>
@@ -16,42 +21,47 @@
                         <a href="{{ route('booking.create')}}" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
                     </div>
                     <div>
-                        <table class="table table-striped">
-                            <tr>
-                                <th>SL</th>
-                                <th>Detail Id</th>
-                                <th>Vehicle Name</th>
-                                <th>Picked Location</th>
-                                <th>Drop Location</th>
-                                <th>Total Amount</th>
-                                <th>Date Create</th>
-                                <th>Action</th>
-                            </tr>
-                            @forelse ($bookings as $book)
-                            <tr>
-                                <td>{{$loop->iteration}}</td>
-                                <td>{{ $book->detail_id }}</td>
-                                <td>{{ $book->vehicle_id }}</td>
-                                <td>{{$book->location_from}}</td>
-                                <td>{{$book->location_to}}</td>
-                                <td>{{$book->total_amount}}</td>
-                                <td>{{ $book->created_at->diffforhumans() }}</td>
-                                <td >
-                                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                                     <a href=""><i class="bi bi-pencil-square"></i></a> 
-                                     <form action="" class="d-inline" method="POST">
-                                         @csrf
-                                         @method("delete")
-                                         <a href="#" class="bi bi-trash3-fill" onclick="del(event,this)"></a>
-                                     </form>
-                                 </td>
-                                @empty
+                        <table id="table" class="table table-striped">
+                            <thead>
                                 <tr>
-                                    <td>No Data Available</td>
+                                    <th>SL</th>
+                                    <th>Detail Id</th>
+                                    <th>Vehicle Name</th>
+                                    <th>Picked Location</th>
+                                    <th>Drop Location</th>
+                                    <th>Total Amount</th>
+                                    <th>Date Create</th>
+                                    <th>Action</th>
                                 </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($bookings as $book)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{ $book->detail_id }}</td>
+                                    <td>{{ $book->vehicle_id }}</td>
+                                    <td>{{$book->location_from}}</td>
+                                    <td>{{$book->location_to}}</td>
+                                    <td>{{$book->total_amount}}</td>
+                                    <td>{{ $book->created_at->diffforhumans() }}</td>
+                                    <td >
+                                        <a href=""><i class="bi bi-eye-fill"></i></a>
+                                        <a href=""><i class="bi bi-pencil-square"></i></a> 
+                                        <form action="" class="d-inline" method="POST">
+                                            @csrf
+                                            @method("delete")
+                                            <a href="#" class="bi bi-trash3-fill" onclick="del(event,this)"></a>
+                                        </form>
+                                    </td>                                
+                                </tr>
+                                @empty
+                                    <tr>
+                                        <td>No Data Available</td>
+                                    </tr>
                                 @endforelse
-                              
-                            </tr>
+                            </tbody>
+                            
+                            
                         </table>
                     </div>
 
@@ -64,6 +74,9 @@
 @endsection
 
 @section('script')
-    
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script>
+        let table = new DataTable('#table');
+    </script>
 @endsection
 
