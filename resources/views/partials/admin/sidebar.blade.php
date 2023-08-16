@@ -21,7 +21,9 @@
             <a href="{{route('user.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-person-circle"></i>User</a>
             <a href="{{route('type.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-list-task"></i>Type</a>
             <a href="{{route('role.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-menu-button-wide"></i>Role</a>
-            <a href="{{route('booking.index')}}" class="nav-item nav-link"><i class="bi bi-bookmark-plus-fill"></i></i>Booking Request</a>
+            <a href="{{route('booking.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-bookmark-plus-fill"></i>Booking </a>
+            <a href="{{route('payment.index')}}" class="nav-item nav-link"><i class=" me-2 bi bi-credit-card-2-front"></i>Payment </a>
+
             <a href="{{route('service.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-tools"></i>Service</a>
             {{-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="me-2 bi bi-tools"></i>Services</a>
@@ -34,7 +36,7 @@
                 </div>  
             </div> --}}
             <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-            <a href="{{route('form.dashboard')}}" class="nav-item nav-link"><i class="bi bi-credit-card-2-front me-2"></i>Payment</a>
+            {{-- <a href="{{route('form.dashboard')}}" class="nav-item nav-link"><i class="bi bi-credit-card-2-front me-2"></i>Payment</a> --}}
             <a href="#" class="nav-item nav-link"><i class="bi bi-book-half me-2"></i>Booking</a>
             <a href="table.html" class="nav-item nav-link"><i class="bi bi-calendar-check-fill me-2"></i>Available Calender</a>
             <a href="chart.html" class="nav-item nav-link"><i class="bi bi-x-circle me-2"></i>Cancelletion and Refund Policies</a>

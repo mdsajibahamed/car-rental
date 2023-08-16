@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-{{__('Bokking')}}
+{{__('Booking')}}
     
 @endsection
 
@@ -13,7 +13,7 @@
     <section>
         <div class="container">
             <div class="row justify-content-center mt-5">
-                <div class="col-10">
+                <div class="col">
                     <div class="d-flex justify-content-between">
                         <h2>All Booking</h2>
                         {{-- <a href="" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a> --}}
@@ -35,19 +35,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($bookings as $book)
+                                @forelse ($bookings as $booking)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{ $book->detail_id }}</td>
-                                    <td>{{ $book->vehicle_id }}</td>
-                                    <td>{{$book->location_from}}</td>
-                                    <td>{{$book->location_to}}</td>
-                                    <td>{{$book->total_amount}}</td>
-                                    <td>{{ $book->created_at->diffforhumans() }}</td>
+                                    <td>{{ $booking->detail_id }}</td>
+                                    <td>{{ $booking->vehicle_id }}</td>
+                                    <td>{{$booking->location_from}}</td>
+                                    <td>{{$booking->location_to}}</td>
+                                    <td>{{$booking->total_amount}}</td>
+                                    <td>{{ $booking->created_at->diffforhumans() }}</td>
                                     <td >
-                                        <a href=""><i class="bi bi-eye-fill"></i></a>
-                                        <a href=""><i class="bi bi-pencil-square"></i></a> 
-                                        <form action="" class="d-inline" method="POST">
+                                        {{-- <a href=""><i class="bi bi-eye-fill"></i></a> --}}
+                                        <a href="{{ route('booking.edit', $booking->id)}}"><i class="bi bi-pencil-square"></i></a> 
+                                        <form action="{{ route('booking.destroy',$booking->id) }}" class="d-inline" method="POST">
                                             @csrf
                                             @method("delete")
                                             <a href="#" class="bi bi-trash3-fill" onclick="del(event,this)"></a>
@@ -78,5 +78,15 @@
     <script>
         let table = new DataTable('#table');
     </script>
+    <script>
+        function del(e,t){
+            e.preventDefault();
+            let c = confirm("Are you sure you want to delete?");
+            if(!c) return;            
+            t.closest('form').submit();
+        }
+        
+    </script>
+
 @endsection
 

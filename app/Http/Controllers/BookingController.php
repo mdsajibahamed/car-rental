@@ -33,6 +33,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,['location_from'=>"required|min:2|max:50",'location_to'=>"required|min:2|max:50",'total_days'=>"required|min:1",'status'=>"required",'total_amount'=>"required"]);
       Booking::create($request->all()); 
       return redirect()->route('booking.create')->with('info','Create Successfully');
     }
@@ -50,7 +51,10 @@ class BookingController extends Controller
      */
     public function edit(Booking $booking)
     {
-        //
+        // $bookings =Booking::all();
+        $details = Detail::all();
+        $vehicles = Vehicle::all();
+      return view('admin.booking.edit',compact('booking','details','vehicles'));
     }
 
     /**
@@ -58,7 +62,8 @@ class BookingController extends Controller
      */
     public function update(Request $request, Booking $booking)
     {
-        //
+       $booking->update($request->all());
+       return redirect()->route('booking.index')->with('warning',' Booking Updated Successfully Id :'.$booking->id);
     }
 
     /**
@@ -66,6 +71,9 @@ class BookingController extends Controller
      */
     public function destroy(Booking $booking)
     {
-        //
+        if($booking->delete()){
+            return redirect()->route('booking.index')->with("info","delete successfully Id :". $booking->id);
+
+        }
     }
 }

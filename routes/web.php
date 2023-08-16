@@ -5,6 +5,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\Paymentcontroller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
@@ -50,6 +51,8 @@ Route::prefix('admin')->group(function () {
     Route::resource('brand', BrandController::class);
     Route::resource('type', TypeController::class);
     Route::resource('booking', BookingController::class);
+    Route::resource('payment', Paymentcontroller::class);
+
     // Route::get('/search',[AdminController::class,'search'])->name('search.dashboard');
     
 });
