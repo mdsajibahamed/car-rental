@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -9,40 +10,41 @@ class FrontController extends Controller
     //
     public function home() {
         
-        return view('home');
+        $vehicles = Vehicle::all();
+        return view('front.home', compact('vehicles'));
     }
     //
     public function about() {
-        return view('about');
+        return view('front.about');
     }
     //
     public function service(){
-        return view('service');
+        return view('front.service');
     }
     //
     public function contact(){
-        return view('contact');
+        return view('front.contact');
     }
     //
     public function detail (){
-        return  view('car_detail');
+        return  view('front.car_detail');
     }
     //
     public function booking(){
-        return view('booking');
+        return view('front.booking');
 
     }
     //
     public function team(){
-        return view('team');
+        return view('front.team');
 
     }
     //
     public function testimonial(){
-        return view('testimonial');
+        return view('front.testimonial');
     }
     //
     public function car_list(){
-        return view('car_list');
+        return view('front.car_list');
     }
 }

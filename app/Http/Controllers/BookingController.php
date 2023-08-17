@@ -62,8 +62,10 @@ class BookingController extends Controller
      */
     public function update(Request $request, Booking $booking)
     {
+        
        $booking->update($request->all());
-       return redirect()->route('booking.index')->with('warning',' Booking Updated Successfully Id :'.$booking->id);
+    //    return redirect()->route('booking.index')->with('warning',' Booking Updated Successfully Id :'.$booking->id);
+       return back()->with('warning',' Booking Updated Successfully Id :'.$booking->id);
     }
 
     /**

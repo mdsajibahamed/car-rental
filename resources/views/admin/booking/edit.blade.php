@@ -27,7 +27,7 @@
                             {{-- @foreach ($vehicles as $vehicle)
                             <input  type="text" class="form-control" name="vehicle_id"  value="{{ $vehicle->id }}" {{ $vehicle->id === $booking->vehicle_id ? 'selected' : '' }} > {{ $vehicle->owner_name }} </input>
                             @endforeach --}}
-                            <input type="text" class="form-control" name="vehicle_id" placeholder="{{ __('vehicle_id....')}}" value="{{ $booking->vehicle_id }}">
+                            <input type="text" class="form-control" name="vehicle_id" placeholder="{{ __('vehicle_id....')}}" value="{{ $booking->vehicle->model }}">
 
                         </div>
                         <div class="form-group">
