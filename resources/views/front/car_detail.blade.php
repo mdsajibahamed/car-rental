@@ -25,9 +25,17 @@
     <div class="container-fluid pt-5">
         <div class="container pt-5">
             <div class="row">
+               
                 <div class="col-lg-8 mb-5">
-                    <h1 class="display-4 text-uppercase mb-5">Mercedes Benz R3</h1>
+                    <h1 class="display-4 text-uppercase mb-5">{{$vehicle->model}}</h1>
                     <div class="row mx-n2 mb-3">
+                        <div class="col-md-3 col-6 px-2 pb-2">
+                            {{-- @forelse ($vehicles as $vehicle)
+                                <h1>{{$vehicle->model}} </h1>
+                            @empty
+                                
+                            @endforelse --}}
+                        </div>
                         <div class="col-md-3 col-6 px-2 pb-2">
                             <img class="img-fluid w-100" src="img/gallery-1.jpg" alt="">
                         </div>
@@ -93,6 +101,7 @@
                         </div>
                     </div>
                </div>
+                
 
                 <div class="col-lg-4 mb-5">
                     <div class="bg-secondary p-5">

@@ -24,10 +24,12 @@ class FrontController extends Controller
     //
     public function contact(){
         return view('front.contact');
-    }
+    } 
     //
-    public function detail (){
-        return  view('front.car_detail');
+    public function detail(Vehicle $vehicle){
+        
+        $vehicles = Vehicle::all();
+        return  view('front.car_detail',compact('vehicle'));
     }
     //
     public function booking(){

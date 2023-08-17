@@ -208,13 +208,14 @@
                                 <i class="fa fa-cogs text-primary mr-1"></i>
                                 <span>{{$vehicle->type}}</span>
                             </div>
+                           
                             <div class="px-2">
                                 <i class="fa fa-road text-primary mr-1"></i>
                                 <span>{{$vehicle->price}}</span>
                             </div>
                         </div>
                         <a class="btn btn-primary px-3" href="">{{$vehicle->rentamount}}</a>
-                        <a class="btn btn-primary px-3" href="{{ route('vehicle.show', $vehicle->id) }}">{{ __('View') }}</a>
+                        <a class="btn btn-primary px-3" href="{{ route('site.detail',$vehicle->id) }}">{{ __('View') }}</a>
                     </div>
                 </div> 
                 @empty

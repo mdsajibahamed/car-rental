@@ -55,7 +55,7 @@ class VehicleController extends Controller
         //  Vehicle is database 
     }
 
-    /**
+    /** 
      * Display the specified resource.
      */
     public function show(Vehicle $vehicle)
