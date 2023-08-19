@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Thumbnail</label>
-                   <input type="text" class="form-control" name="thumbnail" placeholder="thumbnail" value="{{$vehicle->thumbnail}}">
+                   <input type="file" class="form-control" name="thumbnail" placeholder="thumbnail" value="{{$vehicle->thumbnail}}">
                 </div>
                 <div class="form-group">
                    <label for="" class="form-label mt-2">Year</label>

@@ -20,7 +20,7 @@
 
                         <a href="{{ route('booking.create')}}" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
                     </div>
-                    <div>
+                    <div class="table-responsive">
                         <table id="table" class="table table-striped">
                             <thead>
                                 <tr>

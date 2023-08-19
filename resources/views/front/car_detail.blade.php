@@ -27,7 +27,7 @@
             <div class="row">
                
                 <div class="col-lg-8 mb-5">
-                    <h1 class="display-4 text-uppercase mb-5">{{$vehicle->model}}</h1>
+                    <h1 class="display-4 text-uppercase mb-5"></h1>
                     <div class="row mx-n2 mb-3">
                         <div class="col-md-3 col-6 px-2 pb-2">
                             {{-- @forelse ($vehicles as $vehicle)

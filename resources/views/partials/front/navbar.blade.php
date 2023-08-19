@@ -19,7 +19,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="{{route('site.car_list')}}" class="dropdown-item">Car Listing</a>
-                            <a href="{{ route('site.detail')}}" class="dropdown-item">Car Detail</a>
+                            {{-- <a href="{{ route('site.detail',$vehicle->id)}}" class="dropdown-item">Car Detail</a> --}}
                             <a href="{{route('site.booking')}}" class="dropdown-item">Car Booking</a>
                         </div>
                     </div>

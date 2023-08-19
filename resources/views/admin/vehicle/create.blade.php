@@ -13,7 +13,7 @@
                <a title="back to index" style="font-size: 2em" href="{{route("vehicle.index")}}"><i class="bi bi-backspace"></i></a>
             </div>
          
-            <form action="{{route('vehicle.store')}}" method="post">
+            <form action="{{route('vehicle.store')}}" method="post" enctype="multipart/form-data">
                @csrf
                <input type="hidden" name="user_id" value="" />
                <div class="form-group">
@@ -45,7 +45,7 @@
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Thumbnail</label>
-                  <input type="text" class="form-control" name="thumbnail" placeholder="thumbnail" value="{{old("thumbnail")}}">
+                  <input type="file" class="form-control" name="thumbnail" placeholder="thumbnail" value="{{old("thumbnail")}}">
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Year</label>

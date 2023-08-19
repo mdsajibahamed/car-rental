@@ -4,6 +4,7 @@
     {{ __('Homepage') }}
 @endsection
 
+
 @section('hero')
     <!-- Carousel Start -->
     <div class="container-fluid p-0" style="margin-bottom: 90px;">
@@ -46,6 +47,34 @@
 @endsection
 
 @section('content')
+
+<!-- maping system  -->
+
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <script type="module" src="/index.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <!-- prettier-ignore -->
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});</script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
     <!-- About Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
@@ -86,7 +115,7 @@
         </div>
     </div>
     <!-- About End -->
-    
+                                {{-- service  --}}
 
     <!-- Services Start -->
     <div class="container-fluid py-5">
@@ -94,19 +123,28 @@
             <h1 class="display-1 text-primary text-center">02</h1>
             <h1 class="display-4 text-uppercase text-center mb-5">Our Services</h1>
             <div class="row">
+                @foreach($services as $service)
                 <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
+                    <div class="service-item d-flex flex-column justify-content-center px-6 mb-4">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
                                 <i class="fa fa-2x fa-taxi text-secondary"></i>
                             </div>
-                            <h1 class="display-2 text-white mt-n2 m-0">01</h1>
+                            <h1 class="display-2 text-white mt-n2 m-0"> {{ $loop->iteration}}</h1>
                         </div>
-                        <h4 class="text-uppercase mb-3">Car Rental</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
+                        <h4 class="text-uppercase mb-3">{{$service->title}}</h4>
+                        <p class="m-0">{{$service->description}} </p>
+                        <div class="d-flex justify-content-between table-resposive">
+                            <h3 class="m-0">{{$service->price}} </h3>
+                            <a class="btn btn-primary px-3" href="{{ url('service_view',$service->id)}}">{{ __('View') }}</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-2">
+                @endforeach
+                    
+                
+                
+                {{-- <div class="col-lg-4 col-md-6 mb-2">
                     <div class="service-item active d-flex flex-column justify-content-center px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
@@ -118,6 +156,7 @@
                         <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between mb-3">
@@ -165,7 +204,7 @@
                         <h4 class="text-uppercase mb-3">Auto Cleaning</h4>
                         <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -197,7 +236,7 @@
                 @forelse ($vehicles as $vehicle)
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
-                        <img class="img-fluid mb-4" src="img/car-rent-1.png" alt="">
+                        <img class="img-fluid mb-4" src="{{ asset('img/vehicle/'.$vehicle->img)}}" alt="">
                         <h4 class="text-uppercase mb-4">{{$vehicle->model}}</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
@@ -215,7 +254,7 @@
                             </div>
                         </div>
                         <a class="btn btn-primary px-3" href="">{{$vehicle->rentamount}}</a>
-                        <a class="btn btn-primary px-3" href="{{ route('site.detail',$vehicle->id) }}">{{ __('View') }}</a>
+                        <a class="btn btn-primary px-3" href="{{ route('car.detail', $vehicle->id) }}">{{ __('View') }}</a>
                     </div>
                 </div> 
                 @empty
@@ -435,6 +474,7 @@
     <!-- Team End -->
 
 
+
     <!-- Banner Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
@@ -612,4 +652,21 @@
         </div>
     </div>
     <!-- Vendor End -->
+@endsection
+@section('script')
+<script>
+let map;
+
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
+
+  map = new Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+
+initMap();
+</script>
+    
 @endsection
