@@ -37,6 +37,7 @@ Route::get('/contact', [FrontController::class, 'contact'])->name('site.contact'
 // Route::get('/detail', [FrontController::class, 'detail'])->name('site.detail');
 // Route::get('/view', [FrontController::class, 'views'])->name('service.view');
 Route::get('/detail', [FrontController::class, 'detail'])->name('car.detail');
+Route::get('/detail/{carDetails}', [FrontController::class, 'carDetails'])->name('car.details');
 Route::get('/booking', [FrontController::class, 'booking'])->name('site.booking');
 Route::get('/team', [FrontController::class, 'team'])->name('site.team');
 Route::get('/testimonial', [FrontController::class, 'testimonial'])->name('site.testimonial');

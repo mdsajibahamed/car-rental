@@ -4,7 +4,7 @@
 @section('content')
 
 
-    <sction class="">
+    <section class="">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
