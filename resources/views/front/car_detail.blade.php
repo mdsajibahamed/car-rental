@@ -30,21 +30,9 @@
                     <h1 class="display-4 text-uppercase mb-5"></h1>
                     <div class="row mx-n2 mb-3">
                         <div class="col-md-3 col-6 px-2 pb-2">
-                            {{-- @forelse ($vehicles as $vehicle)
-                                <h1>{{$vehicle->model}} </h1>
-                            @empty
-                                
-                            @endforelse --}}
                         </div>
                         <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="img/gallery-1.jpg" alt="">
-                        </div>
-                        <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="img/gallery-2.jpg" alt="">
-                        </div>
-                        <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="img/gallery-3.jpg" alt="">
-                        </div>
+                       
                         <div class="col-md-3 col-6 px-2 pb-2">
                             <img class="img-fluid w-100" src="img/gallery-4.jpg" alt="">
                         </div>

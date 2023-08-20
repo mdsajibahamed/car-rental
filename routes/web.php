@@ -36,13 +36,15 @@ Route::get('/service', [FrontController::class, 'service'])->name('site.service'
 Route::get('/contact', [FrontController::class, 'contact'])->name('site.contact');
 // Route::get('/detail', [FrontController::class, 'detail'])->name('site.detail');
 // Route::get('/view', [FrontController::class, 'views'])->name('service.view');
-Route::get('/detail/{$id}', [FrontController::class, 'detail'])->name('car.detail');
+Route::get('/detail', [FrontController::class, 'detail'])->name('car.detail');
 Route::get('/booking', [FrontController::class, 'booking'])->name('site.booking');
 Route::get('/team', [FrontController::class, 'team'])->name('site.team');
 Route::get('/testimonial', [FrontController::class, 'testimonial'])->name('site.testimonial');
 Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list');
 // Route::get('/car_list/{$id}', [VehicleController::class, 'show'])->name('site.vehicle');
 Route::get('service_view/{$id}',[ServiceController::class, 'show'])->name('service.view');
+
+Route::get('/invoice',[FrontController::class,'ivoice'])->name('site.invoice');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');

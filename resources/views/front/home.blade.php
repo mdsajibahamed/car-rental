@@ -136,7 +136,7 @@
                         <p class="m-0">{{$service->description}} </p>
                         <div class="d-flex justify-content-between table-resposive">
                             <h3 class="m-0">{{$service->price}} </h3>
-                            <a class="btn btn-primary px-3" href="{{ url('service_view',$service->id)}}">{{ __('View') }}</a>
+                            <a class="btn btn-primary px-3" href="{{ route('site.invoice')}}">{{ __('View') }}</a>
                         </div>
                     </div>
                 </div>
@@ -254,7 +254,7 @@
                             </div>
                         </div>
                         <a class="btn btn-primary px-3" href="">{{$vehicle->rentamount}}</a>
-                        <a class="btn btn-primary px-3" href="{{ route('car.detail', $vehicle->id) }}">{{ __('View') }}</a>
+                        <a class="btn btn-primary px-3" href="{{ route('car.detail') }}">{{ __('View') }}</a>
                     </div>
                 </div> 
                 @empty
