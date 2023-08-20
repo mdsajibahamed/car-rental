@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Service;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
@@ -44,9 +45,13 @@ class FrontController extends Controller
     public function carDetails (Request $request, $id) {
         $vehicleId = $id;
 
+         $bookings = Booking::all();
+        //  dd($bookings);
         // find the vehicle 
         $vehicles = Vehicle::find($vehicleId);
-       return view('front.car_detail', compact('vehicles'));
+        // dd($vehicles->model);
+    //    return view('front.car_detail', compact('vehicles'));
+    return view('front.car_detail', ['vehicles' => $vehicles,'bookings' =>$bookings]);
     }
 
 

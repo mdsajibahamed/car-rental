@@ -13,7 +13,7 @@
                         <h2>Crate Booking</h2>
                         <a href="{{ route('booking.index')}}" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a>
                     </div>
-                    <div>
+                    <div> 
                         <form action="{{ route('booking.store')}}" method="POST">
                             @csrf
                             <div class="form-group">

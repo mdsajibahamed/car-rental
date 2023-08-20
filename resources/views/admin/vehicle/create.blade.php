@@ -19,7 +19,7 @@
                <div class="form-group">
                   <label for="" class="form-label">User Name</label>
                   <select name="user_id" class="form-select" id=""> 
-                  @forelse ($users as $user)
+                  @forelse ($users as $user) 
                       <option value="{{ $user->id }}">{{ $user->name }}</option>
                   @empty
                       <option value="">{{ __('-- Choose One --') }}</option>
