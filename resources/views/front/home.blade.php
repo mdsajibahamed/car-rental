@@ -254,7 +254,7 @@
                             </div>
                         </div>
                         <a class="btn btn-primary px-3" href="">{{$vehicle->rentamount}}</a>
-                        <a class="btn btn-primary px-3" href="{{ route('car.detail') }}">{{ __('View') }}</a>
+                        <a class="btn btn-primary px-3" href="{{ route('car.details', $vehicle->id ) }}">{{ __('View') }}</a>
                     </div>
                 </div> 
                 @empty

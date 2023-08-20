@@ -36,11 +36,18 @@ class FrontController extends Controller
     public function detail(Vehicle $vehicle){
         //  return "hi";
         // return view('front.view',compact('vehicle'));
-        return view('front.car_detail',compact('vehicle'));
+        return view('front.car_detail', compact('vehicle'));
     }
     //
 
     //
+    public function carDetails (Request $request, $id) {
+        $vehicleId = $id;
+
+        // find the vehicle 
+        $vehicles = Vehicle::find($vehicleId);
+       return view('front.car_detail', compact('vehicles'));
+    }
 
 
     public function booking(){
