@@ -35,10 +35,10 @@
                     <label for="" class="form-label mt-2">Status</label>
                     <input type="text" class="form-control" name="status" value="{{ $service->status}}">
                  </div>
-                 {{-- <div class="form-group">
+                 <div class="form-group">
                     <label for="" class="form-label mt-2">Image</label>
-                    <input type="text" class="form-control" name="image" value="{{ $service->}}">
-                 </div> --}}
+                    <input type="file" class="form-control" name="image" value="{{ $service->image}}">
+                 </div>
                  <input type="submit" value="Update" class="btn btn-outline-primary mt-3">
 
 

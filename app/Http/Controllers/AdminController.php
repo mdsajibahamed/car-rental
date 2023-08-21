@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
+use App\Models\Brand;
+use App\Models\Type;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -11,8 +15,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        
-         return view('admin.dashboard');
+         $bookings = Booking::all();
+         $vehicles = Vehicle::all();
+         $brands = Brand::all();
+         $types = type::all();
+         return view('admin.dashboard', compact('bookings','brands','types','vehicles'));
     }
 
     /**

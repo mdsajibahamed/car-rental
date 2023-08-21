@@ -50,14 +50,14 @@
                         <i class="fa fa-2x fa-map-marker-alt text-primary flex-shrink-0 mr-3"></i>
                         <div class="mt-n1">
                             <h5 class="text-light">Head Office</h5>
-                            <p>123 Street, New York, USA</p>
+                            <p>Mirpur -2  Dhaka, Bangladesh</p>
                         </div>
                     </div>
                     <div class="d-flex mb-3">
                         <i class="fa fa-2x fa-map-marker-alt text-primary flex-shrink-0 mr-3"></i>
                         <div class="mt-n1">
                             <h5 class="text-light">Branch Office</h5>
-                            <p>123 Street, New York, USA</p>
+                            <p>Dhandmondhi ,Dhaka Bangladesh</p>
                         </div>
                     </div>
                     <div class="d-flex mb-3">

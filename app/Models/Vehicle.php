@@ -27,7 +27,8 @@ class Vehicle extends Model
         'owner_name',
         'owner_phone',
         'seating_capacity',
-        'price'
+        'price',
+        'description'
     ];
       /**
      * Get the comments for the blog post.

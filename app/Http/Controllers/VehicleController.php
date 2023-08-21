@@ -60,7 +60,7 @@ class VehicleController extends Controller
          
         $imageName = '';
         if($image = $request->file('image')){
-            $imageName = time(). '.'. uniqid(). '' . $image->getClientOriginalExtension();
+            $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
             $image->move('img/vehicle',$imageName);
         }
 

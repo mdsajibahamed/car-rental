@@ -8,7 +8,7 @@
        <div class="row justify-content-center">
           <div class="col-10">
              <div class="d-flex justify-content-between">
-                <h1>Add Vehicle</h1>
+                <h1>Service List </h1>
                 <a title="back to index" style="font-size: 2em" href="{{route('service.index')}}"><i class="bi bi-backspace"></i></a>
              </div>
           
@@ -20,8 +20,8 @@
                         <option value="Car Rental">Car Rental</option>
                         <option value="Car Financing">Car Financing</option>
                         <option value="Car Inspection">Car Inspection</option>
-                        <option value="Auto Repairing">Autp Repairing</option>
-                        <option value="Auto Painting">Autp Painting</option>
+                        <option value="Auto Repairing">Auto Repairing</option>
+                        <option value="Auto Painting">Auto Painting</option>
                         <option value="Auto Clening">Auto Clening</option>
                      </select>
                   </div>
@@ -43,7 +43,7 @@
                   </div>
                   <div class="form-group">
                      <label for="" class="form-label mt-2">Image</label>
-                     <input type="text" class="form-control" name="image" value="{{old('image')}}">
+                     <input type="file" class="form-control" name="image" value="{{old('image')}}">
                   </div>
                   <input type="submit" value="insert" class="btn btn-outline-primary mt-3">
 

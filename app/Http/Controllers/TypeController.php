@@ -30,7 +30,7 @@ class TypeController extends Controller
     public function store(Request $request)
     {
         // dd($request);
-        $this->validate($request,['title'=>"required|min:2|max:25",'description'=>"required|min:10|max:150"]);
+        $this->validate($request,['title'=>"required|min:2|max:25",'description'=>"required|min:10"]);
        Type::create($request->all());
      return redirect()->route('type.create')->with('info','Type Create Successfully');
 

@@ -17,7 +17,7 @@
                @csrf
                <input type="hidden" name="user_id" value="" />
                <div class="form-group">
-                  <label for="" class="form-label">User Name</label>
+                  <label for="" class="form-label">User Name</label> 
                   <select name="user_id" class="form-select" id=""> 
                   @forelse ($users as $user) 
                       <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -87,11 +87,15 @@
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Owner Phone</label>
-                  <input type="number" class="form-control" name="owner_phone" placeholder="owner_phone" value="{{old("owner_phone")}}">
+                  <input type="text" class="form-control" name="owner_phone" placeholder="owner_phone" value="{{old("owner_phone")}}">
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Price</label>
                   <input type="text" class="form-control" name="price" placeholder="price" value="{{old("price")}}">
+               </div>
+               <div class="form-group">
+                  <label for="" class="form-label mt-2">Description</label>
+                  <input type="text" class="form-control" name="description" placeholder="description" value="{{old("description")}}">
                </div>
                <input type="submit" value="Insert" class="btn btn-outline-primary my-3">     
             </form>

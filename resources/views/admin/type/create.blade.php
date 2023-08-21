@@ -11,7 +11,7 @@
                 <div class="col-8">
                     <div class="d-flex justify-content-between">
                         <h2>Create Type</h2>
-                        <a href="{{route('role.index')}}" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a>
+                        <a href="{{route('type.index')}}" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a>
 
                     </div>
                     <div>

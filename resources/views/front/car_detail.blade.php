@@ -37,7 +37,7 @@
                             <img class="img-fluid w-100" src="img/gallery-4.jpg" alt="">
                         </div>
                     </div>
-                    <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                    <p>{{$vehicles->description}} </p>
                     <div class="row pt-2">
                         <div class="col-md-4 col-6 mb-2">
                             <i class="fa fa-car text-primary mr-2"></i>
@@ -94,7 +94,7 @@
                 <div class="col-8 col-lg-12 mb-5">
                     <div class="bg-secondary p-5">
                         <h3 class="text-primary text-center mb-4">Check Availability</h3>
-                        <form action="{{route('booking.store')}} " type="POST">
+                        <form action="{{ route('site.invoice')}}" type="POST">
                             @csrf
                             <div class="form-group">
                                 <select name="location_from" class="custom-select px-4" style="height: 50px;">

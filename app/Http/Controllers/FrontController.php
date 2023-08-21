@@ -72,7 +72,7 @@ class FrontController extends Controller
     public function car_list(){
         return view('front.car_list');
     }
-    public function ivoice(){
+    public function invoice(){
         return view('front.invoice');
     }
 }

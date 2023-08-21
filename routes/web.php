@@ -45,7 +45,7 @@ Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list
 // Route::get('/car_list/{$id}', [VehicleController::class, 'show'])->name('site.vehicle');
 Route::get('service_view/{$id}',[ServiceController::class, 'show'])->name('service.view');
 
-Route::get('/invoice',[FrontController::class,'ivoice'])->name('site.invoice');
+Route::get('/invoice',[FrontController::class,'invoice'])->name('site.invoice');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');

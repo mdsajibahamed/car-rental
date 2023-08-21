@@ -32,15 +32,15 @@ class ServiceController extends Controller
     //   $e= Service::create($request->all());
     //   dd($e);
       $this->validate($request,[
-        'title'=>"required",'highlights'=>"required",'description'=>"required|min:10|max:255",'status'=>"required",
+        'title'=>"required",'highlights'=>"required",'description'=>"required|min:10",'status'=>"required",
         // 'image'=>"required|mimes:png,jpg,jpeg"
       ]);
     
-    //   $imageName = '';
-    //   if($image= $request->file('image')){
-    //       $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
-    //       $image->move('img/vehicle',$imageName);
-    //   }
+      $imageName = '';
+      if($image= $request->file('image')){
+          $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
+          $image->move('img/vehicle',$imageName);
+      }
 
       Service::create($request->all());
       return back()->with('info', "Service Create Successfully");

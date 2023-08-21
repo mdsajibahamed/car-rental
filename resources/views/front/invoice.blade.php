@@ -8,7 +8,7 @@
       <div class="container mb-5 mt-3">
         <div class="row d-flex align-items-baseline">
           <div class="col-xl-9">
-            <p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>ID: #123-123</strong></p>
+            <p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>ID: 123-123</strong></p>
           </div>
           <div class="col-xl-3 float-end">
             <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
@@ -23,7 +23,7 @@
           <div class="col-md-12">
             <div class="text-center">
               <i class="fab fa-mdb fa-4x ms-0" style="color:#5d9fc5 ;"></i>
-              <p class="pt-0">MDBootstrap.com</p>
+              <p class="pt-0">BD </p>
             </div>
   
           </div>
@@ -32,22 +32,22 @@
           <div class="row">
             <div class="col-xl-8">
               <ul class="list-unstyled">
-                <li class="text-muted">To: <span style="color:#5d9fc5 ;">John Lorem</span></li>
-                <li class="text-muted">Street, City</li>
-                <li class="text-muted">State, Country</li>
-                <li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
+                <li class="text-muted">To: <span style="color:#5d9fc5 ;"></span></li>
+                <li class="text-muted">Mirpur City</li>
+                <li class="text-muted"> Dhaka, Bangladesh</li>
+                <li class="text-muted"><i class="fas fa-phone"></i>  01303011991</li>
               </ul>
             </div>
             <div class="col-xl-4">
               <p class="text-muted">Invoice</p>
               <ul class="list-unstyled">
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
-                    class="fw-bold">ID:</span>#123-456</li>
+                    class="fw-bold">ID:</span> 123-456</li>
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
-                    class="fw-bold">Creation Date: </span>Jun 23,2021</li>
+                    class="fw-bold">Creation Date: </span>August  22,2023</li>
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
-                    class="me-1 fw-bold">Status:</span><span class="badge bg-warning text-black fw-bold">
-                    Unpaid</span></li>
+                    class="me-1 fw-bold">Status</span><span class="badge bg-warning text-black fw-bold">
+                    Paid</span></li>  
               </ul>
             </div>
           </div>
@@ -58,49 +58,50 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Description</th>
-                  <th scope="col">Qty</th>
-                  <th scope="col">Unit Price</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Vehicle Name</th>
+                  <th scope="col">Per/km price </th>
                   <th scope="col">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Pro Package</td>
-                  <td>4</td>
-                  <td>$200</td>
-                  <td>$800</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Web hosting</td>
-                  <td>1</td>
-                  <td>$10</td>
-                  <td>$10</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Consulting</td>
-                  <td>1 year</td>
-                  <td>$300</td>
+                  <td>Toyota X50 </td>
+                  <td>Johan</td>
+                  <td>Toyota X50</td>
+                  <td>$5</td>
                   <td>$300</td>
                 </tr>
               </tbody>
   
             </table>
           </div>
+
+            <div class="col-xl-4">
+                <div class=""> 
+                    <div class="form">
+                      <label class="form-label" class="form-label" for="formControlLgXM">Payment Method :</label>
+                     <select name="" id="" class="form-control">
+                      <option value="BKash">Bkash</option>
+                      <option value="Nagad">Nagad</option>
+                      <option value="Cash">Cash</option>
+                     </select>
+                    </div>
+              </div>
+           </div>
           <div class="row">
             <div class="col-xl-8">
               <p class="ms-3">Add additional notes and payment information</p>
   
             </div>
-            <div class="col-xl-3">
+            <div class="col-xl-4">
               <ul class="list-unstyled">
-                <li class="text-muted ms-3"><span class="text-black me-4">SubTotal</span>$1110</li>
-                <li class="text-muted ms-3 mt-2"><span class="text-black me-4">Tax(15%)</span>$111</li>
+                <li class="text-muted ms-3"><span class="text-black me-4">SubTotal</span>$300</li>
+                <li class="text-muted ms-3 mt-2"><span class="text-black me-4">Tax(5%)</span>$285</li>
               </ul>
               <p class="text-black float-start"><span class="text-black me-3"> Total Amount</span><span
-                  style="font-size: 25px;">$1221</span></p>
+                  style="font-size: 25px;">$285</span></p>
             </div>
           </div>
           <hr>
@@ -120,88 +121,4 @@
   </div>
 
 
-
-
-
-      {{-- payment       --}}
-
-
-
-      <section class="p-4 p-md-5" style="
-    background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/background3.webp);
-  ">
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-10 col-lg-8 col-xl-5">
-      <div class="card rounded-3">
-        <div class="card-body p-4">
-          <div class="text-center mb-4">
-            <h3>Settings</h3>
-            <h6>Payment</h6>
-          </div>
-          <form action="">
-            <p class="fw-bold mb-4 pb-2">Saved cards:</p>
-
-            <div class="d-flex flex-row align-items-center mb-4 pb-1">
-              <img class="img-fluid" src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
-              <div class="flex-fill mx-3">
-                <div class="form-outline">
-                  <input type="text" id="formControlLgXc" class="form-control form-control-lg"
-                    value="**** **** **** 3193" />
-                  <label class="form-label" for="formControlLgXc">Card Number</label>
-                </div>
-              </div>
-              <a href="#!">Remove card</a>
-            </div>
-
-            <div class="d-flex flex-row align-items-center mb-4 pb-1">
-              <img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" />
-              <div class="flex-fill mx-3">
-                <div class="form-outline">
-                  <input type="text" id="formControlLgXs" class="form-control form-control-lg"
-                    value="**** **** **** 4296" />
-                  <label class="form-label" for="formControlLgXs">Card Number</label>
-                </div>
-              </div>
-              <a href="#!">Remove card</a>
-            </div>
-
-            <p class="fw-bold mb-4">Add new card:</p>
-
-            <div class="form-outline mb-4">
-              <input type="text" id="formControlLgXsd" class="form-control form-control-lg"
-                value="Anna Doe" />
-              <label class="form-label" for="formControlLgXsd">Cardholder's Name</label>
-            </div>
-
-            <div class="row mb-4">
-              <div class="col-7"> 
-                <div class="form-outline">
-                  <input type="text" id="formControlLgXM" class="form-control form-control-lg"
-                    value="1234 5678 1234 5678" />
-                  <label class="form-label" for="formControlLgXM">Card Number</label>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="form-outline">
-                  <input type="password" id="formControlLgExpk" class="form-control form-control-lg"
-                    placeholder="MM/YYYY" />
-                  <label class="form-label" for="formControlLgExpk">Expire</label>
-                </div>
-              </div>
-              <div class="col-2">
-                <div class="form-outline">
-                  <input type="password" id="formControlLgcvv" class="form-control form-control-lg"
-                    placeholder="Cvv" />
-                  <label class="form-label" for="formControlLgcvv">Cvv</label>
-                </div>
-              </div>
-            </div>
-
-            <button class="btn btn-success btn-lg btn-block">Add card</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 @endsection
