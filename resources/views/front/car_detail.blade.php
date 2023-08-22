@@ -23,8 +23,8 @@
 
     <!-- Detail Start -->
     <div class="container-fluid pt-5">
-        <div class="container pt-5">
-            <div class="row">
+        <div class="container pt-5 justify items center">
+            <div class="row justify items center">
                
                 <div class="col-lg-8 mb-5">
                     <h1 class="display-4 text-uppercase mb-5"> {{ $vehicles->model }}</h1>
@@ -90,7 +90,22 @@
                     </div>
                </div>
                 
+                          {{-- checked avality --}}
+                        <div class="mapouter my-5 justify items center">
+                            <h2> Booking Your Rent</h2>
+                                    <div class="gmap_canvas ">
+                                        <iframe src="https://maps.google.com/maps?q=university%20of%20san%20francisco&amp;t=&amp;z=4&amp;ie=UTF8&amp;iwloc=&amp;output=embed" id="gmap_canvas" frameborder="0" scrolling="no" style="width: 700px; height: 400px;">
+                                        </iframe>
+                                        <style>.mapouter{position:relative;text-align:right;height:400px;width:700px;}
+                                        </style>
+                                        <style>.gmap_canvas{overflow:hidden;background:none!important;height:400px;width:700px;}</style>
+                                        <a href="https://www.eireportingonline.com">ei reporting</a>
+                                   </div>
+                        </div>
 
+
+
+                             {{-- checked avality end  --}}
                 <div class="col-8 col-lg-12 mb-5">
                     <div class="bg-secondary p-5">
                         <h3 class="text-primary text-center mb-4">Check Availability</h3>
