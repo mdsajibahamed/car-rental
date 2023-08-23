@@ -10,7 +10,7 @@
             <div class="row justify-content-center mt-5">
                 <div class="col-8">
                     <div class="d-flex justify-content-between">
-                        <h2>All Vehicle</h2>
+                        <h2>Add  Booking</h2>
                         <a href="{{ route('booking.index')}}" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a>
 
                     </div>
@@ -19,15 +19,15 @@
                         @csrf
                         @method('put')
                         <div class="form-group">
-                            <label for="" class="form-label">Detail Id</label>
-                            <input type="text" class="form-control" name="location_from" placeholder="{{ __('location_from....')}}" value="{{ $booking->detail_id }}">
+                            <label for="" class="form-label">user Id</label>
+                            <input type="text" class="form-control" name="user_id" placeholder="{{ __('user_id....')}}" value="{{ $booking->user_id }}">
                         </div>
                         <div class="form-group">
                             <label for="" class="form-label">Vehicle Id</label>
                             {{-- @foreach ($vehicles as $vehicle)
                             <input  type="text" class="form-control" name="vehicle_id"  value="{{ $vehicle->id }}" {{ $vehicle->id === $booking->vehicle_id ? 'selected' : '' }} > {{ $vehicle->owner_name }} </input>
                             @endforeach --}}
-                            <input type="text" class="form-control" name="vehicle_id" placeholder="{{ __('vehicle_id....')}}" value="{{ $booking->vehicle->model }}">
+                            <input type="text" class="form-control" name="vehicle_id" placeholder="{{ __('vehicle_id....')}}" value="{{ $booking->vehicle->id }}">
 
                         </div>
                         <div class="form-group">

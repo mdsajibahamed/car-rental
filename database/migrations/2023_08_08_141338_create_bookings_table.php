@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             // deail means profile
-            $table->bigInteger("detail_id")->unsigned();
-            $table->foreign("detail_id")->references("id")->on("details")->onDelete('cascade');
+            $table->bigInteger("user_id")->unsigned();
+            $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
             $table->bigInteger("vehicle_id")->unsigned();
             $table->foreign("vehicle_id")->references("id")->on("vehicles")->onDelete('cascade');
             $table->string("location_from")->nullable();
             $table->string("location_to")->nullable();
-            $table->string("pickup_date")->nullable();
+            $table->string("pickup_date")->nullable(); 
             $table->string("return_date")->nullable();
             $table->string("total_days")->nullable();
             $table->tinyInteger("status")->nullable();

@@ -19,8 +19,8 @@
                             <div class="form-group">
                                 <label for="" class="form-label">Detail Id </label>
                                 <select name="detail_id" class="form-select" id="">
-                                @forelse ($details as $detail)
-                                    <option value="{{ $detail->id }}">{{ $detail->id }}</option>
+                                @forelse ($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->id }}</option>
                                 @empty
                                     <option value="">{{ __('-- Choose One --') }}</option>
                                 @endforelse
@@ -30,7 +30,7 @@
                                 <label for="" class="form-label">Vehicle Name </label>
                                 <select name="vehicle_id" class="form-select" id="">
                                 @forelse ($vehicles as $vehicle)
-                                    <option value="{{ $vehicle->id }}">{{ $vehicle->model }}</option>
+                                    <option value="{{ $vehicle->id }}">{{ $vehicle->id }}</option>
                                 @empty
                                     <option value="">{{ __('-- Choose One --') }}</option>
                                 @endforelse

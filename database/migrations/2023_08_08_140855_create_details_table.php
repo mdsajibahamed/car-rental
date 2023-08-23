@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
             $table->string("date_of_birth")->nullable();
             $table->tinyInteger('gender')->nullable();
-            $table->string("mobile_number")->nullable();
+            $table->string("mobile_number")->nullable(); 
             $table->text("address1")->nullable();
             $table->string("address2")->nullable();
 

@@ -1,9 +1,7 @@
 @extends('layouts.admin')
 @section('title')
-{{__('Booking')}}
-    
+    {{__('Location')}}
 @endsection
-
 @section('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 @endsection
@@ -15,39 +13,32 @@
             <div class="row justify-content-center mt-5">
                 <div class="col">
                     <div class="d-flex justify-content-between">
-                        <h2>All Booking</h2>
-                        {{-- <a href="" title="Back to Index" style="font-size: 2rem"><i class="bi bi-backspace"></i></a> --}}
-
-                        <a href="{{ route('booking.create')}}" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
+                        <h2>Location</h2>
+                        <a href="" title="add new vehicle" class="" style="font-size:2rem"><i class="bi bi-plus-circle"></i></a>
                     </div>
                     <div class="table-responsive">
                         <table id="table" class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>SL</th>
-                                    <th>User Id </th>
-                                    <th>Vehicle Name</th>
-                                    <th>Picked Location</th>
-                                    <th>Drop Location</th>
-                                    <th>Total Amount</th>
+                                    <th>Sl</th>
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                 
                                     <th>Date Create</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($bookings as $booking)
+                                @forelse ($locations as $location)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{ $booking->user_id }}</td>
-                                    <td>{{ $booking->vehicle_id }}</td>
-                                    <td>{{$booking->location_from}}</td>
-                                    <td>{{$booking->location_to}}</td>
-                                    <td>{{$booking->total_amount}}</td>
-                                    <td>{{ $booking->created_at->diffforhumans() }}</td>
+                                    <td>{{ $location->name }}</td>
+                                    <td>{{ $location->status }}</td>
+                                    <td>{{ $location->created_at->diffforhumans() }}</td>
                                     <td >
                                         {{-- <a href=""><i class="bi bi-eye-fill"></i></a> --}}
-                                        <a href="{{ route('booking.edit', $booking->id)}}"><i class="bi bi-pencil-square"></i></a> 
-                                        <form action="{{ route('booking.destroy',$booking->id) }}" class="d-inline" method="POST">
+                                        <a href=""><i class="bi bi-pencil-square"></i></a> 
+                                        <form action="" class="d-inline" method="POST">
                                             @csrf
                                             @method("delete")
                                             <a href="#" class="bi bi-trash3-fill" onclick="del(event,this)"></a>
@@ -89,4 +80,3 @@
     </script>
 
 @endsection
-

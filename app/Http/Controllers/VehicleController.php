@@ -52,6 +52,14 @@ class VehicleController extends Controller
             'thumbnail'=>"required|mimes:png,jpg,jpeg",
             'image'=> "required|mimes:png,jpg,jpeg"
         ]);
+        
+        // if ($request->hasFile('thumbnail')) {
+        //     $imagePath = $request->file('thumbnail')->store('img', 'public');
+        //     // $food->thumbnail = $imagePath;
+        //     $request->thumbnail =$imagePath;
+        // }
+
+
         $thumbnailName = '';
         if($thumbnail= $request->file('thumbnail')){
             $thumbnailName = time(). '-'. uniqid(). '.' . $thumbnail->getClientOriginalExtension();

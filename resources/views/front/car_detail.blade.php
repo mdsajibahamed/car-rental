@@ -129,14 +129,14 @@
                                 </select>
                                 
                             </div>
-                            <div class="form-group">
+                            <div class="form-group"> 
                                 <select name="location_to" class="custom-select px-4" style="height: 50px;">
                                     <option selected>Drop Location</option>
                                             <option value="Manikgonj">Manikgonj</option>
                                             <option value="Munshigonj">Munshigonj</option>
                                             <option value="Narayangonj">Narayangonj</option>
                                             <option value="kishoregonj">kishoregonj</option>
-                                            <option value="Gazipur">Gazipur</option>
+                                            <option value="Gazipur">Gazipur</option> 
                                             <option value="Tangail">Tangail</option>
                                             <option value="Norsingdi">Norsingdi</option>
                                             <option value="Rajbari">Rajbari</option>
@@ -157,7 +157,7 @@
                                             <option value="Nilphamari">Nilphamari</option>
                                             <option value="Lalmonirhat">Lalmonirhat</option>
                                             <option value="Panchagarh">Panchagarh</option>
-                                            <option value="Rajahahi">Rajahahi</option>
+                                            <option value="Rajahahi">Rajshahi</option>
                                             <option value="Natore">Natore</option>
                                             <option value="Sirajgonj">Sirajgonj</option>
                                             <option value="Pabna">Pabna</option>

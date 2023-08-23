@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Detail;
+use App\Models\User;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
@@ -52,9 +53,10 @@ class BookingController extends Controller
     public function edit(Booking $booking)
     {
         // $bookings =Booking::all();
+        $users = User::all();
         $details = Detail::all();
         $vehicles = Vehicle::all();
-      return view('admin.booking.edit',compact('booking','details','vehicles'));
+      return view('admin.booking.edit',compact('booking','details','vehicles','users'));
     }
 
     /**

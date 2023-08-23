@@ -5,6 +5,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\Paymentcontroller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -58,6 +59,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('type', TypeController::class);
     Route::resource('booking', BookingController::class);
     Route::resource('payment', Paymentcontroller::class);
+    Route::resource('location', LocationController::class);
 
     // Route::get('/search',[AdminController::class,'search'])->name('search.dashboard');
     
