@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+
 use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,10 +24,6 @@ class TypeSeeder extends Seeder
         ];
         foreach ($types as $type) {
             Type::create($type);
-<<<<<<< HEAD
         }
-=======
-        };
->>>>>>> 1c07c9c3d4074700abfde1dac7cd16cc612df971
     }
 }

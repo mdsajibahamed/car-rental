@@ -1,14 +1,12 @@
 <?php
 
 namespace Database\Seeders;
-<<<<<<< HEAD
-=======
 
->>>>>>> 1c07c9c3d4074700abfde1dac7cd16cc612df971
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+
 
 class UserSeeder extends Seeder
 {
@@ -26,8 +24,8 @@ class UserSeeder extends Seeder
             [ 'role_id' => 4, 'name' => 'Customer', 'email' => 'customer@gmail.com', 'password' => Hash::make('customer') ],
         ];
 
-        foreach ($users as $user) {
-            User::create($user);
-        }
+       foreach ($users as $user) {
+        User::crete($user);
+       }
     }
 }
