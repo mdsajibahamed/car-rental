@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+<<<<<<< HEAD
 use App\Models\Vehicle;
+=======
+>>>>>>> 1c07c9c3d4074700abfde1dac7cd16cc612df971
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +16,7 @@ class VehicleSeeder extends Seeder
      */
     public function run(): void
     {
+<<<<<<< HEAD
        //
        $vehicles = [
         [ 'user_id' => 1, 'brand_id' => '1', 'type_id' => '1', 'model' => 'Toyota Prius','thumbnail'=> '','year'=> '2015','status'=>'1','seating_capacity'=>'5','rentamount'=>'4000 Tk','image'=>'','serial_number'=>'1A4532455432DD1','owner_name'=>'sajib','owner_phone'=>'01900909099','price'=>'1000000','description'=>'he Prius is known for its hybrid powertrain, which combines a gasoline engine with an electric motor and a high-capacity battery pack. This hybrid system allows the Prius to operate on electric power alone at low speeds and switch seamlessly between gasoline and electric power as needed. This results in excellent fuel efficiency and reduced emissions.' ],
@@ -43,3 +47,8 @@ class VehicleSeeder extends Seeder
 
     }
 }
+=======
+        //
+    }
+}
+>>>>>>> 1c07c9c3d4074700abfde1dac7cd16cc612df971

@@ -1,6 +1,10 @@
 <?php
 
 namespace Database\Seeders;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c07c9c3d4074700abfde1dac7cd16cc612df971
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;

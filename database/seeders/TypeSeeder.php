@@ -23,6 +23,10 @@ class TypeSeeder extends Seeder
         ];
         foreach ($types as $type) {
             Type::create($type);
+<<<<<<< HEAD
         }
+=======
+        };
+>>>>>>> 1c07c9c3d4074700abfde1dac7cd16cc612df971
     }
 }
