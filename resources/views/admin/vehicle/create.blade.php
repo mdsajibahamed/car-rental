@@ -75,7 +75,7 @@
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Image</label>
-                  <input type="file" class="form-control" name="image" placeholder="image" value="{{old("image")}}">
+                  <input type="file" class="form-control" name="image" placeholder="image" value="{{old("image")}}" multiple>
                </div>
                <div class="form-group">
                   <label for="" class="form-label mt-2">Serial Number</label>

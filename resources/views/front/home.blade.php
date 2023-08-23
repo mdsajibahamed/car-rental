@@ -210,7 +210,7 @@
                 @forelse ($vehicles as $vehicle)
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
-                        <img class="img-fluid mb-4" src="{{ asset('img/vehicle'. $vehicle->image)  }}" alt="">
+                        <img class="img-fluid mb-4" src="{{ asset('img/vehicle/') . $vehicle->image }}" alt="">
                         <h4 class="text-uppercase mb-4">{{$vehicle->model}}</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
