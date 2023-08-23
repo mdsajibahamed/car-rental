@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+use Database\Seeders\RoleSeeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -24,10 +25,10 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             TypeSeeder::class,
             BrandSeeder::class,
+            VehicleSeeder::class,
             BookingSeeder::class,
             LocationSeeder::class,
             ThanaSeeder::class,
-            VehicleSeeder::class,
         ]);
     }
 }
