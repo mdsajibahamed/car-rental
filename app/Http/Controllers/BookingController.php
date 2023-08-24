@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Detail;
+use App\Models\Location;
 use App\Models\User;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
@@ -23,10 +24,12 @@ class BookingController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
+{   
+        $users = User::all();
+        $locations =Location::all();
         $vehicles = Vehicle::all();
         $details = Detail::all();
-        return view('admin.booking.create',compact('details','vehicles')); 
+        return view('admin.booking.create',compact('details','vehicles','users','locations')); 
     }
 
     /**

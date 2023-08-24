@@ -40,6 +40,7 @@ Route::get('/contact', [FrontController::class, 'contact'])->name('site.contact'
 Route::get('/detail', [FrontController::class, 'detail'])->name('car.detail');
 Route::get('/detail/{carDetails}', [FrontController::class, 'carDetails'])->name('car.details');
 Route::get('/booking', [FrontController::class, 'booking'])->name('site.booking');
+Route::post('/booking', [FrontController::class, 'storebooking'])->name('site.store.booking');
 Route::get('/team', [FrontController::class, 'team'])->name('site.team');
 Route::get('/testimonial', [FrontController::class, 'testimonial'])->name('site.testimonial');
 Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list');

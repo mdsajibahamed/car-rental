@@ -18,7 +18,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Detail Id </label>
-                                <select name="detail_id" class="form-select" id="">
+                                <select name="user_id" class="form-select" id="">
                                 @forelse ($users as $user)
                                     <option value="{{ $user->id }}">{{ $user->id }}</option>
                                 @empty
@@ -40,18 +40,69 @@
                                 <label for="" class="form-label mt-2">Pickup Lacation</label>
                                 <select class="form-select mt-2" name="location_from">
                                     <option selected>Pickup Location</option>
-                                    <option value="Dhaka">Dhaka</option>
-                                    <option value="Mirpur">Mirpur </option>
-                                    <option value="Dhanmondhi">Dhanmondhi</option>
-                                    <option value="Gulshan">Gulshan</option>
-                                    <option value="JatraBari">JatraBari</option>
-                                    <option value="Mohakhali">Mohakhali</option>
-                                    <option value="Khilgoan">Khilgoan</option>
-                                    <option value="Cantonment">Cantonment</option>
-                                    <option value="Keraniganj">Keraniganj</option>
-                                    <option value="Mohammadpur">Mohammadpur</option>
-                                    <option value="Saver">Saver</option>
-                                    <option value="Ashulia">Ashulia</option>
+                                    <option value="Manikgonj">Manikgonj</option>
+                                        <option value="Munshigonj">Munshigonj</option>
+                                        <option value="Narayangonj">Narayangonj</option>
+                                        <option value="kishoregonj">kishoregonj</option>
+                                        <option value="Gazipur">Gazipur</option>
+                                        <option value="Tangail">Tangail</option>
+                                        <option value="Norsingdi">Norsingdi</option>
+                                        <option value="Rajbari">Rajbari</option>
+                                        <option value="Faridpur">Faridpur</option>
+                                        <option value="Madaripur">Madaripur</option>
+                                        <option value="Gopalgonj">Gopalgonj</option>
+                                        <option value="Shariatpur">Shariatpur</option>
+                                        <option value="Dhaka">Dhaka</option>
+                                        <option value="Sherpur">Sherpur</option>
+                                        <option value="Netrokona">Netrokona</option>
+                                        <option value="Jamalpur">Jamalpur</option>
+                                        <option value="Mymensingh">Mymensingh</option>
+                                        <option value="Dinajpur">Dinajpur</option>
+                                        <option value="Rangpur">Rangpur</option>
+                                        <option value="Kurigram">Kurigram</option>
+                                        <option value="Gaibandha">Gaibandha</option>
+                                        <option value="Thakurgoan">Thakurgoan</option>
+                                        <option value="Nilphamari">Nilphamari</option>
+                                        <option value="Lalmonirhat">Lalmonirhat</option>
+                                        <option value="Panchagarh">Panchagarh</option>
+                                        <option value="Rajahahi">Rajahahi</option>
+                                        <option value="Natore">Natore</option>
+                                        <option value="Sirajgonj">Sirajgonj</option>
+                                        <option value="Pabna">Pabna</option>
+                                        <option value="Bogura">Bogura</option>
+                                        <option value="Joypurhat">Joypurhat</option>
+                                        <option value="Chapainawabgonj">Chapainawabgonj</option>
+                                        <option value="Naogoan">Naogoan</option>
+                                        <option value="Feni">Feni</option>
+                                        <option value="Coxsbazer">Coxsbazer</option>
+                                        <option value="Rangamati">Rangamati</option>
+                                        <option value="Khagrachhari">Khagrachhari</option>
+                                        <option value="Bandarban">Bandarban</option>
+                                        <option value="Chattogram">Chattogram</option>
+                                        <option value="Cumilla">Cumilla</option>
+                                        <option value="Brahmanbaria">Brahmanbaria</option>
+                                        <option value="Chadpur">Chadpur</option>
+                                        <option value="Lakshmipur">Lakshmipur</option>
+                                        <option value="Satkhira">Satkhira </option>
+                                        <option value="Meherpur">Meherpur</option>
+                                        <option value="Narail">Narail</option>
+                                        <option value="Chuadanga">Chuadanga</option>
+                                        <option value="Kushtia">Kushtia</option>
+                                        <option value="Magura">Magura</option>
+                                        <option value="Khulna">Khulna</option>
+                                        <option value="Bagerhut">Bagerhut</option>
+                                        <option value="Jashore">Jashore</option>
+                                        <option value="Jhenaidha">Jhenaidha</option>
+                                        <option value="Pathuakhali">Pathuakhali</option>
+                                        <option value="Pirojpur">Pirojpur</option>
+                                        <option value="Jhalakathi">Jhalakathi</option>
+                                        <option value="Bhola">Bhola</option>
+                                        <option value="Barguna">Barguna</option>
+                                        <option value="Barisal">Barisal</option>
+                                        <option value="Sylhet">Sylhet</option>
+                                        <option value="Moulvibazer">Moulvibazer</option>
+                                        <option value="Habigonj">Habigonj</option>
+                                        <option value="Sunamgonj">Sunamgonj</option>
                                 </select>
                             </div> 
                             <div class="form-group">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Location;
 use App\Models\Service;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
@@ -43,15 +44,17 @@ class FrontController extends Controller
 
     //
     public function carDetails (Request $request, $id) {
-        $vehicleId = $id;
+        // dd($id);
+       
 
          $bookings = Booking::all();
+         $locations = Location::all();
         //  dd($bookings);
         // find the vehicle 
-        $vehicles = Vehicle::find($vehicleId);
+        $vehicles = Vehicle::find($id); 
         // dd($vehicles->model);
     //    return view('front.car_detail', compact('vehicles'));
-    return view('front.car_detail', ['vehicles' => $vehicles,'bookings' =>$bookings]);
+    return view('front.car_detail', ['vehicles' => $vehicles,'bookings' =>$bookings, 'locations' =>$locations]);
     }
 
 
@@ -74,5 +77,10 @@ class FrontController extends Controller
     }
     public function invoice(){
         return view('front.invoice');
+    }
+    public function storebooking(Request $request){
+        // dd($request);
+       Booking::create($request->all());
+       return back()->with('info','Booking Complate');
     }
 }

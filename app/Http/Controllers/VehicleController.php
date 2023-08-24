@@ -60,7 +60,7 @@ class VehicleController extends Controller
         // }
 
 
-        $thumbnailName = '';
+        $thumbnailName = ''; 
         if($thumbnail= $request->file('thumbnail')){
             $thumbnailName = time(). '-'. uniqid(). '.' . $thumbnail->getClientOriginalExtension();
             $thumbnail->move('img/vehicle',$thumbnailName);
