@@ -107,7 +107,7 @@
                             <h1 class="display-2 text-white mt-n2 m-0"> {{ $loop->iteration}}</h1>
                         </div>
                         <h4 class="text-uppercase mb-3">{{$service->title}}</h4>
-                        {{-- <p class="m-0">{{$service->image}} </p> --}}
+                        <p class="m-0">{{$service->description}} </p>
                         <div class="d-flex justify-content-between table-resposive">
                             <h3 class="m-0">{{$service->price}} </h3>
                             <a class="btn btn-primary px-3" href="{{ route('site.invoice')}}">{{ __('View') }}</a>

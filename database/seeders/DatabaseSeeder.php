@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\Payment;
 use Database\Seeders\RoleSeeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -29,6 +31,8 @@ class DatabaseSeeder extends Seeder
             BookingSeeder::class,
             LocationSeeder::class,
             ThanaSeeder::class,
+            PaymentSeeder::class,
+            ServiceSeeder::class,
         ]);
     }
 }

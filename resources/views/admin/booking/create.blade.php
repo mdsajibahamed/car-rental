@@ -16,8 +16,8 @@
                     <div> 
                         <form action="{{ route('booking.store')}}" method="POST">
                             @csrf
-                            <div class="form-group">
-                                <label for="" class="form-label">Detail Id </label>
+                            <div class="form-group"> 
+                                <label for="" class="form-label">User Id </label>
                                 <select name="user_id" class="form-select" id="">
                                 @forelse ($users as $user)
                                     <option value="{{ $user->id }}">{{ $user->id }}</option>
@@ -205,6 +205,14 @@
                             <div class="form-group">
                                 <label for="" class="form-label mt-3"> Total Amount</label>
                                 <input type="text" name="total_amount" value="{{old('total_amount')}}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="form-label mt-3">Add Payment</label>
+                               <select name="add_payment" id="">
+                                <option value="cash">Cash</option>
+                                <option value="bkash">bKash</option>
+                                <option value="nagad">Nagad</option>
+                               </select>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-outline-primary mt-3" value="Insert">

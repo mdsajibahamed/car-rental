@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string("return_date")->nullable();
             $table->string("total_days")->nullable();
             $table->tinyInteger("status")->nullable();
+            $table->string(("add_payment"))->nullable();
             $table->string("total_amount");
             $table->timestamps();
         });

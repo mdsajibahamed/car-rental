@@ -155,6 +155,17 @@
                                         data-target="#amount" data-toggle="total_amount" />
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div   class="text" id="add_payment" >
+                                    <select name="add_payment" class="custom-select px-4" style="height: 50px;">
+                                        <option value="">Select Payment Option</option>
+                                        <option value="cash">Cash</option>
+                                        <option value="bkash">bKash</option>
+                                        <option value="nagad">Nagad</option>
+                                    </select>
+
+                                </div>
+                            </div>
                             
                             <div class="form-group mb-0">
                                 <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Check Now</button>

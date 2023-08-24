@@ -58,6 +58,10 @@
                             <label for="" class="form-label">Total Amount</label>
                             <input type="text" class="form-control" name="total_amount" placeholder="{{ __('total_amount....')}}" value="{{ $booking->total_amount }}">
                         </div>
+                        <div class="form-group">
+                            <label for="" class="form-label">Add Payment</label>
+                            <input type="text" class="form-control" name="add_payment" placeholder="{{ __('add_payment....')}}" value="{{ $booking->add_payment }}">
+                        </div>
                         <input type="submit" value="Update" class="btn btn-outline-primary mt-3">
                        </form>
                     </div>

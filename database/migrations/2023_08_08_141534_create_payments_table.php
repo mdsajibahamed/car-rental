@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->bigInteger("booking_id")->unsigned()->nullable();
             $table->foreign("booking_id")->references("id")->on("bookings")->onDelete('cascade');
-            $table->bigInteger("service_id")->unsigned()->nullable();
-            $table->foreign("service_id")->references("id")->on("services")->onDelete('cascade');
+            // $table->bigInteger("service_id")->unsigned()->nullable();
+            // $table->foreign("service_id")->references("id")->on("services")->onDelete('cascade');
             $table->string("payment_date");
             $table->string("payment_type");
-            $table->string("trxid")->nullValue();
-            $table->string("amount");
+            $table->string("trxid")->nullable();
+            $table->string("amount")->nullable();
             $table->timestamps();
         });
     }
