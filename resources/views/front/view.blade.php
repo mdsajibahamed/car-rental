@@ -1,4 +1,4 @@
-@extends('layouts.front') <!-- Use your layout file -->
+{{-- @extends('layouts.front') <!-- Use your layout file -->
 
 @section('content')
     <div class="container">
@@ -16,4 +16,4 @@
             </div>
         </div>
     </div>
-@endsection
+@endsection --}}

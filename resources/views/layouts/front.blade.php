@@ -55,6 +55,8 @@
     @include('partials.front.search')
     
     @yield('hero')
+    @include('partials.error')
+    @include('partials.flash')
     
     @yield('content')
 

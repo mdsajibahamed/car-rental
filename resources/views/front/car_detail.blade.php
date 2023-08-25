@@ -108,7 +108,7 @@
                              {{-- checked avality end  --}}
                 <div class="col-8 col-lg-12 mb-5">
                     <div class="bg-secondary p-5">
-                        <h3 class="text-primary text-center mb-4">Submit</h3>
+                        <h3 class="text-primary text-center mb-4"> Book a Car</h3>
                         <form action="{{ route('site.store.booking')}}" method="POST">
                             @csrf
                             <input type="hidden" name="user_id" id="" value="{{isset(Auth::user()->id) ? Auth::user()->id : ''}}">
@@ -168,7 +168,7 @@
                             </div>
                             
                             <div class="form-group mb-0">
-                                <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Check Now</button>
+                                <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Submit</button>
                             </div>
                         </form>
                         

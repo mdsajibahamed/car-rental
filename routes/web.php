@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\BserviceController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\LocationController;
@@ -45,13 +46,17 @@ Route::get('/team', [FrontController::class, 'team'])->name('site.team');
 Route::get('/testimonial', [FrontController::class, 'testimonial'])->name('site.testimonial');
 Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list');
 // Route::get('/car_list/{$id}', [VehicleController::class, 'show'])->name('site.vehicle');
-Route::get('service_view/{$id}',[ServiceController::class, 'show'])->name('service.view');
+// Route::get('service_view/{$id}',[ServiceController::class, 'show'])->name('service.view');
 
-Route::get('/invoice',[FrontController::class,'invoice'])->name('site.invoice');
+ 
+Route::get('/invoices/{invoices}',[FrontController::class,'invoices'])->name('site.invoice');
+Route::resource('bservice',BserviceController::class);
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/form', [AdminController::class, 'form'])->name('form.dashboard');
+    Route::get('bservice',[BserviceController::class,'index'])->name('bservice.booking');
+    Route::get('bservice',[BserviceController::class,'edit'])->name('bservice.booking');
     Route::resource( 'vehicle', VehicleController::class );
     Route::resource( 'service', ServiceController::class );
     Route::resource( 'role', RoleController::class );

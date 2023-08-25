@@ -28,7 +28,8 @@ class FrontController extends Controller
     }
     //
     public function service(){
-        return view('front.service');
+        $services= Service::all(); 
+        return view('front.service', compact('services'));
     }
     //
     public function contact(){
@@ -75,8 +76,11 @@ class FrontController extends Controller
     public function car_list(){
         return view('front.car_list');
     }
-    public function invoice(){
-        return view('front.invoice');
+    public function invoices(Request $request, $id){
+        // dd($request);
+        $services = Service::find($id);
+        
+        return view('front.invoice',['services' =>$services]);
     }
     public function storebooking(Request $request){
         // dd($request);

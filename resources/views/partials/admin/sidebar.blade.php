@@ -22,6 +22,7 @@
             <a href="{{route('type.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-list-task"></i>Type</a>
             <a href="{{route('role.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-menu-button-wide"></i>Role</a>
             <a href="{{route('booking.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-bookmark-plus-fill"></i>Booking </a>
+            <a href="{{route('bservice.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-bookmark-plus-fill"></i>Booking Services </a>
             <a href="{{route('payment.index')}}" class="nav-item nav-link"><i class=" me-2 bi bi-credit-card-2-front"></i>Payment </a>
             <a href="{{route('location.index')}}" class="nav-item nav-link"><i class=" me-2  bi bi-unity"></i>Location </a>
 

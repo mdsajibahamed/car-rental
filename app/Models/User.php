@@ -60,4 +60,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Vehicle::class);
     }
+    /**
+     * Get the comments for the blog post.
+     */
+    public function bservice(): HasMany
+    {
+        return $this->hasMany(Bservice::class);
+    }
 }

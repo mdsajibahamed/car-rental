@@ -3,6 +3,109 @@
     {{__('Invoice')}}
 @endsection
 @section('content')
+
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <div class="row d-flex align-items-baseline">
+        <div class="col-xl-9">
+          <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                {{-- <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
+                    <i class="fa fa-2x fa-car text-secondary"></i>
+                </div> --}}
+                <h1 class="display-2 text-white mt-n2 m-0">01</h1>
+            </div>
+            <h4 class="text-uppercase mb-3">{{$services->title}}</h4>
+            <p class="m-0">{{$services->description}}</p>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="d-flex align-items-center  bg-primary ml-n4">
+                 <h3>{{$services->price}}</h3>
+              </div>
+              <a class="btn btn-primary px-3" href=" ">{{ __('Book') }}</a>
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 justify-content-center">
+      <div class="col-8 col-lg-12 mb-5">
+      <div class="bg-secondary p-5"> 
+      <h3 class="text-primary text-center mb-4"> Book  a Service </h3>
+      <form action="{{route('bservice.store')}}" method="POST">
+          @csrf
+
+              <input type="hidden" name="user_id" id="" value="{{isset(Auth::user()->id) ? Auth::user()->id : ''}}">
+              <input type="hidden" name="service_id" value="{{$services->id}}">
+              <div class="form-group">
+                  <select name="location" class="custom-select px-4" style="height: 50px;">
+                      <option selected >Select Location</option>
+                      <option value = "dhaka" >Dhaka</option>
+                      <option value = "saver" >Saver</option>
+                    
+                  </select>
+                  
+              </div>
+
+              <div class="form-group">
+                  <div class="date" id="date1" data-target-input="nearest">
+                      <input name="date" type="text" class="form-control p-4 datetimepicker-input" placeholder=" Date type"
+                          data-target="#date1" data-toggle="datetimepicker" />
+                  </div>
+              </div>
+              <div class="form-group">
+                <select name="service_type" class="custom-select px-4" style="height: 50px;">
+                    <option selected>service  Type</option>
+                    <option value = "Repairing" >Repairing</option>
+                    <option value = "Cleaning" >Cleaning</option>
+                    <option value = "Painting" >Painting</option>
+                    <option value = "Refinancing" >Refinancing</option>
+                    <option value = "Wasing" >Wasing</option>
+                    <option value = "Inspection" >Inspection</option>
+                    <option value = "Rim Repairs" >Rim Repairs</option>
+                  
+                </select>
+                
+            </div>
+              {{-- <div class="form-group">
+                  <div   class="text" id="amount" >
+                      <input name="amount" type="text" class="form-control p-4 total_amount-input" placeholder="Amount"
+                          data-target="#amount" data-toggle="total_amount" />
+                  </div>
+              </div> --}}
+              <div class="form-group">
+                  <div   class="text" id="payment_type" >
+                      <select name="payment_type" class="custom-select px-4" style="height: 50px;">
+                          <option value="">Select Payment Option</option>
+                          <option value="cash">Cash</option>
+                          <option value="bkash">bKash</option>
+                          <option value="nagad">Nagad</option>
+                      </select>
+
+                  </div>
+              </div>
+              
+              <div class="form-group mb-0">
+                  <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Submit</button>
+              </div>
+      </form>
+      
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <div class="card">
     <div class="card-body">
       <div class="container mb-5 mt-3">

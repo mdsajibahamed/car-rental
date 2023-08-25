@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             ThanaSeeder::class,
             PaymentSeeder::class,
             ServiceSeeder::class,
+            BserviceSeeder::class,
         ]);
     }
 }

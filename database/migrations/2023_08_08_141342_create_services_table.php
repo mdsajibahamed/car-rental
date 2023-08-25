@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("title", 50);
             $table->string("highlights");
             $table->text("description")->nullable();
-            $table->decimal("price", 10, 2);
+            $table->string("price")->nullable();
             $table->tinyInteger('status')->default(0);
             $table->string('image')->nullable();
             $table->timestamps();

@@ -1,0 +1,4 @@
+php artisan migrate:fresh --seed 
+php artisan make:model Brand -crmRs
+php artisan server
+php artisan make:seeder ServiceSeeder
