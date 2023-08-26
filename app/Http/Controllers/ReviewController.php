@@ -20,7 +20,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return "hi";
     }
 
     /**
@@ -28,7 +28,12 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $this->validate($request,[
+            'user_id'=>"required",'vehicle_id'=>"required",'rating'=>"required",'comments'=>"required"
+        ]);
+        Review::create($request->all());
+        return back()->with('info', 'Comments added');
     }
 
     /**
@@ -36,7 +41,7 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
-        //
+       
     }
 
     /**

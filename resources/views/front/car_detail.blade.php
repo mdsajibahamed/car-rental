@@ -89,6 +89,39 @@
                         </div>
                     </div>
                </div>
+                    <div class="container-fluid py-5">
+                        <h3>Add To Comment</h3>
+                        <form action="{{route('review.store')}}"  method="POST" >
+                            @csrf
+                            <textarea name="comments" class="form-control" rows="4" placeholder="Write a comment..."></textarea>
+                            <input type="hidden" name="vehicle_id" value="{{ $vehicles->id }}">
+                            <input type="hidden" name="user_id" id="" value="{{isset(Auth::user()->id) ? Auth::user()->id : ''}}">
+                            {{-- <input type="text" name="rating" class="form-control mt-2" placeholder="Add to rating" > --}}
+                            <label class="form-label" for="">Add To Rating :</label>
+                            <div class="star-rating">
+                                @for ($i = 1; $i <= 5; $i++)
+                                   
+                                    <input  type="radio" name="rating" id="rating{{ $i }}" place value="{{ $i }}">
+                                    <label for="rating{{ $i }}"></label>
+                                @endfor
+                            </div>
+                            <button type="submit" class="btn btn-outline-warning my-3">Submit</button>
+                        </form>
+                        
+                    </div>
+                    <div class="container">
+                        
+                            @foreach ($reviews as $review)
+                            <div  style="padding: 5px; margin:5px; border: 1px solid gold; box-sizing:border-box;">
+                                <p>User Id :   {{$review->user_id}}</p>
+                                <p> Message :  {{$review->comments}}</p>
+                                <p> Date :  {{$review->created_at->diffforhumans()}}</p>
+                            </div>
+                            @endforeach
+                   
+                    </div>
+
+            
                 
                           {{-- checked avality --}}
                         <div class="mapouter my-5 justify items center">
@@ -104,7 +137,7 @@
                         </div>
 
 
-
+ 
                              {{-- checked avality end  --}}
                 <div class="col-8 col-lg-12 mb-5">
                     <div class="bg-secondary p-5">
@@ -143,18 +176,18 @@
                                         data-target="#date2" data-toggle="datetimepicker" />
                                 </div>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <div   class="text" id="days" >
                                     <input name="total_days" type="text" class="form-control p-4 total_days-input" placeholder="Total Days"
                                         data-target="#days" data-toggle="total_days" value="2"/>
                                 </div>
-                            </div>
-                            <div class="form-group">
+                            </div> --}}
+                            {{-- <div class="form-group">
                                 <div   class="text" id="amount" >
                                     <input name="total_amount" type="text" class="form-control p-4 total_amount-input" placeholder="Total Amount"
                                         data-target="#amount" data-toggle="total_amount" />
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <div   class="text" id="add_payment" >
                                     <select name="add_payment" class="custom-select px-4" style="height: 50px;">
@@ -164,7 +197,7 @@
                                         <option value="nagad">Nagad</option>
                                     </select>
 
-                                </div>
+                                </div> 
                             </div>
                             
                             <div class="form-group mb-0">
@@ -178,7 +211,6 @@
         </div>
     </div>
     <!-- Detail End -->
-
 
     <!-- Related Car Start -->
     <div class="container-fluid pb-5">
@@ -267,6 +299,8 @@
     <!-- Related Car End -->
 
 
+
+
     <!-- Vendor Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
@@ -300,4 +334,16 @@
     </div>
     <!-- Vendor End -->
 
+@endsection
+@section('script')
+<script>
+    const stars = document.querySelectorAll('.star-rating input[type="radio"]');
+    const ratingInput = document.getElementById('rating-input');
+
+    stars.forEach((star) => {
+        star.addEventListener('change', (event) => {
+            ratingInput.value = event.target.value;
+        });
+    });
+</script>
 @endsection

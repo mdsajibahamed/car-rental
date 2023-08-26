@@ -65,7 +65,7 @@ class VehicleController extends Controller
             $thumbnailName = time(). '-'. uniqid(). '.' . $thumbnail->getClientOriginalExtension();
             $thumbnail->move('img/vehicle',$thumbnailName);
         }
-         
+          
         $imageName = '';
         if($image = $request->file('image')){
             $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
@@ -83,7 +83,7 @@ class VehicleController extends Controller
      */
     public function show(Vehicle $vehicle)
     {
-    //   $vehicle = Vehicle::all();
+    //   $vehicle = Vehicle::all(); 
     
         return view('admin.vehicle.single')->with('vehicle',$vehicle);
     }

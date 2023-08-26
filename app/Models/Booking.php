@@ -18,7 +18,7 @@ class Booking extends Model
         'return_date',
         'total_days',
         'status',
-        'total_amount',
+        // 'total_amount',
         'add_payment'
     ];
 

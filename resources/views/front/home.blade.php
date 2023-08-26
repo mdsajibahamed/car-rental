@@ -99,23 +99,30 @@
             <div class="row">
                 @foreach($services as $service)
                 <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="service-item d-flex flex-column justify-content-center px-6 mb-4">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
-                                <i class="fa fa-2x fa-taxi text-secondary"></i>
+                    <div class="rent-item mb-4">
+                        <img class="img-fluid mb-4" src="{{ asset('img/vehicle/') . $service->image }}" alt="">
+                        <h4 class="text-uppercase mb-4">{{$service->title}}</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>{{$service->status}}</span>
                             </div>
-                            <h1 class="display-2 text-white mt-n2 m-0"> {{ $loop->iteration}}</h1>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>{{$service->highlights}}</span>
+                            </div>
+                           
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>{{$service->price}}</span>
+                            </div>
                         </div>
-                        <h4 class="text-uppercase mb-3">{{$service->title}}</h4>
-                        <p class="m-0">{{$service->description}} </p>
-                        <div class="d-flex justify-content-between table-resposive">
-                            <h3 class="m-0">{{$service->price}} </h3>
-                            <a class="btn btn-primary px-3" href="{{ route('site.invoice',$service->id)}}">{{ __('View') }}</a>
-                        </div>
+                        <a class="btn btn-primary px-3" href="">   {{$service->highlights}} </a>
+                        <a class="btn btn-primary px-3" href="{{ route('site.invoice',$service->id)}}">{{ __('View') }}</a>
                     </div>
-                </div>
+                </div> 
                 @endforeach
-                    
+
                 
                 
                 {{-- <div class="col-lg-4 col-md-6 mb-2">
@@ -227,7 +234,7 @@
                                 <span>{{$vehicle->price}}</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href=""> Per/Day - {{$vehicle->rentamount}}</a>
+                        <a class="btn btn-primary px-3" href="">   {{$vehicle->rentamount}}  --Per/Day</a>
                         <a class="btn btn-primary px-3" href="{{ route('car.details', $vehicle->id ) }}">{{ __('View') }}</a>
                     </div>
                 </div> 

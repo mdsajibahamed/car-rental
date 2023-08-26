@@ -9,6 +9,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\Paymentcontroller;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TypeController;
@@ -47,10 +48,12 @@ Route::get('/testimonial', [FrontController::class, 'testimonial'])->name('site.
 Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list');
 // Route::get('/car_list/{$id}', [VehicleController::class, 'show'])->name('site.vehicle');
 // Route::get('service_view/{$id}',[ServiceController::class, 'show'])->name('service.view');
-
+ 
  
 Route::get('/invoices/{invoices}',[FrontController::class,'invoices'])->name('site.invoice');
 Route::resource('bservice',BserviceController::class);
+Route::resource('review',ReviewController::class);
+
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');

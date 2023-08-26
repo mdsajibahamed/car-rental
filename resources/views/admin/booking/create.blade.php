@@ -189,10 +189,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="" class="form-label mt-3"> Total Day</label>
                                 <input type="text" name="total_days" value="{{old('total_days')}}" class="form-control">
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label for="" class="form-label mt-3"> Status</label>
                                 <select name="status" class="form-control" id="">

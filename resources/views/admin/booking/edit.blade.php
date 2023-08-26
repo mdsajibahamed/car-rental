@@ -59,6 +59,14 @@
                             <input type="text" class="form-control" name="total_amount" placeholder="{{ __('total_amount....')}}" value="{{ $booking->total_amount }}">
                         </div>
                         <div class="form-group">
+                            <label for="" class="form-label">Status</label>
+                            <select name="status" class="form-control" id="">
+                                <option value="">{{__('choose status')}}</option>
+                                <option value="1" {{$booking->status === 1 ? 'selected' : ''}}>{{__('Complate')}}</option>
+                                <option value="0" {{$booking->status === 0 ? 'selected' : ''}}>{{__('Pending')}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="" class="form-label">Add Payment</label>
                             <input type="text" class="form-control" name="add_payment" placeholder="{{ __('add_payment....')}}" value="{{ $booking->add_payment }}">
                         </div>

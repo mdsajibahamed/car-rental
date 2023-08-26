@@ -30,6 +30,7 @@
                                     <th>Picked Location</th>
                                     <th>Drop Location</th>
                                     <th>Total Amount</th>
+                                    <th>Status</th>
                                     <th>Date Create</th>
                                     <th>Action</th>
                                 </tr>
@@ -43,6 +44,16 @@
                                     <td>{{$booking->location_from}}</td>
                                     <td>{{$booking->location_to}}</td>
                                     <td>{{$booking->total_amount}}</td>
+                                    <td>
+                                    @if($booking->status ===1){
+                                        <span class="badge bg-danger">{{ __('complate') }}</span>
+                                    }@elseif($booking->status === 0){
+                                        
+                                        <span class="badge bg-success">{{__('pending')}}</span>
+                                    }@else
+                                        <span class="badge bg-secondary">{{__('Disable')}}</span>
+                                    @endif
+                                </td>
                                     <td>{{ $booking->created_at->diffforhumans() }}</td>
                                     <td >
                                         {{-- <a href=""><i class="bi bi-eye-fill"></i></a> --}}

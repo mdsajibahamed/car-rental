@@ -52,11 +52,15 @@
 <body>
     @include('partials.front.topbar')
     @include('partials.front.navbar')
-    @include('partials.front.search')
+    {{-- @include('partials.front.search') --}}
     
     @yield('hero')
-    @include('partials.error')
-    @include('partials.flash')
+    <div class="container">
+        
+            @include('partials.error')
+            @include('partials.flash')
+        
+    </div>
     
     @yield('content')
 
@@ -80,6 +84,8 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('js/main2.js')}}"></script>
+    @yield('script')
 </body>
 
 </html>
