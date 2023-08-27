@@ -40,21 +40,29 @@ Route::get('/contact', [FrontController::class, 'contact'])->name('site.contact'
 // Route::get('/detail', [FrontController::class, 'detail'])->name('site.detail');
 // Route::get('/view', [FrontController::class, 'views'])->name('service.view');
 Route::get('/detail', [FrontController::class, 'detail'])->name('car.detail');
-Route::get('/detail/{carDetails}', [FrontController::class, 'carDetails'])->name('car.details');
 Route::get('/booking', [FrontController::class, 'booking'])->name('site.booking');
-Route::post('/booking', [FrontController::class, 'storebooking'])->name('site.store.booking');
 Route::get('/team', [FrontController::class, 'team'])->name('site.team');
 Route::get('/testimonial', [FrontController::class, 'testimonial'])->name('site.testimonial');
 Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list');
+
+
+// booking controller 
+Route::get('/detail/{carDetails}', [FrontController::class, 'carDetails'])->name('car.details');
+Route::post('/booking', [FrontController::class, 'storebooking'])->name('site.store.booking');
 // Route::get('/car_list/{$id}', [VehicleController::class, 'show'])->name('site.vehicle');
 // Route::get('service_view/{$id}',[ServiceController::class, 'show'])->name('service.view');
  
- 
+//  service controiller
 Route::get('/invoices/{invoices}',[FrontController::class,'invoices'])->name('site.invoice');
 Route::resource('bservice',BserviceController::class);
+
+
 Route::resource('review',ReviewController::class);
+Route::get('/uvehicle',[FrontController::class,'uvehicle'])->name('site.uvehicle');
+Route::resource('payment', Paymentcontroller::class);
 
 
+//  this is a admin use
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/form', [AdminController::class, 'form'])->name('form.dashboard');
@@ -67,7 +75,6 @@ Route::prefix('admin')->group(function () {
     Route::resource('brand', BrandController::class);
     Route::resource('type', TypeController::class);
     Route::resource('booking', BookingController::class);
-    Route::resource('payment', Paymentcontroller::class);
     Route::resource('location', LocationController::class);
 
     // Route::get('/search',[AdminController::class,'search'])->name('search.dashboard');

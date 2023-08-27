@@ -38,7 +38,7 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$vehicle->brand_id}}</td>
                                 <td>{{$vehicle->model}}</td>
-                                <td><img class="width:30px" src="{{ asset('img/vahicle/'.$vehicle->image) }}" alt=""></td>
+                                <td>{{$vehicle->image}}</td>
                                 <td>{{$vehicle->type_id}}</td>
                                 <td>{{$vehicle->user_id}}</td>
                                 <td>{{$vehicle->seating_capacity}}</td>

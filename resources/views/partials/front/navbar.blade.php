@@ -42,9 +42,10 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <a class="nav-item" href="#" onclick="event.preventDefault();
-                            this.closest('form').submit();">Logout</a>
+                               this.closest('form').submit();">Logout</a>
                               </form>
                               <a class="dropdown-item"  href="https://laravel.com/" target="_blank">Something Wrong</a>
+                              <a class="dropdown-item"  href="" target="_blank">Add to Vehicle</a>
                           </div>
                        </div>  
                     @endauth

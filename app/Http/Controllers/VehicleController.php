@@ -30,7 +30,7 @@ class VehicleController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     */
+     */ 
     public function create()
     {
         $types = Type::all();
@@ -63,13 +63,13 @@ class VehicleController extends Controller
         $thumbnailName = ''; 
         if($thumbnail= $request->file('thumbnail')){
             $thumbnailName = time(). '-'. uniqid(). '.' . $thumbnail->getClientOriginalExtension();
-            $thumbnail->move('img/vehicle',$thumbnailName);
+            $thumbnail->move('img/',$thumbnailName);
         }
           
         $imageName = '';
         if($image = $request->file('image')){
             $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
-            $image->move('img/vehicle',$imageName);
+            $image->move('img/',$imageName);
         }
 
          Vehicle::create($request->all());
@@ -132,4 +132,5 @@ class VehicleController extends Controller
 
         }
     }
+   
 }

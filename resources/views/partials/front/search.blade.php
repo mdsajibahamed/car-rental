@@ -145,41 +145,7 @@
 </div>
 <!-- Modal -->
 
-{{-- <div class="modal fade w-100" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="">
-            <label for="" class="form-label">Pickup Location</label>
-            <select class="form-control" name="" id="">
-              <option value="">Select</option>
-              <option value="">Dhaka</option>
-            </select>
-            <label for="" class="form-label">Drop Location</label>
-            <select name="" id="" class="form-control">
-              <option value="">Select</option>
-              <option value="">Manikgonj</option>
-              <option value="">Munshigonj</option>
-              <option value="">Tangil</option>
-            </select>
-            <label for="" class="form-label">Date</label>
-            <input type="date" class="form-control">
-            <label for="" class="form-label">Time</label>
-            <input type="text" class="form-control">
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- Search End --> --}}
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">

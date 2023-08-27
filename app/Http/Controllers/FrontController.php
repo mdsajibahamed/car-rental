@@ -148,4 +148,8 @@ class FrontController extends Controller
        
        return back()->with('info','Booking Complate');
     }
+
+    public function uvehicle(){
+        return view('front.uvehicle');
+    }
 }

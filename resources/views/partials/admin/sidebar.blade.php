@@ -13,7 +13,7 @@
                 <h6 class="mb-0">SAJIB</h6>
                 <span>Admin</span>
             </div>
-        </div>
+        </div> 
         <div class="navbar-nav w-100">
             <a href="{{route('admin.dashboard')}}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <a href="{{route('vehicle.index')}}" class="nav-item nav-link"><i class="me-2 bi bi-car-front"></i>Vehicle</a>

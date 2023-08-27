@@ -33,9 +33,9 @@ class Paymentcontroller extends Controller
     public function store(Request $request)
     {
        
-        // dd($request);
-        Payment::create($request->all());
-        return back()->with('info','Payment Create successfully');
+        dd($request);
+        // Payment::create($request->all());
+        // return back()->with('info','Payment Create successfully');
     }
 
     /**

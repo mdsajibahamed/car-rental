@@ -101,7 +101,8 @@
                             <div class="star-rating">
                                 @for ($i = 1; $i <= 5; $i++)
                                    
-                                    <input  type="radio" name="rating" id="rating{{ $i }}" place value="{{ $i }}">
+                                    {{-- <input  type="radio" name="rating" id="rating{{ $i }}" place value="{{ $i }}"> --}}
+                                    <i class="bi bi-star" name="rating" id="rating{{ $i }}" place value="{{ $i }}"></i>
                                     <label for="rating{{ $i }}"></label>
                                 @endfor
                             </div>
@@ -113,7 +114,8 @@
                         
                             @foreach ($reviews as $review)
                             <div  style="padding: 5px; margin:5px; border: 1px solid gold; box-sizing:border-box;">
-                                <p>User Id :   {{$review->user_id}}</p>
+                                {{-- <p>User Id :   {{$review->user_id}}</p> --}}
+                                <p>User Name :   {{isset(Auth::user()->id) ? Auth::user()->name : ''}}</p>
                                 <p> Message :  {{$review->comments}}</p>
                                 <p> Date :  {{$review->created_at->diffforhumans()}}</p>
                             </div>
@@ -142,7 +144,8 @@
                 <div class="col-8 col-lg-12 mb-5">
                     <div class="bg-secondary p-5">
                         <h3 class="text-primary text-center mb-4"> Book a Car</h3>
-                        <form action="{{ route('site.store.booking')}}" method="POST">
+                        <form action="{{route('booking.store')}}" method="post">
+                            
                             @csrf
                             <input type="hidden" name="user_id" id="" value="{{isset(Auth::user()->id) ? Auth::user()->id : ''}}">
                             <input type="hidden" name="vehicle_id" value="{{$vehicles->id}}">
@@ -188,7 +191,7 @@
                                         data-target="#amount" data-toggle="total_amount" />
                                 </div>
                             </div> --}}
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <div   class="text" id="add_payment" >
                                     <select name="add_payment" class="custom-select px-4" style="height: 50px;">
                                         <option value="">Select Payment Option</option>
@@ -198,10 +201,13 @@
                                     </select>
 
                                 </div> 
-                            </div>
+                            </div> --}}
                             
                             <div class="form-group mb-0">
                                 <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Submit</button>
+                            </div>
+                            <div class="form-group mb-0">
+                                <a href="{{route('payment.create')}}" type="submit" class="btn btn-outline-primary">Checkout</a>
                             </div>
                         </form>
                         
