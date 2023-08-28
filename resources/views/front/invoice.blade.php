@@ -147,7 +147,7 @@
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
                     class="fw-bold">ID:</span> 123-456</li>
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
-                    class="fw-bold">Creation Date: </span>August  22,2023</li>
+                    class="fw-bold">Creation Date: </span>August  30,2023</li>
                 <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
                     class="me-1 fw-bold">Status</span><span class="badge bg-warning text-black fw-bold">
                     Paid</span></li>  
@@ -162,19 +162,20 @@
                   <th scope="col">#</th>
                   <th scope="col">Description</th>
                   <th scope="col">Name</th>
-                  <th scope="col">Vehicle Name</th>
-                  <th scope="col">Per/km price </th>
+                  <th scope="col">paymenat type</th>
+                  <th scope="col"> price </th>
                   <th scope="col">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Toyota X50 </td>
-                  <td>Johan</td>
-                  <td>Toyota X50</td>
-                  <td>$5</td>
-                  <td>$300</td>
+                  <td>Car painting service </td>
+                  <td>Car painting </td>
+                  <td>bkash</td>
+                  <td>5000</td>
+                  <td>5000 Tk</td>
+                  {{-- <td>5000 Tk</td> --}}
                 </tr>
               </tbody>
   
@@ -200,11 +201,11 @@
             </div>
             <div class="col-xl-4">
               <ul class="list-unstyled">
-                <li class="text-muted ms-3"><span class="text-black me-4">SubTotal</span>$300</li>
-                <li class="text-muted ms-3 mt-2"><span class="text-black me-4">Tax(5%)</span>$285</li>
+                <li class="text-muted ms-3"><span class="text-black me-4">SubTotal</span>5000 Tk</li>
+                <li class="text-muted ms-3 mt-2"><span class="text-black me-4">Tax(10%)</span>500 Tk</li>
               </ul>
-              <p class="text-black float-start"><span class="text-black me-3"> Total Amount</span><span
-                  style="font-size: 25px;">$285</span></p>
+              <p class="text-black float-start"><span class="text-black me-3"> Total Amount  :</span><span
+                  style="font-size: 25px;"> 4500 Tk</span></p>
             </div>
           </div>
           <hr>

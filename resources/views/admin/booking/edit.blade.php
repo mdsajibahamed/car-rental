@@ -62,8 +62,8 @@
                             <label for="" class="form-label">Status</label>
                             <select name="status" class="form-control" id="">
                                 <option value="">{{__('choose status')}}</option>
-                                <option value="1" {{$booking->status === 1 ? 'selected' : ''}}>{{__('Complate')}}</option>
                                 <option value="0" {{$booking->status === 0 ? 'selected' : ''}}>{{__('Pending')}}</option>
+                                <option value="1" {{$booking->status === 1 ? 'selected' : ''}}>{{__('Complate')}}</option>
                             </select>
                         </div>
                         <div class="form-group">

@@ -41,8 +41,12 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="" class="form-label">Amount </label>
-                            <input type="text" class="form-control" name="amount" placeholder="{{ __('amount....')}}" value="{{ $payment->amount }}">
+                            <label for="" class="form-label">Status</label>
+                            <select name="status" class="form-control" id="">
+                                <option value="">{{__('choose status')}}</option>
+                                <option value="1" {{$payment->status === 1 ? 'selected' : ''}}>{{__('Complate')}}</option>
+                                <option value="0" {{$payment->status === 0 ? 'selected' : ''}}>{{__('Pending')}}</option>
+                            </select>
                         </div>
                         <input type="submit" value="Update" class="btn btn-outline-primary mt-3">
                     </form>

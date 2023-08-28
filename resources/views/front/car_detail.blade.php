@@ -101,8 +101,8 @@
                             <div class="star-rating">
                                 @for ($i = 1; $i <= 5; $i++)
                                    
-                                    {{-- <input  type="radio" name="rating" id="rating{{ $i }}" place value="{{ $i }}"> --}}
-                                    <i class="bi bi-star" name="rating" id="rating{{ $i }}" place value="{{ $i }}"></i>
+                                    <input  type="radio" name="rating" id="rating{{ $i }}" place value="{{ $i }}">
+                                    {{-- <i class="bi bi-star" name="rating" id="rating{{ $i }}" place value="{{ $i }}"></i> --}}
                                     <label for="rating{{ $i }}"></label>
                                 @endfor
                             </div>
@@ -206,9 +206,9 @@
                             <div class="form-group mb-0">
                                 <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Submit</button>
                             </div>
-                            <div class="form-group mb-0">
+                            {{-- <div class="form-group mb-0">
                                 <a href="{{route('payment.create')}}" type="submit" class="btn btn-outline-primary">Checkout</a>
-                            </div>
+                            </div> --}}
                         </form>
                         
                     </div>

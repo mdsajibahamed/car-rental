@@ -51,12 +51,13 @@ class FrontController extends Controller
         $reviews = Review::orderBy('created_at','desc')->paginate('5');
          $bookings = Booking::all();
          $locations = Location::all();
+         $vehicles = Vehicle::all();
         //  dd($bookings);
         // find the vehicle 
         $vehicles = Vehicle::find($id); 
         // dd($vehicles->model);
     //    return view('front.car_detail', compact('vehicles'));
-    return view('front.car_detail', ['vehicles' => $vehicles,'bookings' =>$bookings, 'locations' =>$locations,'reviews'=>$reviews]);
+    return view('front.car_detail', ['vehicles' => $vehicles,'bookings' =>$bookings, 'locations' =>$locations,'reviews'=>$reviews ,'vehicles'=>$vehicles]);
     }
 
 

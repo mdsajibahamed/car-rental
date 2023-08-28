@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("payment_type");
             $table->string("trxid")->nullable();
             $table->string("amount")->nullable();
+            $table->string("status")->nullable();
             $table->timestamps();
         });
     }

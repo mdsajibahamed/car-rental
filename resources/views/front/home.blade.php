@@ -217,7 +217,7 @@
                 @forelse ($vehicles as $vehicle)
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
-                        <img class="img-fluid mb-4"src="{{ asset('img/'.$vehicle->thumbnail)}}" alt="Vehicle Image">
+                        {{-- <img class="img-fluid mb-4"src="{{ asset('img/vehicle/'.$vehicle->thumbnail)}}" alt="Vehicle Image"> --}}
                         <h4 class="text-uppercase mb-4">{{$vehicle->model}}</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
@@ -242,7 +242,7 @@
                     
                 @endforelse
                 
-                <div class="col-lg-4 col-md-6 mb-2">
+                {{-- <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item active mb-4">
                         <img class="img-fluid mb-4" src="img/car-rent-2.png" alt="">
                         <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
@@ -388,7 +388,7 @@
                         </div>
                         <a class="btn btn-primary px-3" href="">$90.00/Day</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

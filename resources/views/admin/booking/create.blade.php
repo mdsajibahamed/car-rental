@@ -196,10 +196,9 @@
                             <div class="form-group">
                                 <label for="" class="form-label mt-3"> Status</label>
                                 <select name="status" class="form-control" id="">
-
-                                    <option value="1">choose status....</option>
-                                    <option value="1">Enable</option>
+                                    <option value="">choose status....</option>
                                     <option value="0">Disable</option>
+                                    <option value="1">Enable</option>
                                 </select>
                             </div>
                             <div class="form-group">

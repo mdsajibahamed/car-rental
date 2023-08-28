@@ -20,7 +20,7 @@
                                     <th>SL </th>
                                     <th>Brand </th>
                                     <th>Model</th>
-                                    <th>Thumbnail</th>
+                                    {{-- <th>Thumbnail</th> --}}
                                     <th>Type</th>
                                     <th>User Id</th>
                                     <th>Seating Capacity</th>
@@ -38,7 +38,7 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$vehicle->brand_id}}</td>
                                 <td>{{$vehicle->model}}</td>
-                                <td>{{$vehicle->image}}</td>
+                                {{-- <td><img style="width: 50px; height:60px;" src="{{ asset('img/vehicle/'.$vehicle->thumbnail) }}" alt=""></td> --}}
                                 <td>{{$vehicle->type_id}}</td>
                                 <td>{{$vehicle->user_id}}</td>
                                 <td>{{$vehicle->seating_capacity}}</td>

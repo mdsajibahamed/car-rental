@@ -53,26 +53,41 @@ class VehicleController extends Controller
             'image'=> "required|mimes:png,jpg,jpeg"
         ]);
         
-        // if ($request->hasFile('thumbnail')) {
-        //     $imagePath = $request->file('thumbnail')->store('img', 'public');
-        //     // $food->thumbnail = $imagePath;
-        //     $request->thumbnail =$imagePath;
+       
+        // $vehicle = new Vehicle;
+        // $vehicle->model = $request->input('model');
+        // $vehicle->year = $request->input('year');
+        // $vehicle->status = $request->input('status');
+        // $vehicle->seating_capacity = $request->input('seating_capacity');
+        // $vehicle->rentamount = $request->input('seating_capacity');
+        // $vehicle->serial_number = $request->input('serial_number');
+        // $vehicle->owner_name = $request->input('owner_name');
+        // $vehicle->owner_phone = $request->input('owner_phone');
+        // $vehicle->price = $request->input('price');
+        // $vehicle->price = $request->input('price');
+        // if($request->hasFile('thumbnail')){
+        //     $file =$request->file('thumbnail');
+        //         $extention = $file->getClientOriginalExtension();
+        //         $filename = time().'.'.$extention;
+        //         $file->move('img/vehicle',$filename);
+        //         $vehicle->thumbnail = $filename;
         // }
+        // $vehicle->save();
 
 
-        $thumbnailName = ''; 
         if($thumbnail= $request->file('thumbnail')){
             $thumbnailName = time(). '-'. uniqid(). '.' . $thumbnail->getClientOriginalExtension();
-            $thumbnail->move('img/',$thumbnailName);
+            $thumbnail->move('img/vehicle',$thumbnailName);
         }
           
         $imageName = '';
         if($image = $request->file('image')){
             $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
-            $image->move('img/',$imageName);
+            $image->move('img/vehicle',$imageName);
         }
 
          Vehicle::create($request->all());
+
          return redirect()->route('vehicle.index')->with('success','successfully added');
 
         //  Vehicle is database 

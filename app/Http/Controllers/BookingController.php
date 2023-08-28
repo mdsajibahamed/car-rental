@@ -37,9 +37,22 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['location_from'=>"required|min:2|max:50",'picked_date'=>"required",'return_date'=>"required", 'user_id' =>"required",'location_to'=>"required|min:2|max:50"]);
-      Booking::create($request->all()); 
-      return redirect()->route('booking.create')->with('info','Create Successfully');
+        $this->validate($request,['location_from'=>"required|min:2|max:50",'return_date'=>"required", 'user_id' =>"required",'location_to'=>"required|min:2|max:50"]);
+        $earlier = new \DateTime($request->pickup_date);
+        $later = new \DateTime($request->return_date);
+
+        $abs_diff = $later->diff($earlier)->format("%a") + 1;
+
+    //    (array_merge($request->all(),['total_days'=>$abs_diff]));
+    //     dd($request->all());
+    //   $request->total_days = $abs_diff;
+
+    
+     
+
+       Booking::create(array_merge($request->all(),['total_days'=>$abs_diff]));
+       
+       return back()->with('info','Booking Complate');
     }
 
     /**

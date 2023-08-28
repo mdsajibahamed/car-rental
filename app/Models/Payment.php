@@ -13,7 +13,8 @@ class Payment extends Model
           'payment_date',
           'payment_type',
           'trxid',
-          'amount'
+          'amount',
+          'status'
     ];
     
 }

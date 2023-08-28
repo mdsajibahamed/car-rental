@@ -49,9 +49,7 @@ Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list
 // booking controller 
 Route::get('/detail/{carDetails}', [FrontController::class, 'carDetails'])->name('car.details');
 Route::post('/booking', [FrontController::class, 'storebooking'])->name('site.store.booking');
-// Route::get('/car_list/{$id}', [VehicleController::class, 'show'])->name('site.vehicle');
-// Route::get('service_view/{$id}',[ServiceController::class, 'show'])->name('service.view');
- 
+
 //  service controiller
 Route::get('/invoices/{invoices}',[FrontController::class,'invoices'])->name('site.invoice');
 Route::resource('bservice',BserviceController::class);

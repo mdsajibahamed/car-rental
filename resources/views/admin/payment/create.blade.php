@@ -14,7 +14,7 @@
           <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 p-2">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Checkout Form</h4>
+                <h4 class="card-title"></h4>
               </div>
               <div class="card-body">
                 <fieldset>
@@ -59,43 +59,15 @@
                       <input type="text" class="form-control" id="addressTwo1" placeholder="Apartment or Suite" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                     </div>
                   </div>
-                  <div class="row my-2">
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                      <div class="form-group">
-                        <label for="division1">Division</label>
-                        <select class="form-control form-control-sm d-block w-100 my-1" id="division1" required>
-                          <option value="">-- Choose One --</option>
-                          <option value="1">Barisal</option>
-                          <option value="2">Chittagong</option>
-                          <option value="3">Dhaka</option>
-                          <option value="4">Khulna</option>
-                          <option value="5">Mymensingh</option>
-                          <option value="6">Rajshahi</option>
-                          <option value="7">Rangpur</option>
-                          <option value="8">Sylhet</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                      <div class="form-group">
-                        <label for="district1">District</label>
-                        <select class="form-control form-control-sm d-block w-100 my-1" id="district1" required>
-                          <option value="">-- Choose One --</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                      <div class="form-group">
-                        <label for="postal1">Postal Code</label>
-                        <div class="input-group input-group-sm my-1">
-                          <input type="text" class="form-control" id="postal1" placeholder="Ex. 1216" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="5" />
-                        </div>
-                      </div>
-                    </div>
+                  <div class="form-group my-2">
+                    <label for="addressTwo1">Status</label>
+                    <select name="status" class="form-control" id="">
+                      <option value="">choose status....</option>
+                      <option value="0">Disable</option>
+                      <option value="1">Enable</option>
+                  </select>
                   </div>
                 </fieldset>
-                <hr>
-                
               </div>
             </div>
           </div>

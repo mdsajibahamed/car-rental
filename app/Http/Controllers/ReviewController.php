@@ -30,7 +30,7 @@ class ReviewController extends Controller
     {
         // dd($request);
         $this->validate($request,[
-            'user_id'=>"required",'vehicle_id'=>"required",'rating'=>"required",'comments'=>"required"
+            'user_id'=>"required",'vehicle_id'=>"required",'comments'=>"required"
         ]);
         Review::create($request->all());
         return back()->with('info', 'Comments added');

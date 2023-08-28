@@ -27,32 +27,52 @@
                                     <th>Payment Date</th>
                                     <th>Payment Type</th>
                                     <th>Transaction Id</th>
-                                    <th>Amount</th>
+                                    {{-- <th>Amount</th> --}}
+                                    <th>status</th>
                                     <th>Create time</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                               @foreach ($payments as $payment)
-                                   <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$payment->booking_id}}</td>
-                                    <td>{{$payment->payment_type}}</td>
-                                    <td>{{$payment->payment_type}}</td>
-                                    <td>{{$payment->trxid}}</td>
-                                    <td>{{$payment->amount}}</td>
-                                    <td>{{$payment->created_at->diffforhumans()}}</td>
-                                    <td>
-                                        <a href="{{ route('payment.edit', $payment->id)}}"><i class="bi bi-pencil-square"></i></a> 
-                                        <form action="{{ route('payment.destroy',$payment->id) }}" class="d-inline" method="POST">
-                                            @csrf
-                                            @method("delete")
-                                            <a href="#" class="bi bi-trash3-fill" onclick="del(event,this)"></a>
-                                        </form>
-                                    </td>
-                                   </tr>
-                               @endforeach
+                               @forelse ($payments as $payment)
+                               <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$payment->booking_id}}</td>
+                                <td>{{$payment->payment_type}}</td>
+                                <td>{{$payment->payment_type}}</td>
+                                <td>{{$payment->trxid}}</td>
+                                <td>
+                                    @if ($payment->status === 1){
+                                        <span>{{__('Complate')}}</span>
+                                    }
+                                    @else
+                                        <span>{{__('Pending')}}</span>
+                                    @endif
+                                    {{-- @if($payment->status === 0){
+                                        <span class="badge bg-success">{{ __('Pending') }}</span>
+                                    }@elseif($payment->status === 1){   
+                                        <span class="badge bg-danger">{{__('complate')}}</span>
+                                    }@else
+                                        <span class="badge bg-secondary">{{__('disable')}}</span>
+                                    @endif --}}
+                                     </td>
+                                {{-- <td>{{$payment->amount}}</td> --}}
+                                <td>{{$payment->created_at->diffforhumans()}}</td>
+                                <td>
+                                    <a href="{{ route('payment.edit', $payment->id)}}"><i class="bi bi-pencil-square"></i></a> 
+                                    <form action="{{ route('payment.destroy',$payment->id) }}" class="d-inline" method="POST">
+                                        @csrf
+                                        @method("delete")
+                                        <a href="#" class="bi bi-trash3-fill" onclick="del(event,this)"></a>
+                                    </form>
+                                </td>
+                               </tr>
+                               @empty
+                                   <tr><td>No data available</td></tr>
+                               @endforelse 
+                                   
+                              
                                 
                             </tbody>
                         </table>
