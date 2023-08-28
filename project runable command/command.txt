@@ -1,0 +1,8 @@
+install composer
+
+php artisan migrate:fresh --selected
+
+
+login 
+gmail : admin@gmail.com
+password : admin
