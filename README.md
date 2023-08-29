@@ -10,8 +10,18 @@
 
 <h2>Project runable Code</h2>
 <br>
-<p>composer install</p>
-<p></p>
+<h3>composer install</h3>
+
+<h3>cp .env.example .env</h3>
+<h2>php artisan key:generate</h2>
+<h2>npm install</h2>
+<h2>php artisan migrate:fresh --seed</h2>
+<h2>Admin</h2>
+    
+<h2>
+login 
+gmail : admin@gmail.com
+password : admin</h2>
 
 ## About Laravel
 
