@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\BserviceController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\LocationController;
@@ -37,17 +38,14 @@ Route::get('/home', [FrontController::class, 'home'])->name('site.home');
 Route::get('/about', [FrontController::class, 'about'])->name('site.about');
 Route::get('/service', [FrontController::class, 'service'])->name('site.service');
 Route::get('/contact', [FrontController::class, 'contact'])->name('site.contact');
-// Route::get('/detail', [FrontController::class, 'detail'])->name('site.detail');
-// Route::get('/view', [FrontController::class, 'views'])->name('service.view');
-Route::get('/detail', [FrontController::class, 'detail'])->name('car.detail');
-Route::get('/booking', [FrontController::class, 'booking'])->name('site.booking');
+// Route::get('/booking', [FrontController::class, 'booking'])->name('site.booking');
 Route::get('/team', [FrontController::class, 'team'])->name('site.team');
 Route::get('/testimonial', [FrontController::class, 'testimonial'])->name('site.testimonial');
 Route::get('/car_list',[FrontController::class,'car_list'])->name('site.car_list');
 
 
 // booking controller 
-Route::get('/detail/{carDetails}', [FrontController::class, 'carDetails'])->name('car.details');
+Route::get('/details/{carDetails}', [FrontController::class, 'carDetails'])->name('car.details');
 Route::post('/booking', [FrontController::class, 'storebooking'])->name('site.store.booking');
 
 //  service controiller
@@ -58,6 +56,9 @@ Route::resource('bservice',BserviceController::class);
 Route::resource('review',ReviewController::class);
 Route::get('/uvehicle',[FrontController::class,'uvehicle'])->name('site.uvehicle');
 Route::resource('payment', Paymentcontroller::class);
+// contact
+ Route::resource('message', ContactController::class);
+
 
 
 //  this is a admin use

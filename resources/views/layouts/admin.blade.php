@@ -66,7 +66,7 @@
                             &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
-                            Developed by <a href="https://rejoan.com" target="_blank">Mohd Rejoan</a> 
+                            Developed by <a href="https://sajib.com" target="_blank">Md Sajib</a> 
                         </div>
                     </div>
                 </div>

@@ -75,13 +75,19 @@
         </div>
         <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                <span class="d-none d-lg-inline-flex">John Doe</span>
+                {{-- <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;"> --}}
+                <span class="d-none d-lg-inline-flex">Administrator</span>
             </a>
             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                <a href="#" class="dropdown-item">My Profile</a>
-                <a href="#" class="dropdown-item">Settings</a>
-                <a href="#" class="dropdown-item">Log Out</a>
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    {{Auth::user()->name}}  
+                  </a>
+                  <a class="dropdown-item" href="{{route("profile.edit")}}">Profile</a
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="dropdown-item" href="#" onclick="event.preventDefault();
+                       this.closest('form').submit();">Logout</a>
+                    </form>
             </div>
         </div>
     </div>

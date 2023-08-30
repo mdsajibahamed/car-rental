@@ -44,8 +44,9 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        //dd($request);
         $this->validate($request,[
+             
             'model' =>"required|min:5|max:25",
             // 'thumbnail'  =>"min:2|max:20",
             'year' =>"required|min:1|max:10",'status'=>"required",'seating_capacity'=>"required|min:1|max:30",'rentamount'=>"required|max:30",'serial_number'=>"required|min:5|max:100",'owner_name'=>"required|min:2|max:25",'owner_phone'=>"required|min:5|max:100",'price'=>"required|min:2|max:30",
@@ -73,18 +74,28 @@ class VehicleController extends Controller
         //         $vehicle->thumbnail = $filename;
         // }
         // $vehicle->save();
-
-
-        if($thumbnail= $request->file('thumbnail')){
-            $thumbnailName = time(). '-'. uniqid(). '.' . $thumbnail->getClientOriginalExtension();
-            $thumbnail->move('img/vehicle',$thumbnailName);
-        }
+        $vehicle = new Vehicle;
+        // Fill the vehicle model with other fields
+        // $vehicle->save();
+    
+        if ($request->hasFile('thumbnail')) {
+            $thumbnailPath = $request->file('thumbnail')->store('public','photo');
+            $vehicle->thumbnail = $thumbnailPath;
           
-        $imageName = '';
-        if($image = $request->file('image')){
-            $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
-            $image->move('img/vehicle',$imageName);
         }
+
+
+        
+        // if($thumbnail= $request->file('thumbnail')){
+        //     $thumbnailName = time(). '-'. uniqid(). '.' . $thumbnail->getClientOriginalExtension();
+        //     $thumbnail->move('img/vehicle',$thumbnailName);
+        // }
+          
+        // $imageName = '';
+        // if($image = $request->file('image')){
+        //     $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
+        //     $image->move('img/vehicle',$imageName);
+        // }
 
          Vehicle::create($request->all());
 

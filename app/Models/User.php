@@ -67,4 +67,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Bservice::class);
     }
+    /**
+     * Get the comments for the blog post.
+     */
+    public function constact(): HasMany
+    {
+        return $this->hasMany(Contact::class);
+    }
 }

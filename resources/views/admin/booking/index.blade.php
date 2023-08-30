@@ -29,7 +29,7 @@
                                     <th>Vehicle Name</th>
                                     <th>Picked Location</th>
                                     <th>Drop Location</th>
-                                    <th>Total Amount</th>
+                                    <th>Total Day</th>
                                     <th>Status</th>
                                     <th>Date Create</th>
                                     <th>Action</th>
@@ -43,7 +43,7 @@
                                     <td>{{ $booking->vehicle_id }}</td>
                                     <td>{{$booking->location_from}}</td>
                                     <td>{{$booking->location_to}}</td>
-                                    <td>{{$booking->total_amount}}</td>
+                                    <td>{{$booking->total_days}}</td>
                                     <td>
                                     @if($booking->status ===1){
                                         <span class="badge bg-danger">{{ __('complate') }}</span>

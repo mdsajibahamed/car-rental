@@ -37,7 +37,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['location_from'=>"required|min:2|max:50",'return_date'=>"required", 'user_id' =>"required",'location_to'=>"required|min:2|max:50"]);
+        $this->validate($request,['location_from'=>"required|min:2|max:50",'pickup_date' => "required", 'return_date'=>"required", 'user_id' =>"required",'location_to'=>"required|min:2|max:50"]);
         $earlier = new \DateTime($request->pickup_date);
         $later = new \DateTime($request->return_date);
 

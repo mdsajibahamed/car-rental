@@ -20,7 +20,7 @@
                                 <label for="" class="form-label">User Id </label>
                                 <select name="user_id" class="form-select" id="">
                                 @forelse ($users as $user)
-                                    <option value="{{ $user->id }}">{{ $user->id }}</option>
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
                                 @empty
                                     <option value="">{{ __('-- Choose One --') }}</option>
                                 @endforelse
@@ -30,7 +30,7 @@
                                 <label for="" class="form-label">Vehicle Name </label>
                                 <select name="vehicle_id" class="form-select" id="">
                                 @forelse ($vehicles as $vehicle)
-                                    <option value="{{ $vehicle->id }}">{{ $vehicle->id }}</option>
+                                    <option value="{{ $vehicle->id }}">{{ $vehicle->model }}</option>
                                 @empty
                                     <option value="">{{ __('-- Choose One --') }}</option>
                                 @endforelse
@@ -206,19 +206,10 @@
                                 <input type="text" name="total_amount" value="{{old('total_amount')}}" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="" class="form-label mt-3">Add Payment</label>
-                               <select name="add_payment" id="">
-                                <option value="cash">Cash</option>
-                                <option value="bkash">bKash</option>
-                                <option value="nagad">Nagad</option>
-                               </select>
-                            </div>
-                            <div class="form-group">
                                 <input type="submit" class="btn btn-outline-primary mt-3" value="Insert">
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>

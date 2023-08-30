@@ -144,7 +144,7 @@
                 <div class="col-8 col-lg-12 mb-5">
                     <div class="bg-secondary p-5">
                         <h3 class="text-primary text-center mb-4"> Book a Car</h3>
-                        <form action="{{route('booking.store')}}" method="post">
+                        <form action="{{route('site.store.booking')}}" method="post">
                             
                             @csrf
                             <input type="hidden" name="user_id" id="" value="{{isset(Auth::user()->id) ? Auth::user()->id : ''}}">

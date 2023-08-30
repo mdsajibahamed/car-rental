@@ -19,8 +19,6 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="{{route('site.car_list')}}" class="dropdown-item">Car Listing</a>
-                            {{-- <a href="{{ route('site.detail',$vehicle->id)}}" class="dropdown-item">Car Detail</a> --}}
-                            <a href="{{route('site.booking')}}" class="dropdown-item">Car Booking</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -35,15 +33,15 @@
                     @auth
                        <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-                            {{Auth::user()->name}} 
+                            {{Auth::user()->name}}  
                           </a>
                           <div class="dropdown-menu rounded-0 m-0">
                             <a class="dropdown-item" href="{{route("profile.edit")}}">Profile</a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <a class="nav-item" href="#" onclick="event.preventDefault();
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                this.closest('form').submit();">Logout</a>
-                              </form>
+                            </form>
                               <a class="dropdown-item"  href="https://laravel.com/" target="_blank">Something Wrong</a>
                               <a class="dropdown-item"  href="" target="_blank">Add to Vehicle</a>
                           </div>

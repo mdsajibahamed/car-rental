@@ -398,13 +398,12 @@
     <!-- Team Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <h1 class="display-1 text-primary text-center">04</h1>
             <h1 class="display-4 text-uppercase text-center mb-5">Meet Our Team</h1>
             <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
                 <div class="team-item">
                     <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
                     <div class="position-relative py-4">
-                        <h4 class="text-uppercase">Full Name</h4>
+                        <h4 class="text-uppercase">Joy Ahasan</h4>
                         <p class="m-0">Designation</p>
                         <div class="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
                             <a class="btn btn-lg btn-primary btn-lg-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
@@ -416,7 +415,7 @@
                 <div class="team-item">
                     <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
                     <div class="position-relative py-4">
-                        <h4 class="text-uppercase">Full Name</h4>
+                        <h4 class="text-uppercase">Puja </h4>
                         <p class="m-0">Designation</p>
                         <div class="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
                             <a class="btn btn-lg btn-primary btn-lg-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
@@ -428,7 +427,7 @@
                 <div class="team-item">
                     <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
                     <div class="position-relative py-4">
-                        <h4 class="text-uppercase">Full Name</h4>
+                        <h4 class="text-uppercase">Khalid Aslam</h4>
                         <p class="m-0">Designation</p>
                         <div class="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
                             <a class="btn btn-lg btn-primary btn-lg-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
@@ -440,7 +439,7 @@
                 <div class="team-item">
                     <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
                     <div class="position-relative py-4">
-                        <h4 class="text-uppercase">Full Name</h4>
+                        <h4 class="text-uppercase">Khairul Islam</h4>
                         <p class="m-0">Designation</p>
                         <div class="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
                             <a class="btn btn-lg btn-primary btn-lg-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
@@ -525,7 +524,7 @@
                         <h1 class="display-2 text-white m-0 fa fa-quote-right"></h1>
                     </div>
                     <h4 class="text-uppercase mb-2">Client Name</h4>
-                    <i class="mb-2">Profession</i>
+                    <i class="mb-2">Profession</i>y
                     <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
                 </div>
             </div>
@@ -537,25 +536,26 @@
     <!-- Contact Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
-            <h1 class="display-1 text-primary text-center">06</h1>
             <h1 class="display-4 text-uppercase text-center mb-5">Contact Us</h1>
             <div class="row">
                 <div class="col-lg-7 mb-2">
                     <div class="contact-form bg-light mb-4" style="padding: 30px;">
-                        <form>
+                        <form action="{{ route('message.store')}}" method="POST">
+                            @csrf
                             <div class="row">
+                                <input type="hidden" name="user_id" id="" value="{{isset(Auth::user()->id) ? Auth::user()->id : ''}}">
                                 <div class="col-6 form-group">
-                                    <input type="text" class="form-control p-4" placeholder="Your Name" required="required">
+                                    <input type="text" name="name" class="form-control p-4" placeholder="Your Name" required="required">
                                 </div>
                                 <div class="col-6 form-group">
-                                    <input type="email" class="form-control p-4" placeholder="Your Email" required="required">
+                                    <input type="email" name="email" class="form-control p-4" placeholder="Your Email" required="required">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Subject" required="required">
+                                <input type="text" name="mobile_number" class="form-control p-4" placeholder="Mobile Number" required="required">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control py-3 px-4" rows="5" placeholder="Message" required="required"></textarea>
+                                <textarea name="message" class="form-control py-3 px-4" rows="5" placeholder="Message" required="required"></textarea>
                             </div>
                             <div>
                                 <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
@@ -568,15 +568,22 @@
                         <div class="d-flex mb-3">
                             <i class="fa fa-2x fa-map-marker-alt text-primary flex-shrink-0 mr-3"></i>
                             <div class="mt-n1">
-                                <h5 class="text-light">Head Office</h5>
-                                <p>123 Street, New York, USA</p>
+                                <h5 class="text-light"> Head Office</h5>
+                                <p>Mirpur -2  Dhaka, Bangladesh</p>
                             </div>
                         </div>
                         <div class="d-flex mb-3">
                             <i class="fa fa-2x fa-map-marker-alt text-primary flex-shrink-0 mr-3"></i>
                             <div class="mt-n1">
                                 <h5 class="text-light">Branch Office</h5>
-                                <p>123 Street, New York, USA</p>
+                                <p>Dhandmondhi ,Dhaka Bangladesh</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fa fa-2x fa-map-marker-alt text-primary flex-shrink-0 mr-3"></i>
+                            <div class="mt-n1">
+                                <h5 class="text-light">Phone</h5>
+                                <p>+8801303011991 & +959392</p>
                             </div>
                         </div>
                         <div class="d-flex mb-3">
