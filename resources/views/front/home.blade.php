@@ -214,7 +214,7 @@
             <h1 class="display-1 text-primary text-center">03</h1>
             <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
             <div class="row">
-                @forelse ($vehicles as $vehicle)
+                @forelse ($vehicles as $vehicle) 
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
                         {{-- <img class="img-fluid mb-4"src="{{ asset('img/vehicle/'.$vehicle->thumbnail)}}" alt="Vehicle Image"> --}}
