@@ -42,66 +42,102 @@ class VehicleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //dd($request);
-        $this->validate($request,[
+    // public function store(Request $request)
+    // {
+    //     //dd($request);
+    //     // $this->validate($request,[
              
-            'model' =>"required|min:5|max:25",
-            // 'thumbnail'  =>"min:2|max:20",
-            'year' =>"required|min:1|max:10",'status'=>"required",'seating_capacity'=>"required|min:1|max:30",'rentamount'=>"required|max:30",'serial_number'=>"required|min:5|max:100",'owner_name'=>"required|min:2|max:25",'owner_phone'=>"required|min:5|max:100",'price'=>"required|min:2|max:30",
-            'thumbnail'=>"required|mimes:png,jpg,jpeg",
-            'image'=> "required|mimes:png,jpg,jpeg"
-        ]);
+    //     //     'model' =>"required|min:5|max:25",
+    //     //     // 'thumbnail'  =>"min:2|max:20",
+    //     //     'year' =>"required|min:1|max:10",'status'=>"required",'seating_capacity'=>"required|min:1|max:30",'rentamount'=>"required|max:30",'serial_number'=>"required|min:5|max:100",'owner_name'=>"required|min:2|max:25",'owner_phone'=>"required|min:5|max:100",'price'=>"required|min:2|max:30",
+    //     //     'thumbnail'=>"required|mimes:png,jpg,jpeg",
+    //     //     'image'=> "required|mimes:png,jpg,jpeg"
+    //     // ]);
         
        
-        // $vehicle = new Vehicle;
-        // $vehicle->model = $request->input('model');
-        // $vehicle->year = $request->input('year');
-        // $vehicle->status = $request->input('status');
-        // $vehicle->seating_capacity = $request->input('seating_capacity');
-        // $vehicle->rentamount = $request->input('seating_capacity');
-        // $vehicle->serial_number = $request->input('serial_number');
-        // $vehicle->owner_name = $request->input('owner_name');
-        // $vehicle->owner_phone = $request->input('owner_phone');
-        // $vehicle->price = $request->input('price');
-        // $vehicle->price = $request->input('price');
-        // if($request->hasFile('thumbnail')){
-        //     $file =$request->file('thumbnail');
-        //         $extention = $file->getClientOriginalExtension();
-        //         $filename = time().'.'.$extention;
-        //         $file->move('img/vehicle',$filename);
-        //         $vehicle->thumbnail = $filename;
-        // }
-        // $vehicle->save();
-        $vehicle = new Vehicle;
-        // Fill the vehicle model with other fields
-        // $vehicle->save();
+    //     // $vehicle = new Vehicle;
+    //     // $vehicle->model = $request->input('model');
+    //     // $vehicle->year = $request->input('year');
+    //     // $vehicle->status = $request->input('status');
+    //     // $vehicle->seating_capacity = $request->input('seating_capacity');
+    //     // $vehicle->rentamount = $request->input('seating_capacity');
+    //     // $vehicle->serial_number = $request->input('serial_number');
+    //     // $vehicle->owner_name = $request->input('owner_name');
+    //     // $vehicle->owner_phone = $request->input('owner_phone');
+    //     // $vehicle->price = $request->input('price');
+    //     // $vehicle->price = $request->input('price');
+    //     // if($request->hasFile('thumbnail')){
+    //     //     $file =$request->file('thumbnail');
+    //     //         $extention = $file->getClientOriginalExtension();
+    //     //         $filename = time().'.'.$extention;
+    //     //         $file->move('img/vehicle',$filename);
+    //     //         $vehicle->thumbnail = $filename;
+    //     // }
+    //     // $vehicle->save();
+    //     $vehicle = new Vehicle;
+    //     // Fill the vehicle model with other fields
+    //     // $vehicle->save();
     
-        if ($request->hasFile('thumbnail')) {
-            $thumbnailPath = $request->file('thumbnail')->store('public','photo');
-            $vehicle->thumbnail = $thumbnailPath;
+    //     if ($request->hasFile('thumbnail')) {
+    //         $thumbnailPath = $request->file('thumbnail')->store('public','photo');
+    //         $vehicle->thumbnail = $thumbnailPath;
           
-        }
+    //     }
 
 
         
-        // if($thumbnail= $request->file('thumbnail')){
-        //     $thumbnailName = time(). '-'. uniqid(). '.' . $thumbnail->getClientOriginalExtension();
-        //     $thumbnail->move('img/vehicle',$thumbnailName);
-        // }
+    //     // if($thumbnail= $request->file('thumbnail')){
+    //     //     $thumbnailName = time(). '-'. uniqid(). '.' . $thumbnail->getClientOriginalExtension();
+    //     //     $thumbnail->move('img/vehicle',$thumbnailName);
+    //     // }
           
-        // $imageName = '';
-        // if($image = $request->file('image')){
-        //     $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
-        //     $image->move('img/vehicle',$imageName);
+    //     // $imageName = '';
+    //     // if($image = $request->file('image')){
+    //     //     $imageName = time(). '-'. uniqid(). '.' . $image->getClientOriginalExtension();
+    //     //     $image->move('img/vehicle',$imageName);
+    //     // }
+
+    //      Vehicle::create($request->all());
+
+    //      return redirect()->route('vehicle.index')->with('success','successfully added');
+
+    //     //  Vehicle is database 
+    // }
+    public function store(Request $request) {
+        // 
+        // dd($request);
+
+
+
+        try {
+            $vehicle = Vehicle::create($request->all());
+        
+            if ($request->hasFile('thumbnail')) {
+                $thumbnailFile = $request->file('thumbnail');
+                $thumbnailName = time() . '.' . $thumbnailFile->getClientOriginalExtension();
+                $thumbnailPath = $thumbnailFile->storeAs('public/photo', $thumbnailName);
+        
+                $vehicle->thumbnail = $thumbnailPath;
+                $vehicle->save();
+            }
+        
+            return response()->json(['message' => 'Successful'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error: ' . $e->getMessage()], 500);
+        }
+        
+        // $vehicle = Vehicle::create($request->all());
+        // if ($request->hasFile('thumbnail')) {
+        // //   $thumbnailPath = $request->file('thumbnail')->store('public','photo');
+        // //   $vehicle->thumbnail = $thumbnailPath;
+        //     $thumbnailFile = $request->file('thumbnail');
+        //     $thumbnailName = time(). '.' . $thumbnailFile->getClientOriginalExtension();
+        //     $thumbnail = $thumbnailFile->storeAs('/photo',$thumbnailName);
+
+        //     $vehicle->thumbnail = $thumbnail;
+        //     $vehicle->save();
         // }
-
-         Vehicle::create($request->all());
-
-         return redirect()->route('vehicle.index')->with('success','successfully added');
-
-        //  Vehicle is database 
+        // return "Successfull";
     }
 
     /** 

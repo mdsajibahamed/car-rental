@@ -54,7 +54,7 @@ Route::resource('bservice',BserviceController::class);
 
 
 Route::resource('review',ReviewController::class);
-Route::get('/uvehicle',[FrontController::class,'uvehicle'])->name('site.uvehicle');
+// Route::get('/uvehicle',[FrontController::class,'uvehicle'])->name('site.uvehicle');
 Route::resource('payment', Paymentcontroller::class);
 // contact
  Route::resource('message', ContactController::class);

@@ -44,7 +44,7 @@ class FrontController extends Controller
     //
     public function carDetails (Request $request, $id) {
         // dd($id);
-        
+          
         $reviews = Review::orderBy('created_at','desc')->paginate('5');
          $bookings = Booking::all();
          $locations = Location::all();
