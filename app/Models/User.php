@@ -50,7 +50,7 @@ class User extends Authenticatable
      * Get the comments for the blog post.
      */
     public function detail(): HasOne
-    {
+    { 
         return $this->hasOne(Detail::class);
     }
       /**

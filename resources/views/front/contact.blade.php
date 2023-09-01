@@ -23,10 +23,11 @@
         <div class="row">
             <div class="col-lg-7 mb-2">
                 <div class="contact-form bg-light mb-4" style="padding: 30px;">
+                    @auth
                     <form action="{{ route('message.store')}}" method="POST">
                         @csrf
                         <div class="row">
-                            <input type="hidden" name="user_id" id="" value="{{isset(Auth::user()->id) ? Auth::user()->id : ''}}">
+                            {{-- <input type="hidden" name="user_id" id="" value="{{isset(Auth::user()->id) ? Auth::user()->id : ''}}"> --}}
                             <div class="col-6 form-group">
                                 <input type="text" name="name" class="form-control p-4" placeholder="Your Name" required="required">
                             </div>
@@ -44,6 +45,9 @@
                             <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
                         </div>
                     </form>
+                        
+                    @endauth
+                   
                 </div>
             </div>
             <div class="col-lg-5 mb-2">

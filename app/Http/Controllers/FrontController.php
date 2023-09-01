@@ -5,17 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Location;
 use App\Models\Review;
+use App\Models\User;
 use App\Models\Service;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
     //
     public function home() {
-        $services = Service::all();
-        $vehicles = Vehicle::all();
-        return view('front.home', compact('vehicles','services'));
+
+        // $user_id = Auth::user()->role_id;
+        // if($user_id =='1'){
+
+            $services = Service::all();
+            $vehicles = Vehicle::all();
+            return view('front.home', compact('vehicles','services'));
+        // }else{
+        //     return view('front.car_list');
+        // }
     }
     //
         public function views($id){

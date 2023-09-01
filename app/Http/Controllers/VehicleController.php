@@ -121,7 +121,7 @@ class VehicleController extends Controller
                 $vehicle->save();
             }
         
-            return response()->json(['message' => 'Successful'], 200);
+            return redirect()->route('vehicle.index')->with('info','Vehicle Added Successfully');
         } catch (\Exception $e) {
             return response()->json(['message' => 'Error: ' . $e->getMessage()], 500);
         }

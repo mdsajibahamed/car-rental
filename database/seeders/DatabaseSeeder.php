@@ -27,13 +27,13 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             TypeSeeder::class,
             BrandSeeder::class,
-            // VehicleSeeder::class,
+            VehicleSeeder::class,
             // BookingSeeder::class,
             LocationSeeder::class,
             ThanaSeeder::class,
             // PaymentSeeder::class,
             ServiceSeeder::class,
-            // BserviceSeeder::class,
+            BserviceSeeder::class,
         ]);
     }
 }

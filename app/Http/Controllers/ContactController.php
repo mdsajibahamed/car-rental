@@ -29,6 +29,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        
       Contact::create($request->all());
       return back()->with('info', 'Message Sent');
           

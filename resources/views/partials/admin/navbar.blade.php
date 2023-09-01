@@ -79,8 +79,7 @@
                 <span class="d-none d-lg-inline-flex">Administrator</span>
             </a>
             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-                    {{Auth::user()->name}}  
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> 
                   </a>
                   <a class="dropdown-item" href="{{route("profile.edit")}}">Profile</a
                     <form method="POST" action="{{ route('logout') }}">
