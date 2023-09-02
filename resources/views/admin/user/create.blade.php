@@ -41,9 +41,9 @@
                             <div class="form-group">
                                 <label for="" class="form-label">Gender</label>
                                 <select name="gender" id="" class="form-control">
-                                    <option value="1">select option</option>
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
+                                    <option value="Male">select option</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
                             <div class="form-group">

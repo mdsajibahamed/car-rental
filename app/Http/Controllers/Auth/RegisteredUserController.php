@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Detail;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -34,14 +35,27 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'mobile_number' => ['required', 'string', 'max:255'], // Add validation rules for other fields as needed.
+            'address1' => ['required', 'string', 'max:255'],
+            'date_of_birth' => ['required', 'string','min:2','max:255'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
-            
+            'password' => Hash::make($request->password), 
         ]);
+        if ($user) {
+            // Create a new detail record associated with the user
+            $detail = new Detail([
+                'mobile_number' => $request->input('mobile_number'),
+                'address1' => $request->input('address1'),
+                'date_of_birth' => $request->input('date_of_birth'),
+                // Add more fields as needed.
+            ]);
+    
+            $user->detail()->save($detail);
+        }
 
         event(new Registered($user));
 
