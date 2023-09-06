@@ -32,7 +32,7 @@ class BserviceController extends Controller
     {
         // dd($request);
         $this->validate($request,[
-            'location' => "required",'user_id' => "required",'service_id' => "required", 'date' => "required",'service_type' => "required",'payment_type' => "required",
+            'location' => "required",'user_id' => "required",'service_id' => "required", 'date' => "required",'service_type' => "required",
         ]);
         Bservice::create($request->all());
         return back()->with('info', 'Booking Submitted');

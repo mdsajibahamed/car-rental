@@ -100,7 +100,7 @@
                <input type="submit" value="Insert" class="btn btn-outline-primary my-3">     
             </form>
          </div>
-      </div>
+      </div> 
    </div>
 </section>
 @endsection

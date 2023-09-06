@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('title')
-    {{__('Invoice')}}
+    {{__('Service Details')}}
 @endsection
 @section('content')
 
@@ -14,7 +14,7 @@
                 {{-- <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
                     <i class="fa fa-2x fa-car text-secondary"></i>
                 </div> --}}
-                <h1 class="display-2 text-white mt-n2 m-0">01</h1>
+                <h1 class="display-2 text-white mt-n2 m-0">{{$services->id}}</h1>
             </div>
             <h4 class="text-uppercase mb-3">{{$services->title}}</h4>
             <p class="m-0">{{$services->description}}</p>
@@ -39,7 +39,7 @@
       <div class="col-8 justify-content-center">
       <div class="col-8 col-lg-12 mb-5">
       <div class="bg-secondary p-5"> 
-      <h3 class="text-primary text-center mb-4"> Book  a Service </h3>
+      <h3 class="text-primary text-center mb-4">  Checkout </h3>
       <form action="{{route('bservice.store')}}" method="POST">
           @csrf
 
@@ -75,13 +75,8 @@
                 </select>
                 
             </div>
+              
               {{-- <div class="form-group">
-                  <div   class="text" id="amount" >
-                      <input name="amount" type="text" class="form-control p-4 total_amount-input" placeholder="Amount"
-                          data-target="#amount" data-toggle="total_amount" />
-                  </div>
-              </div> --}}
-              <div class="form-group">
                   <div   class="text" id="payment_type" >
                       <select name="payment_type" class="custom-select px-4" style="height: 50px;">
                           <option value="">Select Payment Option</option>
@@ -91,7 +86,7 @@
                       </select>
 
                   </div>
-              </div>
+              </div> --}} 
               
               <div class="form-group mb-0">
                   <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Submit</button>
