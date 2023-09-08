@@ -243,7 +243,7 @@
                 @endforelse
                 
 
-                
+
                 {{-- <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item active mb-4">
                         <img class="img-fluid mb-4" src="img/car-rent-2.png" alt="">
@@ -498,36 +498,36 @@
                         <img class="img-fluid ml-n4" src="img/testimonial-1.jpg" alt="">
                         <h1 class="display-2 text-white m-0 fa fa-quote-right"></h1>
                     </div>
-                    <h4 class="text-uppercase mb-2">Client Name</h4>
-                    <i class="mb-2">Profession</i>
-                    <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
+                    <h4 class="text-uppercase mb-2">Mirza Golam</h4>
+                    <i class="mb-2">Web Specialist</i>
+                    <p class="m-0">Your services is very good</p>
                 </div>
                 <div class="testimonial-item d-flex flex-column justify-content-center px-4">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <img class="img-fluid ml-n4" src="img/testimonial-2.jpg" alt="">
                         <h1 class="display-2 text-white m-0 fa fa-quote-right"></h1>
                     </div>
-                    <h4 class="text-uppercase mb-2">Client Name</h4>
-                    <i class="mb-2">Profession</i>
-                    <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
+                    <h4 class="text-uppercase mb-2">Jim </h4>
+                    <i class="mb-2">Web developer</i>
+                    <p class="m-0">Very good understanding and service</p>
                 </div>
                 <div class="testimonial-item d-flex flex-column justify-content-center px-4">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <img class="img-fluid ml-n4" src="img/testimonial-3.jpg" alt="">
                         <h1 class="display-2 text-white m-0 fa fa-quote-right"></h1>
                     </div>
-                    <h4 class="text-uppercase mb-2">Client Name</h4>
-                    <i class="mb-2">Profession</i>
-                    <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
+                    <h4 class="text-uppercase mb-2">David Leo</h4>
+                    <i class="mb-2">Full-Stack Developer</i>
+                    <p class="m-0">Rent is a comfortable and renuable is special features </p>
                 </div>
                 <div class="testimonial-item d-flex flex-column justify-content-center px-4">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <img class="img-fluid ml-n4" src="img/testimonial-4.jpg" alt="">
                         <h1 class="display-2 text-white m-0 fa fa-quote-right"></h1>
                     </div>
-                    <h4 class="text-uppercase mb-2">Client Name</h4>
-                    <i class="mb-2">Profession</i>y
-                    <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
+                    <h4 class="text-uppercase mb-2">Mimea </h4>
+                    <i class="mb-2">Database Design and front-end developer</i>y
+                    <p class="m-0"> Your site is very good</p>
                 </div>
             </div>
         </div>

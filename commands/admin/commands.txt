@@ -2,3 +2,11 @@ php artisan migrate:fresh --seed
 php artisan make:model Brand -crmRs
 php artisan server
 php artisan make:seeder ServiceSeeder
+
+
+php artisan cache:clear 
+php artisan cache:clear --store redis 
+php artisan cache:forget key 
+php artisan route:clear
+php artisan config:clear
+php artisan view:clear
