@@ -242,6 +242,8 @@
                     
                 @endforelse
                 
+
+                
                 {{-- <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item active mb-4">
                         <img class="img-fluid mb-4" src="img/car-rent-2.png" alt="">
