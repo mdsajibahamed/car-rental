@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             TypeSeeder::class,
             BrandSeeder::class,
             VehicleSeeder::class,
-            // BookingSeeder::class,
+            BookingSeeder::class,
             LocationSeeder::class,
             ThanaSeeder::class,
             // PaymentSeeder::class,
