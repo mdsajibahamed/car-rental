@@ -4,6 +4,7 @@ php artisan server
 php artisan make:seeder ServiceSeeder
 
 
+
 php artisan cache:clear 
 php artisan cache:clear --store redis 
 php artisan cache:forget key 

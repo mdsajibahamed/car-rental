@@ -57,7 +57,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <img class="w-75 mb-4" src="img/about.png" alt="">
-                    <p>Justo et eos et ut takimata sed sadipscing dolore lorem, et elitr labore labore voluptua no rebum sed, stet voluptua amet sed elitr ea dolor dolores no clita. Dolores diam magna clita ea eos amet, amet rebum voluptua vero vero sed clita accusam takimata. Nonumy labore ipsum sea voluptua sea eos sit justo, no ipsum sanctus sanctus no et no ipsum amet, tempor labore est labore no. Eos diam eirmod lorem ut eirmod, ipsum diam sadipscing stet dolores elitr elitr eirmod dolore. Magna elitr accusam takimata labore, et at erat eirmod consetetur tempor eirmod invidunt est, ipsum nonumy at et.</p>
+                    <p>Welcome to the world of Royal Cars, where luxury, elegance, and performance meet to create an unparalleled driving experience. Royal Cars is a prestigious automotive brand that has a rich history of crafting some of the finest and most exquisite automobiles in the world. Let's dive into a description of what makes Royal Cars truly exceptional</p>
                 </div>
             </div>
             <div class="row mt-3">
@@ -199,8 +199,8 @@
                 <div class="py-5">
                     <h1 class="display-1 text-uppercase text-primary mb-4">50% OFF</h1>
                     <h1 class="text-uppercase text-light mb-4">Special Offer For New Members</h1>
-                    <p class="mb-4">Only for Sunday from 1st Jan to 30th Jan 2045</p>
-                    <a class="btn btn-primary mt-2 py-3 px-5" href="">Register Now</a>
+                    <p class="mb-4">Only for Sunday from Every Week </p>
+                    <a class="btn btn-primary mt-2 py-3 px-5" href="{{route('register')}}">Register Now</a>
                 </div>
             </div>
         </div>

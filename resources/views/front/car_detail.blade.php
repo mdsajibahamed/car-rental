@@ -1,20 +1,6 @@
 @extends('layouts.front')
 @section('title')
 {{__('Car_Details')}}
-    
-@endsection
-@section('hero')
-  <!-- Page Header Start -->
-  <div class="container-fluid page-header">
-    <h1 class="display-3 text-uppercase text-white mb-3">Car Detail</h1>
-    <div class="d-inline-flex text-white">
-        <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
-        <h6 class="text-body m-0 px-3">/</h6>
-        <h6 class="text-uppercase text-body m-0">Car Detail</h6>
-    </div>
-</div>
-<!-- Page Header Start -->
-    
 @endsection
 @section('content')
 {{-- <h1>Laravel Up & Running Second Edition </h1>
@@ -89,37 +75,45 @@
                         </div>
                     </div>
                </div>
-                    <div class="container-fluid py-5">
-                        <h3>Add To Comment</h3>
-                        <form action="{{route('review.store')}}"  method="POST" >
-                            @csrf
-                            <textarea name="comments" class="form-control" rows="4" placeholder="Write a comment..."></textarea>
-                            <input type="hidden" name="vehicle_id" value="{{ $vehicles->id }}">
-                            <input type="hidden" name="user_id" id="" value="{{isset(Auth::user()->id) ? Auth::user()->id : ''}}">
-                            {{-- <input type="text" name="rating" class="form-control mt-2" placeholder="Add to rating" > --}}
-                            <label class="form-label" for="">Add To Rating :</label>
-                            <div class="star-rating">
-                                @for ($i = 1; $i <= 5; $i++)
-                                   
-                                    <input  type="radio" name="rating" id="rating{{ $i }}" place value="{{ $i }}">
-                                    {{-- <i class="bi bi-star" name="rating" id="rating{{ $i }}" place value="{{ $i }}"></i> --}}
-                                    <label for="rating{{ $i }}"></label>
-                                @endfor
-                            </div>
-                            <button type="submit" class="btn btn-outline-warning my-3">Submit</button>
-                        </form>
-                        
-                    </div>
+               <div class="container-fluid py-5">
+                <h3>Add To Comment</h3>
+                @if (Auth::check())
+                    <!-- User is logged in, display the comment form -->
+                    <form action="{{ route('review.store') }}" method="POST">
+                        @csrf
+                        <textarea name="comments" class="form-control" rows="4" placeholder="Write a comment..."></textarea>
+                        <input type="hidden" name="vehicle_id" value="{{ $vehicles->id }}">
+                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                        {{-- <input type="text" name="rating" class="form-control mt-2" placeholder="Add to rating" > --}}
+                        <label class="form-label" for="">Add To Rating :</label>
+                        <div class="star-rating">
+                            @for ($i = 1; $i <= 5; $i++)
+                                <input type="radio" name="rating" id="rating{{ $i }}" value="{{ $i }}">
+                                <label for="rating{{ $i }}"></label>
+                            @endfor
+                        </div>
+                        <button type="submit" class="btn btn-outline-warning my-3">Submit</button>
+                    </form>
+                @else
+                    <!-- User is not logged in, display a message and a link to the registration form -->
+                    <p>Please <a href="{{ route('register') }}">register</a> to add comments.</p>
+                @endif
+            </div>
+            
+            
                     <div class="container">
                         
-                            @foreach ($reviews as $review)
-                            <div  style="padding: 5px; margin:5px; border: 1px solid gold; box-sizing:border-box;">
-                                {{-- <p>User Id :   {{$review->user_id}}</p> --}}
-                                <p>User Name :   {{isset(Auth::user()->id) ? Auth::user()->name : ''}}</p>
-                                <p> Message :  {{$review->comments}}</p>
-                                <p> Date :  {{$review->created_at->diffforhumans()}}</p>
-                            </div>
-                            @endforeach
+                        @foreach ($reviews as $review)
+                        <div style="padding: 5px; margin: 5px; border: 1px solid gold; box-sizing: border-box;">
+                            @if (Auth::check())
+                                {{-- Display the user's name for authenticated users --}}
+                                <p>User Name : {{ Auth::user()->name }}</p>
+                            @endif
+                            <p>Message : {{ $review->comments }}</p>
+                            <p>Date : {{ $review->created_at->diffForHumans() }}</p>
+                        </div>
+                    @endforeach
+                    
                    
                     </div>
 
