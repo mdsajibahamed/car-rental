@@ -8,7 +8,7 @@
 </p>
 
 
-<h2>Project runable Code</h2>
+<h2>Project run to Code</h2>
 <br>
 <h3>composer install</h3>
 
