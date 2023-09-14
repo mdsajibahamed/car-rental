@@ -14,9 +14,9 @@
                     <img class="w-100" src="img/carousel-1.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-md-3">Rent A Car</h4>
+                            <h1 class="text-white text-uppercase mb-md-3">Rent A Car</h1>
                             <h1 class="display-1 text-white mb-md-4">Best Rental Cars In Your Location</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
+                            <a href="{{route('register')}}" class="btn btn-primary py-md-3 px-md-5 mt-2">Registration Now</a>
                         </div>
                     </div>
                 </div>
@@ -24,9 +24,9 @@
                     <img class="w-100" src="img/carousel-2.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-md-3">Rent A Car</h4>
+                            <h1 class="text-white text-uppercase mb-md-3">Rent A Car</h1>
                             <h1 class="display-1 text-white mb-md-4">Quality Cars with Unlimited Miles</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserve Now</a>
+                            <a href="{{route('register')}}" class="btn btn-primary py-md-3 px-md-5 mt-2">Registration Now</a>
                         </div>
                     </div>
                 </div>
