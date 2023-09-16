@@ -18,14 +18,13 @@
                     <div>
                         <table class="table table-striped">
                             <tr>
-                                <th></th>
-                                <th></th>
+                                <th> service name</th>
+                                <th> service status</th>
                             </tr>
 
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>paniting</td>
+                                <td>1</td>
                             </tr>
                         </table>
                     </div>
