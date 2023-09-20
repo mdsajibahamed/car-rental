@@ -44,10 +44,20 @@
             </div>
         </div>
     </section>
-
-
 @endsection
 
 @section('script')
-    
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script>
+        let table = new DataTable('#table');
+    </script>
+    <script>
+        function del(e,t){
+            e.preventDefault();
+            let c = confirm("Are you sure you want to delete?");
+            if(!c) return;            
+            t.closest('form').submit();
+        }
+        
+    </script>
 @endsection
