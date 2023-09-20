@@ -21,7 +21,7 @@
 <h3> 
 gmail : admin@gmail.com
 </h2>
-<h2>password : admin</h2>
+<h3>password : admin</h2>
 
 ## About Laravel
 
