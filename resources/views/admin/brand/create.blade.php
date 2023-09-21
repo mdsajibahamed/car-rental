@@ -14,7 +14,7 @@
                     </div>
                     <div>
                        <form action="{{ route('brand.store') }}" method="post">
-                      
+                
                         @csrf 
                         <div class="form-group">
                             <label for="title" class="form-label">Title</label>
@@ -39,9 +39,6 @@
                     </form>
                     
                     </div>
-
-                    
-                    
                 </div>
             </div>
         </div>
