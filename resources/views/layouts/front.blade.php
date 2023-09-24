@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
+<head>  
     <meta charset="utf-8">
     <title>@yield('title') | {{ config('app.name') }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -50,6 +50,7 @@
 </head>
 
 <body>
+
     @include('partials.front.topbar')
     @include('partials.front.navbar')
     {{-- @include('partials.front.search') --}}
@@ -88,6 +89,7 @@
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/main2.js')}}"></script>
     @yield('script')
+    
 </body>
 
 </html>
