@@ -50,9 +50,7 @@
                                         <td>No Data Available</td>
                                     </tr>
                                 @endforelse
-                            </tbody>
-                            
-                            
+                            </tbody>      
                         </table>
                     </div>
 
@@ -60,7 +58,6 @@
             </div>
         </div>
     </section>
-
 
 @endsection
 
