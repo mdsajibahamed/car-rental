@@ -62,10 +62,6 @@
                                     <td>No Data Available</td>
                                 </tr>
                                 @endforelse
-                                
-                               
-                                   
-                               
                             </tbody>
                             
                             
