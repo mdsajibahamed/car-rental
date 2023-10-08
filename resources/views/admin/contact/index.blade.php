@@ -37,9 +37,8 @@
                                     <td> {{$contact->created_at->diffforhumans()}} </td>
                                 </tr>
                                 @empty
-                                    
-                                @endforelse
                                 
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -48,7 +47,6 @@
             </div>
         </div>
     </section>
-
 
 @endsection
 
