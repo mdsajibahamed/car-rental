@@ -9,7 +9,6 @@
 @endsection
 
 @section('content')
-
     <section>
         <div class="container">
             <div class="row justify-content-center mt-5">
@@ -63,8 +62,6 @@
                                 </tr>
                                 @endforelse
                             </tbody>
-                            
-                            
                         </table>
                     </div>
 
