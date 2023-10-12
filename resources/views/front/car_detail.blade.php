@@ -28,6 +28,7 @@
                             <i class="fa fa-car text-primary mr-2"></i>
                             <span> Year : {{ $vehicles->year }}</span>
                         </div>
+                        
                         <div class="col-md-4 col-6 mb-2">
                             <i class="fa fa-cogs text-primary mr-2"></i>
                             <span>Owner Name : {{$vehicles->owner_name}} </span>
