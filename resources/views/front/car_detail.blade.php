@@ -6,7 +6,6 @@
 {{-- <h1>Laravel Up & Running Second Edition </h1>
     <br> --}}
 
-
     <!-- Detail Start -->
     <div class="container-fluid pt-5">
         <div class="container pt-5 justify items center">
@@ -173,30 +172,6 @@
                                         data-target="#date2" data-toggle="datetimepicker" />
                                 </div>
                             </div>
-                            {{-- <div class="form-group">
-                                <div   class="text" id="days" >
-                                    <input name="total_days" type="text" class="form-control p-4 total_days-input" placeholder="Total Days"
-                                        data-target="#days" data-toggle="total_days" value="2"/>
-                                </div>
-                            </div> --}}
-                            {{-- <div class="form-group">
-                                <div   class="text" id="amount" >
-                                    <input name="total_amount" type="text" class="form-control p-4 total_amount-input" placeholder="Total Amount"
-                                        data-target="#amount" data-toggle="total_amount" />
-                                </div>
-                            </div> --}}
-                            {{-- <div class="form-group">
-                                <div   class="text" id="add_payment" >
-                                    <select name="add_payment" class="custom-select px-4" style="height: 50px;">
-                                        <option value="">Select Payment Option</option>
-                                        <option value="cash">Cash</option>
-                                        <option value="bkash">bKash</option>
-                                        <option value="nagad">Nagad</option>
-                                    </select>
-
-                                </div> 
-                            </div> --}}
-                            
                             <div class="form-group mb-0">
                                 <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Submit</button>
                             </div>
@@ -210,74 +185,6 @@
             </div>
         </div>
     </div>
-    <!-- Detail End -->
-
-    <!-- Related Car Start -->
-    {{-- <div class="container-fluid pb-5">
-        <div class="container pb-5">
-            <h2 class="mb-4">Related Cars</h2>
-            <div class="owl-carousel related-carousel position-relative" style="padding: 0 30px;">
-                
-                <div class="rent-item">
-                    <img class="img-fluid mb-4" src="img/car-rent-4.png" alt="">
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="">$99.00/Day</a>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- Related Car End -->
-
-
-
-
-    <!-- Vendor Start -->
-    {{-- <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="owl-carousel vendor-carousel">
-                <div class="bg-light p-4">
-                    <img src="img/vendor-1.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="img/vendor-2.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="img/vendor-3.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="img/vendor-4.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="img/vendor-5.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="img/vendor-6.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="img/vendor-7.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="img/vendor-8.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- Vendor End -->
-
 @endsection
 @section('script')
 <script>
