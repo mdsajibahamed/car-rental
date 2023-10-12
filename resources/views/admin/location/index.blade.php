@@ -23,7 +23,7 @@
                                     <th>Sl</th>
                                     <th>Name</th>
                                     <th>Status</th>
-                                 
+                                     <th></th>
                                     <th>Date Create</th>
                                     <th>Action</th>
                                 </tr>
@@ -50,9 +50,7 @@
                                         <td>No Data Available</td>
                                     </tr>
                                 @endforelse
-                            </tbody>
-                            
-                            
+                            </tbody>      
                         </table>
                     </div>
 
@@ -60,7 +58,6 @@
             </div>
         </div>
     </section>
-
 
 @endsection
 
